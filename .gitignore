@@ -1,3 +1,11 @@
+.idea/
+composer.lock
+.DS_Store
 /vendor
 /node_modules
 .env
+/config/owl.php
+/public/css/
+/public/js/
+
+deploy*.tgz
