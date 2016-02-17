@@ -23,14 +23,18 @@ class ProductsController extends Controller {
 	 */
 	public function index()
 	{
-		return view(
-			'page.products',[
-				'products' => Config::get($products),
-				'phx_url' => Config::get('phx'),
-				'params' => $params,
+                $products  = Config::get('products');
+                $params = array(); 
+		$agent = null;
+                return view(
+			'products',
+			[
+                          'products' =>	$products,
+                          'phx_url' => Config::get('phx'),
+			  'params' => $params,
 				'footer' => Config::get('footer'),
-				'agent' => $this->agent,
-			]
+				'agent' => $agent,
+                        ]
 		);
 	}
 
