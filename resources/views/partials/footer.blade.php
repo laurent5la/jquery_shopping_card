@@ -408,6 +408,7 @@
 			
 		</div>
 		<hr>
+		
 		<div class="row legal">
 			<div class="col-md-12 col-sm-12">
 				<ul class="list-inline">
