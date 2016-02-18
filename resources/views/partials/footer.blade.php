@@ -1,4 +1,3 @@
-@section('footer')
 <?php
 		if (! isset($footer)) {
 			$footer = Config::get("footer");
@@ -11,7 +10,10 @@
 		</div>
 		<div class="col-md-3 col-sm-12">
 			<ul class="list-inline list-unstyled">
-				<li><span class="icon phone white"></span> Call Us @if($agent->isMobile())<a href="tel:+18006492568"> (800) 649-2568 </a>  @else() (800) 649-2568 @endif</li>
+				<li>
+					<span class="glyphicon glyphicon-earphone"></span>
+					<span class="icon phone white"></span> Call Us<a href=""> (800) 649-2568 </a>
+				</li>
 			</ul>
 		</div>
 		<div class="col-md-3 col-sm-12">
@@ -417,4 +419,4 @@
 		</div>
 	</div>
 </footer>
-@stop
+
