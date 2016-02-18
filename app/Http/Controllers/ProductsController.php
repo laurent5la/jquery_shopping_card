@@ -33,7 +33,6 @@ class ProductsController extends Controller {
                           'phx_url' => Config::get('phx'),
 			  'params' => $params,
 				'footer' => Config::get('footer'),
-				'agent' => $agent,
                         ]
 		);
 	}
