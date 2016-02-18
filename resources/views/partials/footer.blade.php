@@ -1,3 +1,4 @@
+@section('footer')
 <?php
 		if (! isset($footer)) {
 			$footer = Config::get("footer");
@@ -26,7 +27,7 @@
 		</div>
 	</div>
 	<div id="contact-form-section">
-		<form id="contact-form" action="https://click.dandb.com/pub/rf" method=“POST">
+		<form id="contact-form" action="https://click.dandb.com/pub/rf" method='POST'>
 			<div class="row">
 				<div class="col-md-12 col-sm-12 title">
 					Your Information
@@ -402,36 +403,18 @@
 			<div class="col-md-3 col-sm-12">
 				<a class="logo" href="http://www.dnb.com/"></a>
 			</div>
-			@foreach ($footer["links"] as $category => $links)
-				<div class="col-md-2 col-sm-12 group-link-heading">
-					<b>{{$category}}</b><span class="glyphicon glyphicon-plus pull-right hidden-lg hidden-md hidden-sm"></span>
-					<div class="collapse hidden-xs">
-						<ul class="list-unstyled">
-						@foreach ($links as $url => $text)
-							<li><a href="{{$url}}" target="_blank">{{$text}}</a></li>
-						@endforeach
-						</ul>
-					</div>
-				</div>
-			@endforeach
-			<div class="col-md-3 col-sm-12">
-				<ul class="list-inline">
-					@foreach ($footer["social"] as $url => $class)
-						<li><a href="{{$url}}" target="_blank"><img class="social-icon" src="/images/{{$class}}-icon.png"></a></li>
-					@endforeach
-				</ul>
-			</div>
+			
 		</div>
 		<hr>
 		<div class="row legal">
 			<div class="col-md-12 col-sm-12">
 				<ul class="list-inline">
 					<li>© Dun &amp; Bradstreet, Inc. 2000-<?php echo date("Y");?>. All rights reserved.</li>
-					@foreach ($footer["legal"] as $url => $text)
-						<li><a href="{{$url}}" target="_blank">{{$text}}</a></li>
-					@endforeach
+					
+					
 				</ul>
 			</div>
 		</div>
 	</div>
 </footer>
+@stop

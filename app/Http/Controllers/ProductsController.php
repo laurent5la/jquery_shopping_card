@@ -2,7 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use Input;
+
+use Cart;
 use Config;
+use Session;
+use Jenssegers\Agent\Agent;
 
 class ProductsController extends Controller {
 
@@ -21,6 +31,14 @@ class ProductsController extends Controller {
 	 *
 	 * @return Response
 	 */
+	private $agent;
+
+	public function __construct(){
+		$this->agent= new Agent();
+	}
+
+
+
 	public function index()
 	{
                 $products  = Config::get('products');
@@ -29,11 +47,12 @@ class ProductsController extends Controller {
                 return view(
 			'products',
 			[
-                          'products' =>	$products,
-                          'phx_url' => Config::get('phx'),
-			  'params' => $params,
-				'footer' => Config::get('footer'),
-                        ]
+               'products' =>	$products,
+               'phx_url' => Config::get('phx'),
+			   'params' => $params,
+			   'footer' => Config::get('footer'),
+			   'products',array('agent'=>$this->agent)
+            ]
 		);
 	}
 
