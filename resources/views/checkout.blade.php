@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="css/app.css"></link>
-<link rel="stylesheet" type="text/css" href="css/style.css"></link>
 <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css"></link>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -16,8 +15,7 @@
 		
 
 		<div id="content">
-                        @include('partials.loginform')
-                        @include('partials.billingform')
+            @include('partials.loginform')                    
 
 			@yield('content')
 		</div>

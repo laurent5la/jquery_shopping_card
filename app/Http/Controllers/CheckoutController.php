@@ -56,4 +56,8 @@
             }
             return null;
         }
+
+        public function index() {
+            return view('checkout');     
+        }
     }
