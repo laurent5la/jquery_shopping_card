@@ -431,7 +431,7 @@
 		<div class="row legal">
 			<div class="col-md-12 col-sm-12">
 				<ul class="list-inline">
-					<li>© Dun &amp; Bradstreet, Inc. 2000-<?php echo date("Y");?>. All rights reserved.</li>
+					<li>© Company Name, Inc. 2000-<?php echo date("Y");?>. All rights reserved.</li>
 				</ul>
 			</div>
 		</div>
