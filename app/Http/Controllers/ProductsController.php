@@ -35,17 +35,22 @@ class ProductsController extends Controller {
 	public function index()
 	{
                 $products  = Config::get('products');
+
+                $footer = Config::get('footer');
+                // print_r($footer);exit;
                 $params = array(); 
-		$agent = null;
+				$agent = null;
                 return view(
 			'products',
 			[
                'products' =>	$products,
                'phx_url' => Config::get('phx'),
 			   'params' => $params,
-			   'footer' => Config::get('footer'),
+			   'footer' => $footer,
             ]
-		);
+
+		//return View::make('footer',)->with('footer',($footer)->with());
+		);	
 	}
 
 }
