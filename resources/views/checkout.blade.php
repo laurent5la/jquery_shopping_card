@@ -16,8 +16,7 @@
 		
 
 		<div id="content">
-                        @include('partials.loginform')
-                        @include('partials.billingform')
+            @include('partials.loginform')                    
 
 			@yield('content')
 		</div>

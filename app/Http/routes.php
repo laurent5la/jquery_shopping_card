@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'ProductsController@index');
-Route::match(['get', 'post'],'/co','CheckoutController@index');
+Route::match(['get', 'post'],'/checkout','CheckoutController@index');
