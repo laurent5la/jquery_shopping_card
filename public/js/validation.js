@@ -2,37 +2,37 @@ $(document).ready(function() {
 
 	"use strict";
 	  
-	var validator=$('#myform').validate({
+	var validator=$('#loginform').validate({
 	    rules: {
-            username: {
+            uname: {
                 required: true,
                 minlength: 4,
-                alphanumeric:true
+                alphanumericcheck:true
             },
             email: {
                 required: true,
                 email: 5
             },
-            password: { 
+            password1: { 
                 required: true,
-                minlength: 9,
+                minlength: 6,
                 pwcheck: true
             }, 
             cpassword: { 
-            	minlength: 9,
+            	minlength: 6,
                 required: true,
-                equalTo: "#password"
+                equalTo: "#password1"
             }
 	    },
         messages: {
-            username: "Please enter valid username",
-            email: "Please enter valid email addres",
-            password: "Please enter valid password",
+            uname: "Please enter valid username",
+            email: "Please enter valid email address",
+            password1: "Please enter valid password",
             cpassword: "Should be equal to password entered"
         }
 	});
 
-	$('#field1').blur(function(){
+	$('#loginform').blur(function(){
 		this.validate();
 	});
 
@@ -48,12 +48,26 @@ $(document).ready(function() {
        	&& /\d/.test(value) // has a digit
 	});
 
+
+    $.validator.addMethod("alphanumericcheck", function(value) {
+        return /^[a-z0-9]+$/i.test(value) // consists of only these
+    });
+
+    // $('#myForm').validate({
+    //     errorClass:'myClass'
+    //     //your options
+    // });
+
     var options = {};
     options.ui = {
-        bootstrap4: true,
         container: "#pwd-container",
+        showVerdictsInsideProgressBar: true,
+        showErrors: true,
         viewports: {
             progress: ".pwstrength_viewport_progress"
+        },
+        errorMessages:{
+            wordLength: "Your password should be of minimum length 6"
         }
     };
     options.common = {
@@ -63,6 +77,7 @@ $(document).ready(function() {
         }
     };
     $('#password1').pwstrength(options);
+
 
  });
 

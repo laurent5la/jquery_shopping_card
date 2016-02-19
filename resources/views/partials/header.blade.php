@@ -40,7 +40,7 @@
 				</div>
 			</div>
 			<div class="navbar-toggle pull-right">
-				<span class="toggle-search"><img src="/images/magnify-glass-icon.png"></span>
+				<span class="toggle-search"><span class="  glyphicon glyphicon-search  form-control-feedback"></span></span>
 			</div>
 			<div class="logo navbar-nav"><a href=""></a></div>
 		</div>

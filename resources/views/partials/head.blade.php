@@ -9,7 +9,7 @@
     <title>{{$page_title or 'Company Search'}}</title>
 
     <!-- Bootstrap -->
-    <link href="/css/style.css" rel="stylesheet">
+    <!-- <link href="/css/style.css" rel="stylesheet"> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +23,7 @@
     <!-- Jquery expansion -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/main.js"></script>
+     <!-- <script src="/js/main.js"></script> -->
 </head>
 <body>
     <!-- Google Tag Manager -->
