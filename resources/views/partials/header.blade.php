@@ -24,7 +24,7 @@
 					
 					<div class="form-group has-feedback">
 						<div class= "left-addon"><span class="  glyphicon glyphicon-search  form-control-feedback"></span></div>
-						<input type="text" class="form-control" placeholder="Search Business"/>
+						<input type="text" class=" business-search-input form-control" placeholder="Search Business"/>
 					</div>
 				</div>
 			</div>
