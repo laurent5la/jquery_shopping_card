@@ -5,7 +5,5 @@ composer.lock
 /node_modules
 .env
 /config/owl.php
-/public/css/
-/public/js/
 
 deploy*.tgz
