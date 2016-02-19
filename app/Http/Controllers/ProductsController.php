@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 use Input;
 use Config;
 
-
 class ProductsController extends Controller {
 
 	/*
@@ -28,29 +27,22 @@ class ProductsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	
-
-
 
 	public function index()
 	{
-                $products  = Config::get('products');
-
-                $footer = Config::get('footer');
-                // print_r($footer);exit;
-                $params = array(); 
-				$agent = null;
-                return view(
-			'products',
-			[
-               'products' =>	$products,
-               'phx_url' => Config::get('phx'),
-			   'params' => $params,
-			   'footer' => $footer,
-            ]
-
-		//return View::make('footer',)->with('footer',($footer)->with());
-		);	
+      $products  = Config::get('products');
+      $footer = Config::get('footer');
+      $params = array();
+			$agent = null;
+      return view(
+				'products',
+				[
+     				'products' =>	$products,
+     				'phx_url' => Config::get('phx'),
+						'params' => $params,
+						'footer' => $footer,
+  			]
+		);
 	}
 
 }

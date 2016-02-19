@@ -65,7 +65,7 @@ return [
 		],
 	],
 	[
-		'name' => 'Product 2 Information Report&trade;',
+		'name' => 'Product 2',
 		'code' => 'product2',
 		'short_description' => 'Product 2 Business Report',
 		'description_title' => 'The Most Popular Report for Business Credit Decisions',
