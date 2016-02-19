@@ -7222,4 +7222,6 @@ span.icon {
 .error{
    color: #FF0000
 }
-
+.search-input{
+  text-align: center;
+}

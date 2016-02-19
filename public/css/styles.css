@@ -1032,4 +1032,7 @@ span.icon.pencil.white {
 .error{
    color: #FF0000
 }
+.search-input{
+  text-align: center;
+}
 
