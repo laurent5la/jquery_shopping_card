@@ -91,7 +91,7 @@
 }
 .modal .modal-dialog .modal-content {
     border-radius: 0;
-    color: #fff;
+
     border: none;
     width: 70%;
     margin: 0 auto;
@@ -197,6 +197,40 @@
     vertical-align: middle;
     pointer-events: none
 }
+
+#company_search_results{
+  width: 100%;
+  height: 180px;
+  color: white;
+  text-align: left;
+  background-color: #3096B1;
+  padding-top: 10px;
+}
+
+#company_search_results .company_search_show h1{
+  font-size: 40px;
+}
+
+#company_search_results .company_search_show h4{
+  padding-bottom: : 5px;
+}
+
+#company_search{
+  width: 100%;
+  height: 60px;
+  background-color: #01516F;
+}
+
+#company_search h3{
+  text-align: center;
+  color: white;
+  font-weight: 400;
+
+}
+
+#main_product{
+  text-align: left;
+}
 #content {
     display: inline-block;
     margin: 0 auto;
@@ -260,24 +294,21 @@
 #content .container .options li a.bir-links:active,
 #content .container .options li a.bir-links:focus,
 #content .container .options li a.bir-links:hover,
-#content .container .options li a.cm-links:active,
-#content .container .options li a.cm-links:focus,
-#content .container .options li a.cm-links:hover {
+#content .container .options li a.product1-links:active,
+#content .container .options li a.product1-links:focus,
+#content .container .options li a.product1-links:hover {
     color: #3095b4;
     border-bottom: 1px solid #1c6b82
 }
-#content .container .options li a.ca-links:active,
-#content .container .options li a.ca-links:focus,
-#content .container .options li a.ca-links:hover,
-#content .container .options li a.cb-links:active,
-#content .container .options li a.cb-links:focus,
-#content .container .options li a.cb-links:hover {
+#content .container .options li a.product2-links:active,
+#content .container .options li a.product2-links:focus,
+#content .container .options li a.product2-links:hover {
     color: #be4d00;
     border-bottom: 1px solid #903a17
 }
-#content .container .options li a.cc-links:active,
-#content .container .options li a.cc-links:focus,
-#content .container .options li a.cc-links:hover,
+#content .container .options li a.product3-links:active,
+#content .container .options li a.product3-links:focus,
+#content .container .options li a.product3-links:hover,
 #content .container .options li a.dnbc-links:active,
 #content .container .options li a.dnbc-links:focus,
 #content .container .options li a.dnbc-links:hover {
@@ -353,6 +384,7 @@
 #content .container .product .product_selected {
     height: 100%;
     color: #fff;
+    background-color:#3095b4!important;
     display: inline-block;
     border: none
 }
@@ -513,13 +545,14 @@
     font-weight: 400
 }
 #content .container #other_options {
-    margin-bottom: 100px
+    margin-bottom: 100px;
 }
 #content .container #other_options .sub_option {
     cursor: pointer;
     padding: 0 10px 30px 5px;
     border: 2px solid #ddd;
-    border-top: 9px solid
+    border-top: 9px solid;
+      margin-bottom: 100px;
 }
 #content .container #other_options .sub_option .option_buttons {
     display: inline-block;
@@ -542,16 +575,15 @@
     background-color: #005172
 }
 #content .container #other_options .sub_option .option_buttons button.bir:hover,
-#content .container #other_options .sub_option .option_buttons button.cm:hover {
+#content .container #other_options .sub_option .option_buttons button.product1:hover {
     color: #fff;
     background-color: #3095b4
 }
-#content .container #other_options .sub_option .option_buttons button.ca:hover,
-#content .container #other_options .sub_option .option_buttons button.cb:hover {
+#content .container #other_options .sub_option .option_buttons button.product2:hover {
     color: #fff;
     background-color: #be4d00
 }
-#content .container #other_options .sub_option .option_buttons button.cc:hover,
+#content .container #other_options .sub_option .option_buttons button.product3:hover,
 #content .container #other_options .sub_option .option_buttons button.dnbc:hover {
     color: #fff;
     background-color: #00b2aa
@@ -710,7 +742,6 @@
     color: #000
 }
 
-
 body {
     height: 100%;
     color: #868686;
@@ -757,14 +788,13 @@ a:hover {
     border-color: #005172!important
 }
 .bir-border-color,
-.cm-border-color {
+.product1-border-color {
     border-color: #3095b4!important
 }
-.ca-border-color,
-.cb-border-color {
+.product2-border-color {
     border-color: #be4d00!important
 }
-.cc-border-color,
+.product3-border-color,
 .dnbc-border-color {
     border-color: #00b2aa!important
 }
@@ -773,14 +803,13 @@ a:hover {
     border-top-color: #003650!important
 }
 .bir-border-dark,
-.cm-border-dark {
+.product1-border-dark {
     border-top-color: #1c6b82!important
 }
-.ca-border-dark,
-.cb-border-dark {
+.product2-border-dark {
     border-top-color: #903a17!important
 }
-.cc-border-dark,
+.product3-border-dark,
 .dnbc-border-dark {
     border-top-color: #00807a!important
 }
@@ -789,14 +818,13 @@ a:hover {
     border-top-color: #005172!important
 }
 .bir-border,
-.cm-border {
+.product1-border {
     border-top-color: #3095b4!important
 }
-.ca-border,
-.cb-border {
+.product2-border {
     border-top-color: #be4d00!important
 }
-.cc-border,
+.product3-border,
 .dnbc-border {
     border-top-color: #00b2aa!important
 }
@@ -805,14 +833,13 @@ a:hover {
     color: #005172
 }
 .bir,
-.cm {
+.product1 {
     color: #3095b4
 }
-.ca,
-.cb {
+.product2 {
     color: #be4d00;
 }
-.cc,
+.product3,
 .dnbc {
     color: #00b2aa
 }
@@ -822,16 +849,15 @@ a:hover {
     color: #fff!important
 }
 .bir-bg,
-.cm-bg {
+.product1-bg {
     background-color: #3095b4!important;
     color: #fff!important
 }
-.ca-bg,
-.cb-bg {
+.product2-bg {
     background-color: #be4d00!important;
     color: #fff!important
 }
-.cc-bg,
+.product3-bg,
 .dnbc-bg {
     background-color: #00b2aa!important;
     color: #fff!important
@@ -842,16 +868,15 @@ a:hover {
     color: #fff!important
 }
 .bir-dark-bg,
-.cm-dark-bg {
+.product1-dark-bg {
     background-color: #1c6b82!important;
     color: #fff!important
 }
-.ca-dark-bg,
-.cb-dark-bg {
+.product2-dark-bg {
     background-color: #903a17!important;
     color: #fff!important
 }
-.cc-dark-bg,
+.product3-dark-bg,
 .dnbc-dark-bg {
     background-color: #00807a!important;
     color: #fff!important
@@ -937,7 +962,8 @@ button.learn-more span {
 }
 button.borderless {
     border: 0;
-    margin-top: 50px
+    margin-top: 50px;
+    color: #3095b4!important;
 }
 ul.bullets li {
     margin-bottom: 10px;
@@ -1029,7 +1055,3 @@ span.icon.pencil {
 span.icon.pencil.white {
     background-position: -36px -49px
 }
-.error{
-   color: #FF0000
-}
-
