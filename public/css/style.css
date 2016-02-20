@@ -5796,7 +5796,6 @@ button.close {
     #footer #contact-us-section li, #footer #contact-us-section a {
       color: #FFF;
       font-size: 15px;
-      letter-spacing: .5px;
       margin: 0px;
       padding: 0px;
       text-decoration: none; }
@@ -7222,4 +7221,3 @@ span.icon {
 .error{
    color: #FF0000
 }
-
