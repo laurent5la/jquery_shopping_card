@@ -1,6 +1,18 @@
 $(document).ready(function() {
 
 	"use strict";
+
+    $('#password1').keyup(function(){
+        if(!$('#password1').val()){
+            $(".pwstrength_viewport_progress").css('visibility', 'hidden');
+        }
+    });
+    $('#password1').keypress(function(){
+        
+        $(".pwstrength_viewport_progress").css('visibility', 'visible');
+        //$(".pwstrength_viewport_progress").show("fast");
+
+    });
 	  
 	var validator=$('#loginform').validate({
 	    rules: {
@@ -36,6 +48,8 @@ $(document).ready(function() {
 		this.validate();
 	});
 
+    
+
 	// The password should meet some minimum requirements:
 	// 	minimum length: 8 -> I just use 'minlength: 8'
 	// 	at least one lower-case character
@@ -48,21 +62,27 @@ $(document).ready(function() {
        	&& /\d/.test(value) // has a digit
 	});
 
+    if ($('label.error').val() == '') {
+        alert('hi');
+        $('#uname').css('border-color', 'red');
+    }
+
+
 
     $.validator.addMethod("alphanumericcheck", function(value) {
         return /^[a-z0-9]+$/i.test(value) // consists of only these
     });
 
-    // $('#myForm').validate({
-    //     errorClass:'myClass'
-    //     //your options
-    // });
+    $('#myForm').validate({
+        errorClass:'myClass'
+        //your options
+    });
 
     var options = {};
     options.ui = {
         container: "#pwd-container",
         showVerdictsInsideProgressBar: true,
-        showErrors: true,
+        showErrors: false,
         viewports: {
             progress: ".pwstrength_viewport_progress"
         },
