@@ -12,14 +12,23 @@
 		@include('partials.header')
 		@yield('header')
 
-		
-
-		<div id="content">
-            @include('partials.loginform')                    
-
-			@yield('content')
+		<div class="row checkout-title ">
+			Almost finished! Enter your details below.
 		</div>
+		
+		<div class="row">
+				<div id="content col" >
+		            <div class="login-form-page row">
+		            	@include('partials.loginform')  
+		        	</div>
 
+		            <div class="billing-form-page row">
+		           	 @include('partials.billingform')   
+		            </div>                 
+
+					@yield('content')
+				</div>
+		</div>
 		@include('partials.footer')
 		@yield('footer')
 		
