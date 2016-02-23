@@ -1,6 +1,8 @@
 
 /*starts here*/
 /* enable absolute positioning */
+
+
 .login-icon{
     font-size: 34px;
     line-height: 48px;
@@ -1008,4 +1010,97 @@ span.icon.pencil.white {
 .search-input{
   text-align: center;
 }
+
+/*Shopping cart */
+.cart {
+
+  border: 1px solid #ddd;
+  border-top: 8px solid;
+  border-top-color: #3095b4;
+}
+
+.padd{
+  padding: 20px 20px 30px 30px;
+}
+
+.hr-padd{
+  margin: 0px 20px 0px 30px;
+}
+
+.pd{
+  padding: 0px 0px 0px 0px;
+}
+.black{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 18px;
+}
+
+.bl{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.amt{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 38px;
+  font-weight: 300;
+}
+
+.amt-b{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.cep{
+  color: #3095b4;
+}
+
+.right-float{
+  float: right;
+
+}
+
+.grey{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #999;
+  font-size: 18px;
+}
+
+.promo{
+  padding-left: 20px;
+  margin-left: 20px;
+  width: 500px;
+  height: 75px;
+}
+
+.applyp{
+  border-radius: 25px;
+  border: 1px solid gray;
+  width: 145px;
+  height: 40px;
+  border-color: #3095b4;
+  background-color: #fff;
+  color: #3095b4;
+  font-size: 16px;
+}
+
+.apply{
+  border-radius: 25px;
+  border: 1px solid gray;
+  width: 145px;
+  height: 40px;
+  margin: 20px 10px 10px;
+  background-color: #fff;
+  color: #999;
+  font-size: 16px;
+}
+
+/*Shopping cart */
+
 
