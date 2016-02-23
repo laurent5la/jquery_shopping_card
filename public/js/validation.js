@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
 	"use strict";
@@ -13,8 +15,14 @@ $(document).ready(function() {
         //$(".pwstrength_viewport_progress").show("fast");
 
     });
+    $('#uname, #email, #password1').blur(function(){
+        validator.validate()
+    });
 	  
 	var validator=$('#loginform').validate({
+        onfocusout: function (element) {
+        $(element).valid();
+        },
 	    rules: {
             uname: {
                 required: true,
@@ -23,7 +31,7 @@ $(document).ready(function() {
             },
             email: {
                 required: true,
-                email: 5
+                email: true
             },
             password1: { 
                 required: true,
@@ -45,7 +53,7 @@ $(document).ready(function() {
 	});
 
 	$('#loginform').blur(function(){
-		this.validate();
+		$('#loginform').validate();
 	});
 
     
@@ -62,21 +70,11 @@ $(document).ready(function() {
        	&& /\d/.test(value) // has a digit
 	});
 
-    if ($('label.error').val() == '') {
-        alert('hi');
-        $('#uname').css('border-color', 'red');
-    }
-
-
 
     $.validator.addMethod("alphanumericcheck", function(value) {
         return /^[a-z0-9]+$/i.test(value) // consists of only these
     });
 
-    $('#myForm').validate({
-        errorClass:'myClass'
-        //your options
-    });
 
     var options = {};
     options.ui = {
@@ -97,7 +95,6 @@ $(document).ready(function() {
         }
     };
     $('#password1').pwstrength(options);
-
 
  });
 
