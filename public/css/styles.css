@@ -195,8 +195,11 @@ label.error{
     font-size: 21px;
     color: #3096B1;
     font-weight: inherit;
+}
+#billingform__input--div{
     margin-bottom: 40px;
 }
+
 .billing__heading{
     margin-bottom: 30px;
     font-weight: 100px;
