@@ -4,12 +4,12 @@
 .login-icon{
     font-size: 34px;
     line-height: 48px;
-    padding-top: 3px; 
+    padding-top: 3px;
     color: #3096B1;
 }
 
-.inner-addon { 
-    position: relative; 
+.inner-addon {
+    position: relative;
 }
 
 /* style icon */
@@ -205,6 +205,15 @@ label.error{
     font-weight: 100px;
 }
 /*ends here*/
+#content .container .options li {
+    list-style-type: none;
+    margin: 30px 0 0;
+    padding-left: 5px;
+    display: inline;
+    width: 30%;
+    height: 64px;
+    font-size: 18px;
+}
 
 #company_search_results{
   width: 100%;
@@ -235,6 +244,8 @@ label.error{
   font-weight: 400;
 
 }
+
+
 
 #content {
     display: inline-block;
@@ -1014,4 +1025,3 @@ span.icon.pencil.white {
 .search-input{
   text-align: center;
 }
-

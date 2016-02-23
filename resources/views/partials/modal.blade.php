@@ -23,10 +23,10 @@
 										<h2 class="modal_title">{{$products[$i]['name']}}</h2>
 										<div class="price">
 											@if ($products[$i]['quantity'][0]['price']['dollars'])
-												<h1>${{$products[$i]['quantity'][0]['price']['dollars']}}@if ($products[$i]['quantity'][0]['price']['cents'])<sup>{{$products[$i]['quantity'][0]['price']['cents']}}</sup>@endif @if(Session::get('crediton') == 'cos')<small>/mo</small>@endif</h1>
+												<h1 id="price_dollars"></h1>
 											@endif
 										</div>
-										<p class="description">{{$products[$i]['quantity'][0]['short_description']}}</p>
+										<p class="description" id="quantity"></p>
 										<button class="{{$products[$i]['code']}} borderless" type="submit">{{$products[$i]['call_to_action']}}</button>
 									</div>
 								</div>
