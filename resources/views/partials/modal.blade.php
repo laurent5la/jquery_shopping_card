@@ -26,8 +26,16 @@
 												<h1 id="price_dollars"></h1>
 											@endif
 										</div>
-										<p class="description" id="quantity"></p>
-										<button class="{{$products[$i]['code']}} borderless" type="submit">{{$products[$i]['call_to_action']}}</button>
+
+										<p class="description" id="quantity">{{$products[$i]['quantity'][0]['short_description']}}</p>
+										<form method="POST" action="/checkout">
+											<button class="{{$products[$i]['code']}} borderless" type="submit">{{$products[$i]['call_to_action']}}</button>
+											<input type="hidden" name="ProductName" value="{{$products[$i]['name']}}"></input>
+											<input type="hidden" name="dollars" value="{{$products[$i]['quantity'][0]['price']['dollars']}}"></input>
+											<input type="hidden" name="cents" value="{{$products[$i]['quantity'][0]['price']['cents']}}"></input>
+											<input type="hidden" name="productId" value="{{$products[$i]['quantity'][0]['product_id']}}"></input>
+										</form>
+
 									</div>
 								</div>
 								<div class="col-md-12 upgrade_banner {{$products[$i]['code']}}-dark-bg"><h2>Upgrade to <strong>{{$products[($i+1)]['name']}}</strong> to receive these additional features:</h2></div>
@@ -52,7 +60,13 @@
 											@endif
 										</div>
 										<p class="description">{{$products[($i+1)]['quantity'][0]['short_description']}}</p>
-										<button type="submit" class="{{$products[($i+1)]['code']}}">{{$products[($i+1)]['call_to_action']}}</button>
+										<form method="POST" action="/checkout">
+											<button type="submit" class="{{$products[($i+1)]['code']}}">{{$products[($i+1)]['call_to_action']}}</button>
+											<input type="hidden" name="ProductName" value="{{$products[($i+1)]['name']}}"></input>
+											<input type="hidden" name="dollars" value="{{$products[($i+1)]['quantity'][0]['price']['dollars']}}"></input>
+											<input type="hidden" name="cents" value="{{$products[($i+1)]['quantity'][0]['price']['cents']}}"></input>
+											<input type="hidden" name="productId" value="{{$products[($i+1)]['quantity'][0]['product_id']}}"></input>
+										</form>
 									</div>
 								</div>
 							</div>

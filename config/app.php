@@ -13,7 +13,8 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
+	//'debug' => env('APP_DEBUG'),
+	'debug' => 'TRUE',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -135,6 +136,7 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+		'Darryldecode\Cart\CartServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -192,6 +194,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+		'Cart'      => 'Darryldecode\Cart\Facades\CartFacade',
 
 	],
 

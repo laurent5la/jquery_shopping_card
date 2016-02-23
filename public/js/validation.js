@@ -96,5 +96,23 @@ $(document).ready(function() {
     };
     $('#password1').pwstrength(options);
 
- });
+
+
+    //Coupon code
+    $("#form1").submit(function(){
+
+            $.ajax({
+                type: 'POST',
+                url: '/coupon',
+                success: function(data) {
+                    alert(data);
+                    //$("p").text(data);
+
+                }
+            }); 
+   });  
+    //Coupon code end
+});
+
+
 

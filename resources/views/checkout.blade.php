@@ -24,11 +24,16 @@
 
 		            <div class="billing-form-page row">
 		           	 @include('partials.billingform')   
-		            </div>                 
+		            </div> 
+
+		            <div class="shopping-cart row">
+		           	 @include('partials.shoppingcart')   
+		            </div>                  
 
 					@yield('content')
 				</div>
 		</div>
+		
 		@include('partials.footer')
 		@yield('footer')
 		
