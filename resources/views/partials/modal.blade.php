@@ -13,7 +13,7 @@
 										<ul class="bullets">
 											@if (count($products[$i]['bullets']) > 0)
 												@foreach ($products[$i]['bullets'] as $bullet)
-												<li>{{$bullet}}</li>
+													<li>{{$bullet}}</li>
 												@endforeach
 											@endif
 										</ul>
@@ -22,9 +22,12 @@
 									<div class="col-md-5 modal_border">
 										<h2 class="modal_title">{{$products[$i]['name']}}</h2>
 										<div class="price">
-											@if ($products[$i]['quantity'][0]['price']['dollars'])
-												<h1 id="price_dollars"></h1>
+											@if ($products[($i)]['quantity'][0]['price']['dollars'])
+												<h1>${{$products[($i)]['quantity'][0]['price']['dollars']}}@if ($products[($i)]['quantity'][0]['price']['cents'])<sup>{{$products[($i)]['quantity'][0]['price']['cents']}}</sup>@endif @if(Session::get('crediton') == 'cos')<small class="{{$products[($i)]['code']}}">/mo</small>@endif</h1>
 											@endif
+											<!-- @if ($products[$i]['quantity'][0]['price']['dollars'])
+												<h1 id="price_dollars"></h1>
+											@endif -->
 										</div>
 
 										<p class="description" id="quantity">{{$products[$i]['quantity'][0]['short_description']}}</p>

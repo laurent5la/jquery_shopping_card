@@ -32,7 +32,7 @@
 
 					@yield('content')
 				</div>
-		</div>
+		</div
 		
 		@include('partials.footer')
 		@yield('footer')
