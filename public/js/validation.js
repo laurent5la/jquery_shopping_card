@@ -38,7 +38,6 @@ $(document).ready(function() {
             }, 
             cpassword: { 
             	minlength: 6,
-                required: true,
                 equalTo: "#password1"
             }
 	    },
@@ -117,7 +116,15 @@ $(document).ready(function() {
             },
             address:{
                 required: true,
-                addressCheck: true
+                minlength: 3
+            },
+            city: {
+                required: true,
+                minlength: 2 
+            },
+            zipcode:{
+                required: true,
+                zipcodeCheck: true
             }
         },
         messages: {
@@ -134,8 +141,8 @@ $(document).ready(function() {
             expdate: {
                ccexpdate: "Please enter valid expiry date",
             },
-            address: {
-                addressCheck: "Please enter zipcode",
+            zipcode: {
+                zipcodeCheck: "Please enter valid zipcode",
             }
 
         }
@@ -206,9 +213,10 @@ $(document).ready(function() {
         return year;
     }
 
-
-    $.validator.addMethod("addressCheck",function(value){
-        return /([0-9]){5}\-|([0-9]){5}\b/g.test(value) ;
+    $.validator.addMethod("zipcodeCheck",function(value){
+        //return /([0-9]){5}\-|([0-9]){5}\b/g.test(value) ;
+        //var zipregex= '\d{5}(?:[-\s]\d{4})?$';
+        return /^\d{5}(?:[-\s]\d{4})?$/.test(value);
     });
     /*billing validation ends here*/
 
@@ -231,6 +239,23 @@ $(document).ready(function() {
                         success: function(output) {
                             $('#loginform-div').hide();
                             $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
+                            // var priceId = $('#priceId').val();
+                            // var productId = $('#productId').val();
+                            // console.log("productId: "+ productId + "\t priceId:" + priceId);
+                            // $.ajax({                                                        //call to order php
+                            //     url: 'http://api.local/order.php',
+                            //     type: 'POST',
+                            //     data:JSON.stringify(JSONObject),
+                            //     dataType:'json',
+                            //     headers : {
+                            //         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            //     },
+                            //     success: function(output) {
+                            //         $('#loginform-div').hide();
+                            //         $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
+                                    
+                            //     }
+                            // });
                         }
                     });
                 }else{  //confirm password entered
