@@ -148,6 +148,9 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             url: '/coupon',
+            xhrFields: {
+                withCredentials: true
+            },
             success: function(data) {
                 alert(data);
             }
@@ -162,6 +165,9 @@ $(document).ready(function() {
             type: 'POST',
             url: '/coupon',
             data: { product_id: product_id },
+            xhrFields: {
+                withCredentials: true
+            },
             success: function(data) {
                 alert(data);
             }
@@ -169,8 +175,6 @@ $(document).ready(function() {
    });  
     //Coupon code end
 
-});
-    
 
     $.validator.addMethod("ccexpdate", function (value, element) {
         var match=value.match(/^\s*(0?[1-9]|1[0-2])\/(\d\d|\d{4})\s*$/);

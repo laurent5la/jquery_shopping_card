@@ -5,8 +5,9 @@
     use GuzzleHttp\Exception\RequestException;
     use App\Providers\CartServiceProvider;
     use Input;
-    //use Cart\add;
-    use Request;
+    // use Cart;
+    //use Request;
+    use Illuminate\Http\Request;
 
     class CheckoutController extends Controller
     {
@@ -16,13 +17,16 @@
          *
          * @return void
          */
-        public function __construct()
+
+
+        public function __construct(array $attributes = array())
         {
         //    $this->client = new Client();
         //    $this->config = app()['config'];
         //    $this->clientID = $this->config->get('owl.client_id');
         //    $this->clientSecret = $this->config->get('owl.client_secret');
         //    $this->cacheKeyForOWLToken = 'OWL-TOKEN' . '-' . $this->clientID;
+              
         }
 
         //private function getAccessToken()
@@ -61,12 +65,12 @@
             return null;
         }
 
-        public function index() {
+        public function index(Request $request) {
 
+            //$this->instantiateCart();
             $shoppingCart = app('cartlist');
-            //$shoppingCart = app['cartlist'];
 
-            $shoppingCart->add(455, 'Sample Item', 100.99, 2, array());
+            //$shoppingCart::add(455, 'Sample Item', 100.99, 2, array());
 
             $ProductName = Input::get('ProductName');
             $dollars = Input::get('dollars');
@@ -76,7 +80,7 @@
 
 
             // Adding contents to the Cart
-            //$shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1));
+            $shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1, array()));
                             //array('id' => 568,'name' => 'Product 2','price' => 10.00,'quantity' => $q2),
                     
 
@@ -107,7 +111,7 @@
                 $taxC = '00';
 
             // Total amount without conditions applied
-            $subTotal = $shoppingCart->getSubTotal();
+            $subTotal =$shoppingCart->getSubTotal();
 
             //Converting to dollars & cents
             $arr = explode(".", $subTotal);
@@ -129,6 +133,7 @@
             else
                 $totalC = '00';
 
+            $request->session()->put('key', 'value');
             
             return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 
                 'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 
@@ -137,16 +142,25 @@
 
         public function coupon()
         {
-            //$cartCollection = Cart::getContent();
-            //$a = Cart::getSubTotal();
-
+    
             $itemId = Input::get('product_id');
-            $a = Cart::get($itemId);
+
+            $shoppingCart = app('cartlist');
+
+            //Cart::instance('cartlist')->(455, 'Sample Item', 100.99, 2, array());
+
+            $a = $shoppingCart->get($itemId);
+            //$a = $shoppingCart::get('455');
+
+            //$a = $shoppingCart::getSubTotal();
+            $data = $request->session()->all();
+            echo $data;
+            /*
             if($a)
                 echo $a;
             else
                 echo "fail";
-
+            */
         }
 
     }

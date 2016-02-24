@@ -146,7 +146,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-		'App\Providers\CartServiceProvider'
+		'App\Providers\CartProvider',
 
 	],
 
@@ -195,8 +195,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-		'Cart'      => 'Darryldecode\Cart\Facades\CartFacade',
-		'add'       => 'Darryldecode\Cart\Facades\CartFacade\add',
+		'Cart'      => 'Darryldecode\Cart\Cart',
 
 	],
 
