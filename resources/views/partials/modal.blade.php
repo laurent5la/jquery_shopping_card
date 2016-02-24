@@ -35,7 +35,6 @@
 											<input type="hidden" name="cents" value="{{$products[$i]['quantity'][0]['price']['cents']}}"></input>
 											<input type="hidden" name="productId" value="{{$products[$i]['quantity'][0]['product_id']}}"></input>
 										</form>
-
 									</div>
 								</div>
 								<div class="col-md-12 upgrade_banner {{$products[$i]['code']}}-dark-bg"><h2>Upgrade to <strong>{{$products[($i+1)]['name']}}</strong> to receive these additional features:</h2></div>

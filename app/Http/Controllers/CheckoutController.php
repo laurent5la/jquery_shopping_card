@@ -3,8 +3,10 @@
 
     use GuzzleHttp\Client;
     use GuzzleHttp\Exception\RequestException;
+    use App\Providers\CartServiceProvider;
     use Input;
-    use Cart;
+    //use Cart\add;
+    use Request;
 
     class CheckoutController extends Controller
     {
@@ -16,25 +18,25 @@
          */
         public function __construct()
         {
-            $this->client = new Client();
-            $this->config = app()['config'];
-            $this->clientID = $this->config->get('owl.client_id');
-            $this->clientSecret = $this->config->get('owl.client_secret');
-            $this->cacheKeyForOWLToken = 'OWL-TOKEN' . '-' . $this->clientID;
+        //    $this->client = new Client();
+        //    $this->config = app()['config'];
+        //    $this->clientID = $this->config->get('owl.client_id');
+        //    $this->clientSecret = $this->config->get('owl.client_secret');
+        //    $this->cacheKeyForOWLToken = 'OWL-TOKEN' . '-' . $this->clientID;
         }
 
-        private function getAccessToken()
-        {
-            if (!Cache::has($this->cacheKeyForOWLToken)) {
-                $this->accessToken = $this->createAccessToken();
+        //private function getAccessToken()
+        //{
+        //    if (!Cache::has($this->cacheKeyForOWLToken)) {
+        //        $this->accessToken = $this->createAccessToken();
 
-                if (is_null($this->accessToken)) {
-                    return null;
-                }
-                Cache::put($this->cacheKeyForOWLToken, $this->accessToken, 24 * 60);
-            }
-            return Cache::get($this->cacheKeyForOWLToken);
-        }
+        //        if (is_null($this->accessToken)) {
+        //            return null;
+        //        }
+        //        Cache::put($this->cacheKeyForOWLToken, $this->accessToken, 24 * 60);
+        //    }
+        //    return Cache::get($this->cacheKeyForOWLToken);
+        //}
 
         private function createAccessToken()
         {
@@ -61,6 +63,11 @@
 
         public function index() {
 
+            $shoppingCart = app('cartlist');
+            //$shoppingCart = app['cartlist'];
+
+            $shoppingCart->add(455, 'Sample Item', 100.99, 2, array());
+
             $ProductName = Input::get('ProductName');
             $dollars = Input::get('dollars');
             $cents = Input::get('cents');
@@ -69,9 +76,9 @@
 
 
             // Adding contents to the Cart
-            Cart::add(array(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1)
+            //$shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1));
                             //array('id' => 568,'name' => 'Product 2','price' => 10.00,'quantity' => $q2),
-                    ));
+                    
 
             // Adding conditions to the whole Cart
             $condition1 = new \Darryldecode\Cart\CartCondition(array(
@@ -82,14 +89,14 @@
             ));
 
             // Applying the condition to the Cart
-            Cart::condition($condition1);
+            $shoppingCart->condition($condition1);
 
             // Passing all the contents to the view
-            $items = Cart::getContent();
+            $items = $shoppingCart->getContent();
 
             // Passing conditions to the view
             //$cartConditions = Cart::getConditions();
-            $cartCondition = Cart::getCondition('VAT 12.5%');
+            $cartCondition = $shoppingCart->getCondition('VAT 12.5%');
             $tax = $cartCondition->getValue();
             //Converting to dollars & cents
             $arr = explode(".", $tax);
@@ -100,7 +107,7 @@
                 $taxC = '00';
 
             // Total amount without conditions applied
-            $subTotal = Cart::getSubTotal();
+            $subTotal = $shoppingCart->getSubTotal();
 
             //Converting to dollars & cents
             $arr = explode(".", $subTotal);
@@ -111,7 +118,7 @@
                 $subTotalC = '00';
 
             // Totak amount with all the conditions applied
-            $total = Cart::getTotal();
+            $total = $shoppingCart->getTotal();
 
             //Converting to dollars & cents
             $arr = explode(".", $total);
@@ -123,13 +130,23 @@
                 $totalC = '00';
 
             
-            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 'taxC' => $taxC,
-                                         'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 'totalC' => $totalC)); 
+            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 
+                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 
+                'totalC' => $totalC, 'productId' => $productId, )); 
         }
 
         public function coupon()
         {
-            echo "hello!";
+            //$cartCollection = Cart::getContent();
+            //$a = Cart::getSubTotal();
+
+            $itemId = Input::get('product_id');
+            $a = Cart::get($itemId);
+            if($a)
+                echo $a;
+            else
+                echo "fail";
+
         }
 
     }

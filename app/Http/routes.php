@@ -12,9 +12,7 @@
 */
 
 Route::get('/', 'ProductsController@index');
-//Route::post('/checkout', 'CheckoutController@index');
-Route::match(['get','post'],'/checkout','CheckoutController@index');
 
-Route::match(['get', 'post'],'/coupon','CheckoutController@coupon');
+Route::post('/checkout', 'CheckoutController@index');
 
-//Route::post('/coupon','CheckoutController@coupon');
+Route::post('/coupon','CheckoutController@coupon');

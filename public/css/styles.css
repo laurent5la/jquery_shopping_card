@@ -1097,7 +1097,7 @@ span.icon.pencil.white {
   height: 75px;
 }
 
-.applyp{
+.apply{
   border-radius: 25px;
   border: 1px solid gray;
   width: 145px;
@@ -1105,17 +1105,6 @@ span.icon.pencil.white {
   border-color: #3095b4;
   background-color: #fff;
   color: #3095b4;
-  font-size: 16px;
-}
-
-.apply{
-  border-radius: 25px;
-  border: 1px solid gray;
-  width: 145px;
-  height: 40px;
-  margin: 20px 10px 10px;
-  background-color: #fff;
-  color: #999;
   font-size: 16px;
 }
 

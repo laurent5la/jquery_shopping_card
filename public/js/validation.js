@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
 	"use strict";
@@ -99,19 +97,33 @@ $(document).ready(function() {
 
 
     //Coupon code
-    $("#form1").submit(function(){
+    $("#coupon_btn").on("click", function(){
+        //event.PreventDefault();
+        alert("Success!");
+        $.ajax({
+            type: 'POST',
+            url: '/coupon',
+            success: function(data) {
+                alert(data);
+            }
+        });
+   });  
 
-            $.ajax({
-                type: 'POST',
-                url: '/coupon',
-                success: function(data) {
-                    alert(data);
-                    //$("p").text(data);
-
-                }
-            }); 
+    $("#annual_btn").on("click", function(){
+        //event.PreventDefault();
+        var product_id = document.getElementById("annual_btn").value;
+        alert("Value = " +product_id);
+        $.ajax({
+            type: 'POST',
+            url: '/coupon',
+            data: { product_id: product_id },
+            success: function(data) {
+                alert(data);
+            }
+        });
    });  
     //Coupon code end
+
 });
 
 

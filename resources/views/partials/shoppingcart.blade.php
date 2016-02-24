@@ -18,15 +18,13 @@
                 <div class="row padd cmargin">
                     <div class="col-md-5" ><p class="black"> Annual Pricing - <sup>$</sup>499<sup>99</sup> </p> </div>
                     <div class="col-md-3" ><p class="bl"> Save 27% </p> </div>
-                    <div class="col-md-4" ><input type="submit" value="Apply to Price" class="applyp"></div>
+                    <div class="col-md-4" ><button type="submit" class="apply" id="annual_btn" value="{{$productId}}">Apply to Price</button></div>
                 </div>
                 <hr>
-                <div class="row padd">
-                    <form id="form1">
-                        <p class="black"> <input class="promo" type="text" placeholder="Promo Code"></input></p>
-                        <div class="col-md-8" ></div>
-                        <div class="col-md-4" ><input type="submit" value="Apply" class="apply" id="coupon_btn" name="coupon_btn"></div>
-                    </form>
+                <div class="row padd">       
+                    <p class="black"> <input class="promo" type="text" placeholder="Promo Code"></input></p>
+                    <div class="col-md-8" ></div>
+                    <div class="col-md-4" ><button type="submit" class="apply" id="coupon_btn" >Apply</button></div>                 
                 </div>
                 <hr>
                 <div class="row padd">
