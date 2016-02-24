@@ -36,6 +36,7 @@
                   <h1>Call Us</h1>
                   <h3>or</h3>
               @endif
+              <input type="hidden" id="session_crediton" value="{{Session::get('crediton')}}">
               <h3 id="quantity">{{$products[0]['quantity'][0]['short_description']}}</h3>
               <form class="{{$products[0]['code']}}-bg">
                   <ul class="hollow-radios">
@@ -46,7 +47,11 @@
                                          class="product_quantity"
                                          id="product_{{$products[0]['code']}}_{{$quantity['product_id']}}"
                                          name="Product_{{$products[0]['code']}}"
-                                         value="{{$quantity['count']}}"
+                                         @if(Session::get('crediton') == 'coo')
+                                          value="{{$quantity['count']}}"
+                                         @else
+                                          value="{{$quantity['short_description']}}"
+                                         @endif
                                          data-product="{{$products[0]['code']}}"
                                          data-product_id="{{$quantity['product_id']}}"
                                          data-price_id="{{$quantity['price_id']}}"
@@ -60,18 +65,39 @@
 
                                   <label for="product_{{$products[0]['code']}}_{{$quantity['product_id']}}">
                                       <span></span>
-                                      <label>
-                                          {{$quantity['count']}}
-                                          @if ($quantity['count'] == 1)
-                                              company
-                                          @else
-                                              companies
-                                          @endif
-                                          - ${{$quantity['price']['dollars']}}
-                                          @if ($quantity['price']['cents'])
-                                              <sup class="cents">{{$quantity['price']['cents']}}</sup>
-                                          @endif
-                                      </label>
+                                      @if(Session::get('crediton') == 'coo')
+                                        <label>
+                                            {{$quantity['count']}}
+                                            @if ($quantity['count'] == 1)
+                                                company
+                                            @else
+                                                companies
+                                            @endif
+                                            - ${{$quantity['price']['dollars']}}
+                                            @if ($quantity['price']['cents'])
+                                                <sup class="cents">{{$quantity['price']['cents']}}</sup>
+                                            @endif
+                                        </label>
+                                      @else
+                                        <label>
+                                            {{$quantity['short_description']}}
+                                            - ${{$quantity['price']['dollars']}}
+                                            @if ($quantity['price']['cents'])
+                                                <sup class="cents">{{$quantity['price']['cents']}}</sup>
+                                            @endif
+                                        </label>
+                                        @if ($quantity['short_description'] != 'Monthly Subscription')
+                                          <label class="savings">Save {{floor(
+                                              (
+                                                1-
+                                                $quantity['price']['dollars'] /
+                                                (
+                                                  $products[0]['quantity'][0]['price']['dollars'] * 12
+                                                )
+                                              )*100
+                                            ) }}%</label>
+                                        @endif
+                                      @endif
                                   @if ( floor($products[0]['quantity'][0]['price']['dollars'] * $quantity['count']) > $quantity['price']['dollars'] )
                                   <label class="savings">Save {{floor(
                                       (
@@ -85,9 +111,16 @@
                                   @endif
                               </label>
                           </li>
+
                           <input type="hidden" id="quantity" value="{{$quantity['count']}}">
-                          <input type="hidden" id="price_dollars_{{$quantity['count']}}" value="{{$quantity['price']['dollars']}}">
-                          <input type="hidden" id="price_cents_{{$quantity['count']}}" value="{{$quantity['price']['cents']}}">
+                          @if(Session::get('crediton') == 'coo')
+                            <input type="hidden" id="price_dollars_{{$quantity['count']}}" value="{{$quantity['price']['dollars']}}">
+                            <input type="hidden" id="price_cents_{{$quantity['count']}}" value="{{$quantity['price']['cents']}}">
+                          @else
+                            <input type="hidden" id="price_dollars_{{$quantity['short_description']}}" value="{{$quantity['price']['dollars']}}">
+                            <input type="hidden" id="price_cents_{{$quantity['short_description']}}" value="{{$quantity['price']['cents']}}">
+                          @endif
+
                           @endforeach
                       @endif
                   </ul>
@@ -120,7 +153,7 @@
 						<div class="sub_option {{$products[$i]['code']}}-border">
               <h2>{{$products[$i]['name']}}</h2>
   							<h1 class="{{$products[$i]['code']}}">
-  						    <sup>$</sup>{{$products[$i]['quantity'][0]['price']['dollars']}}<sup>{{$products[$i]['quantity'][0]['price']['cents']}}</sup>
+  						    <sup>$</sup>{{$products[$i]['quantity'][0]['price']['dollars']}}<sup>{{$products[$i]['quantity'][0]['price']['cents']}}</sup>@if(Session::get('crediton') == 'cos')<small>/mo</small>@endif
                 </h1>
 						        <h3 class="{{$products[$i]['code']}}">Per Report</h3>
 						        <p class="black">Added features:</p>

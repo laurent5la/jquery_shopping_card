@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'ProductsController@index');
+Route::get('/cos', 'ProductsController@index');
+Route::get('/coo', 'ProductsController@index');
 //Route::post('/checkout', 'CheckoutController@index');
 Route::match(['get','post'],'/checkout','CheckoutController@index');
 

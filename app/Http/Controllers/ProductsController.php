@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Route;
 use Input;
 use Config;
+use Session;
 
 class ProductsController extends Controller {
 
@@ -30,7 +32,23 @@ class ProductsController extends Controller {
 
 	public function index()
 	{
-      $products  = Config::get('products');
+			$path = Route::getCurrentRoute()->getPath();
+			switch($path) {
+			case 'cos':
+				$products  = Config::get('products_cos');
+				Session::put('crediton', 'cos');
+				//echo $value = Session::get('key'); exit;
+				break;
+			case 'coo':
+				$products  = Config::get('products_coo');
+				Session::put('crediton', 'coo');
+				break;
+			default:
+				$products = '';
+				Session::put('crediton', '');
+				break;
+		}
+
       $footer = Config::get('footer');
       $params = array();
 			$agent = null;
