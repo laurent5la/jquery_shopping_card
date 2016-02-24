@@ -28,7 +28,7 @@
           <div class="col-md-4 col-md-push-8 product_selected {{$products[0]['code']}}-bg">
               <h1 class="visible-xs-* hidden-lg hidden-md">{{$products[0]['name']}}</h1>
               @if ($products[0]['quantity'][0]['price']['dollars'])
-                  <h1><sup>$</sup>{{$products[0]['quantity'][0]['price']['dollars']}}@if ($products[0]['quantity'][0]['price']['cents'])<sup>{{$products[0]['quantity'][0]['price']['cents']}}</sup>@if(Session::get('crediton') == 'cos')<small>/mo</small>@endif @endif
+                  <h1 id="price_dollars"><sup>$</sup>{{$products[0]['quantity'][0]['price']['dollars']}}@if ($products[0]['quantity'][0]['price']['cents'])<sup>{{$products[0]['quantity'][0]['price']['cents']}}</sup>@if(Session::get('crediton') == 'cos')<small>/mo</small>@endif @endif
                   </h1>
               @elseif ($products[0]['quantity'][0]['price']['dollars'] === 0 && $products[0]['quantity'][0]['price']['cents'] === 0)
                   <h1>Free</h1>
@@ -36,9 +36,8 @@
                   <h1>Call Us</h1>
                   <h3>or</h3>
               @endif
-              <h3>{{$products[0]['quantity'][0]['short_description']}}</h3>
+              <h3 id="quantity">{{$products[0]['quantity'][0]['short_description']}}</h3>
               <form class="{{$products[0]['code']}}-bg">
-
                   <ul class="hollow-radios">
                       @if (count($products[0]['quantity']) > 1)
                           @foreach ($products[0]['quantity'] as $j=>$quantity)
@@ -81,7 +80,7 @@
                                         (
                                           $products[0]['quantity'][0]['price']['dollars'] * $quantity['count']
                                         )
-                          )*100
+                                      )*100
                                     ) }}%</label>
                                   @endif
                               </label>
