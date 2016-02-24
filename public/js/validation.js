@@ -178,30 +178,41 @@ $(document).ready(function() {
     });
     /*billing validation ends here*/
 
-
     /*login or register php call starts here*/
     $('#cardname').focus(function(){
-        if( $('#password1').val() && $('#uname').val() ){  //username & password field not empty
-            if($('#password1').valid() && $('#uname').valid()){   //valid username & password entered
-                if(!$('#cpassword').val()){   //if confirm password not entered
-                    $.ajax({                                                //call to login php
+        if( $('#password1').val() && $('#uname').val() ){                           //username & password field not empty
+            if($('#password1').valid() && $('#uname').valid()){                     //valid username & password entered
+                if(!$('#cpassword').val()){                                         //if confirm password not entered
+                    var username = $('#uname').val();
+                    var password = $('#password1').val();
+                    var JSONObject= {"user_name":username , "password": password };
+                    console.log("data to be sent:" + JSON.stringify(JSONObject));
+                    $.ajax({                                                        //call to login php
                         url: 'http://api.local/login.php',
                         type: 'POST',
-                        data: {"user_name":$('#uname').val() , "password": $('#password1').val()},
+                        data:JSON.stringify(JSONObject),
+                        dataType:'json',
+                        headers : {
+                            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                        },
                         success: function(output) {
                             $('#loginform-div').hide();
-                            $('.checkout-title').html('Hello '+ output  + '.Complete your purchase below.');
+                            $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
                         }
                     });
                 }else{  //confirm password entered
-                    if($('#cpassword').valid()){   // cpassword entered and is valid
-                        $.ajax({                                                //call to register.php
+                    if($('#cpassword').valid()){                                    // cpassword entered and is valid
+                        $.ajax({                                                    //call to register.php
                             url: 'http://api.local/register.php',
                             type: 'POST',
-                            data: {"user_name":$('#uname').val() , "password": $('#password1').val()},
+                            data:JSON.stringify(JSONObject),
+                            dataType:'json',
+                            headers : {
+                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            },
                             success: function(output) {
                                 $('#loginform-div').hide();
-                                $('.checkout-title').html('Hello '+ output  + '.Complete your purchase below.');
+                                $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
                             }
                         });
                     }
