@@ -189,7 +189,6 @@ $(document).ready(function() {
                         type: 'POST',
                         data: {"user_name":$('#uname').val() , "password": $('#password1').val()},
                         success: function(output) {
-                            console.log(output);
                             $('#loginform-div').hide();
                             $('.checkout-title').html('Hello '+ output  + '.Complete your purchase below.');
                         }
@@ -198,7 +197,8 @@ $(document).ready(function() {
                     if($('#cpassword').valid()){   // cpassword entered and is valid
                         $.ajax({                                                //call to register.php
                             url: 'http://api.local/register.php',
-                            type: 'GET',
+                            type: 'POST',
+                            data: {"user_name":$('#uname').val() , "password": $('#password1').val()},
                             success: function(output) {
                                 $('#loginform-div').hide();
                                 $('.checkout-title').html('Hello '+ output  + '.Complete your purchase below.');
