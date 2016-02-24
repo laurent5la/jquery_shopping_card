@@ -26,7 +26,7 @@
         //    $this->clientID = $this->config->get('owl.client_id');
         //    $this->clientSecret = $this->config->get('owl.client_secret');
         //    $this->cacheKeyForOWLToken = 'OWL-TOKEN' . '-' . $this->clientID;
-              
+
         }
 
         //private function getAccessToken()
@@ -82,7 +82,7 @@
             // Adding contents to the Cart
             $shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1, array()));
                             //array('id' => 568,'name' => 'Product 2','price' => 10.00,'quantity' => $q2),
-                    
+
 
             // Adding conditions to the whole Cart
             $condition1 = new \Darryldecode\Cart\CartCondition(array(
@@ -129,20 +129,20 @@
             $totalD = $arr[0];
             if(sizeof($arr) > 1)
                 $totalC = $arr[1];
-               
+
             else
                 $totalC = '00';
 
-            $request->session()->put('key', 'value');
-            
-            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 
-                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 
-                'totalC' => $totalC, 'productId' => $productId, )); 
+            //$request->session()->put('key', 'value');
+
+            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD,
+                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
+                'totalC' => $totalC, 'productId' => $productId, ));
         }
 
         public function coupon()
         {
-    
+
             $itemId = Input::get('product_id');
 
             $shoppingCart = app('cartlist');
