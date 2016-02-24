@@ -186,7 +186,6 @@ $(document).ready(function() {
                     var username = $('#uname').val();
                     var password = $('#password1').val();
                     var JSONObject= {"user_name":username , "password": password };
-                    console.log("data to be sent:" + JSON.stringify(JSONObject));
                     $.ajax({                                                        //call to login php
                         url: 'http://api.local/login.php',
                         type: 'POST',
