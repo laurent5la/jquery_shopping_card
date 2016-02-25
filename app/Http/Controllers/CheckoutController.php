@@ -137,7 +137,8 @@
 
             return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD,
                 'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'productId' => $productId, ));
+                'totalC' => $totalC, 'productId' => $productId,'j'=>$j,'products'=>$products ));
+
         }
 
         public function coupon()
