@@ -6,7 +6,11 @@
         <div class="col-md-6 pd" >
             <h2>Cart</h2>
             <br>  
-            <div class="cart"> 
+            <div class="cart" style="display:none;"> 
+                <div class="products" >
+                    <div id="productId">{{$productId}}</div>
+                    <div id="priceId">{{$priceId}}</div>
+                </div>
                 <div class="row padd">
                     <div class="col-md-6" ><h3>{{$ProductName}}<sup>TM</sup></h3></div>
                     <div class="col-md-6" ><h1 class="cep right-float"><sup>$</sup>{{$dollars}}<sup>{{$cents}}</sup></h1></div>

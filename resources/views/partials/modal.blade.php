@@ -38,7 +38,6 @@
 											<input type="hidden" name="cents" value="{{$products[$i]['quantity'][0]['price']['cents']}}"></input>
 											<input  type="hidden" name="productId" value="{{$products[$i]['quantity'][0]['product_id']}}"></input>
 											<input  type="hidden" name="priceId" value="{{$products[($i)]['quantity'][0]['price_id']}}"></input>
-
 										</form>
 									</div>
 								</div>

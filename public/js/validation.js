@@ -2,23 +2,22 @@ $(document).ready(function() {
 
 	"use strict";
 
-    /*login validation starts here */
+    // displaying password strength
     $('#password1').keyup(function(){
         if(!$('#password1').val()){
             $(".pwstrength_viewport_progress").css('visibility', 'hidden');
         }
     });
     $('#password1').keypress(function(){
-        
         $(".pwstrength_viewport_progress").css('visibility', 'visible');
         //$(".pwstrength_viewport_progress").show("fast");
 
     });
 	
+    /*login validation starts here */
     $('#loginform').blur(function(){
         this.validate();
     });
-
 
 	var validator=$('#loginform').validate({
 	    rules: {
@@ -56,8 +55,6 @@ $(document).ready(function() {
             }
         }
 	});
-
-	
 	$.validator.addMethod("pwcheck", function(value) {
    		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
        	&& /[a-z]/.test(value) // has a lowercase letter
@@ -227,7 +224,7 @@ $(document).ready(function() {
                 if(!$('#cpassword').val()){                                         //if confirm password not entered
                     var username = $('#uname').val();
                     var password = $('#password1').val();
-                    var JSONObject= {"user_name":username , "password": password };
+                    var JSONObject= {"userid":username , "password": password };
                     $.ajax({                                                        //call to login php
                         url: 'http://api.local/login.php',
                         type: 'POST',
@@ -236,26 +233,47 @@ $(document).ready(function() {
                         headers : {
                             'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
                         },
-                        success: function(output) {
+                        success: function(outputLogin) {
+
+                            //page changes
                             $('#loginform-div').hide();
-                            $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
-                            // var priceId = $('#priceId').val();
-                            // var productId = $('#productId').val();
-                            // console.log("productId: "+ productId + "\t priceId:" + priceId);
-                            // $.ajax({                                                        //call to order php
-                            //     url: 'http://api.local/order.php',
-                            //     type: 'POST',
-                            //     data:JSON.stringify(JSONObject),
-                            //     dataType:'json',
-                            //     headers : {
-                            //         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                            //     },
-                            //     success: function(output) {
-                            //         $('#loginform-div').hide();
-                            //         $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
-                                    
-                            //     }
-                            // });
+                            $('.checkout-title').html('Hello '+ outputLogin.userid + '.Complete your purchase below.');
+                            $('#cardname').val(outputLogin.userid);        
+                            
+                            //order details
+                            var priceId = $('#priceId').text();
+                            var productId = $('#productId').text();
+                            /* var products =[];
+                            products.push(product); 
+                            for each when multiple products
+                            */
+                            var orderJsonObject= {
+                              "userid": outputLogin.userid,
+                              "products": [
+                                {
+                                  "productid": productId,
+                                  "priceid": priceId
+                                }
+                              ]
+                            };
+                            //call to order php
+                            $.ajax({                                                        
+                                url: 'http://api.local/order.php',
+                                type: 'POST',
+                                data:JSON.stringify(orderJsonObject),
+                                dataType:'json',
+                                headers : {
+                                    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                                },
+                                success: function(outputOrder) {
+                                    var orderId = outputOrder.orderId;
+                                    console.log(orderId);
+                                    //call to cybersource
+                                    $.ajax({
+                                        url: 'http://api.local/cybersource.php',  
+                                    });
+                                }
+                            });
                         }
                     });
                 }else{  //confirm password entered
@@ -268,9 +286,43 @@ $(document).ready(function() {
                             headers : {
                                 'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
                             },
-                            success: function(output) {
+                            success: function(outputRegister) {
                                 $('#loginform-div').hide();
-                                $('.checkout-title').html('Hello '+ output.user_name + '.Complete your purchase below.');
+                                $('.checkout-title').html('Hello '+ outputRegister.userid + '.Complete your purchase below.');
+                                $('#cardname').val(outputRegister.userid);
+                                
+                                //order details
+                                var priceId = $('#priceId').text();
+                                var productId = $('#productId').text();
+                                var orderJsonObject= {
+                                    "userid": outputRegister.userid,
+                                    "products": [
+                                        {
+                                            "productid": productId,
+                                            "priceid": priceId
+                                        }
+                                    ]
+                                };
+
+                                //call to order php
+                                $.ajax({                                                        
+                                    url: 'http://api.local/order.php',
+                                    type: 'POST',
+                                    data:JSON.stringify(orderJsonObject),
+                                    dataType:'json',
+                                    headers : {
+                                        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                                    },
+                                    success: function(outputOrder) {
+                                        var orderId = outputOrder.orderid;
+                                        console.log(orderId);
+                                        //call to cybersource
+                                        $.ajax({
+                                            url: 'http://api.local/cybersource.php',
+                                            
+                                        });
+                                    }
+                                });
                             }
                         });
                     }

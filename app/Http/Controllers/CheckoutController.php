@@ -76,6 +76,7 @@
             $dollars = Input::get('dollars');
             $cents = Input::get('cents');
             $productId = Input::get('productId');
+            $priceId = Input::get('priceId');
             $price = ($dollars) + ($cents*0.01);
 
 
@@ -133,11 +134,10 @@
             else
                 $totalC = '00';
 
-            //$request->session()->put('key', 'value');
+            
+            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 'taxC' => $taxC,
+                                         'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 'totalC' => $totalC,'productId'=> $productId,'priceId'=>$priceId)); 
 
-            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD,
-                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'productId' => $productId, ));
         }
 
         public function coupon()
