@@ -78,7 +78,7 @@
             $productId = Input::get('productId');
             $price = ($dollars) + ($cents*0.01);
             $j=Input::get('i');
-            $products  = Config::get('products');
+            $products  = Config::get('products_coo');
             $footer = Config::get('footer');
 
 
@@ -140,7 +140,7 @@
 
             return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD,
                 'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'productId' => $productId,'j'=>$j,'products'=>$products, 'footer' => $footer));
+                'totalC' => $totalC, 'productId' => $productId,'j'=>$j,'products'=>$products,'footer' => $footer));
 
         }
 

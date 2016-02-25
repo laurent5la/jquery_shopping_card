@@ -2,6 +2,7 @@
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="css/app.css"></link>
 <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+<link rel-"stylesheet" type="text/css" href="css/style.css"></link>
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css"></link>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
  -->	@include("partials.head")
@@ -23,20 +24,22 @@
 		        	</div>
 
 		            <div class="billing-form-page row">
-		           	 @include('partials.billingform')   
+		           		@include('partials.billingform')   
 		            </div> 
 
 		            <div class="shopping-cart row">
-		           	 @include('partials.shoppingcart')   
-		            </div>      
+		           		@include('partials.shoppingcart')   
+		            </div>
+
 		            <div class="shopping-cart row">
-		           	 @include('partials.upsell')   
+		           		@include('partials.upsell')   
 		            </div>              
 
 					@yield('content')
 				</div>
 		</div
 		
+
 		@include('partials.footer')
 		@yield('footer')
 		
