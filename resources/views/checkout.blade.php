@@ -28,7 +28,10 @@
 
 		            <div class="shopping-cart row">
 		           	 @include('partials.shoppingcart')   
-		            </div>                  
+		            </div>      
+		            <div class="shopping-cart row">
+		           	 @include('partials.upsell')   
+		            </div>              
 
 					@yield('content')
 				</div>
