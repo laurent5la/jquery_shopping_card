@@ -17,25 +17,30 @@
 		</div>
 		
 		<div class="row">
-				<div id="content col" >
-		            <div class="login-form-page row">
-		            	@include('partials.loginform')  
-		        	</div>
+				<div class="col-md-5" style="margin-left:70px; margin-right:70px;">
+			            <div class="row">
+			            	@include('partials.loginform')  
+			        	</div>
 
-		            <div class="billing-form-page row">
-		           		@include('partials.billingform')   
-		            </div> 
+			            <div class="row">
+			           		@include('partials.billingform')   
+			            </div>
+			        
+			    </div>
+			    <div class="col-md-7">
+			    	
+			            <div class="row">
+			           		@include('partials.shoppingcart')   
+			            </div>
 
-		            <div class="shopping-cart row">
-		           		@include('partials.shoppingcart')   
-		            </div>
-
-		            <div class="shopping-cart row">
-		           		@include('partials.upsell')   
-		            </div>              
+			            <div class="row">
+			           		@include('partials.upsell')   
+			            </div>
+			        
+			    </div>              
 
 					@yield('content')
-				</div>
+				
 		</div>
 		
 

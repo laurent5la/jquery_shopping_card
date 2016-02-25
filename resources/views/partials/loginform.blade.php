@@ -1,6 +1,6 @@
-<div id="loginform-div" style="float: left;" >
+<div id="loginform-div">
 		<label class="login-form__label" for="loginform">Create Account or <span class="login-form__login-text">Login</span></label>
-		<form class=" form-group "id="loginform" role="form" style="margin-bottom: 20px; margin-left: 40px;margin-right: 40px; margin-top: 20px">
+		<form class=" form-group "id="loginform" role="form">
 			<div class="form-group">
 				<span class="login-icon inner-addon left-addon">
 					<i class="  glyphicon glyphicon-user"></i>
