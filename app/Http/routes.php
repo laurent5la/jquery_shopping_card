@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', 'ProductsController@index');
-
+Route::get('/cos', 'ProductsController@index');
+Route::get('/coo', 'ProductsController@index');
 Route::post('/checkout', 'CheckoutController@index');
-
 Route::post('/coupon','CheckoutController@coupon');
