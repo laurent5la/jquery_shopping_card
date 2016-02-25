@@ -77,6 +77,8 @@
             $cents = Input::get('cents');
             $productId = Input::get('productId');
             $price = ($dollars) + ($cents*0.01);
+            $j=Input::get('i');
+            $products  = Config::get('products');
 
 
             // Adding contents to the Cart

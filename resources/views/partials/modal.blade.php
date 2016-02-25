@@ -37,6 +37,7 @@
 											<input type="hidden" name="dollars" value="{{$products[$i]['quantity'][0]['price']['dollars']}}"></input>
 											<input type="hidden" name="cents" value="{{$products[$i]['quantity'][0]['price']['cents']}}"></input>
 											<input type="hidden" name="productId" value="{{$products[$i]['quantity'][0]['product_id']}}"></input>
+											<input type="hidden" name="i" value="{{($i+1)}}"></input>
 										</form>
 									</div>
 								</div>
