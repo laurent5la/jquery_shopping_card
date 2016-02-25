@@ -8,7 +8,7 @@
     // use Cart;
     //use Request;
     use Illuminate\Http\Request;
-
+    use Config;
     class CheckoutController extends Controller
     {
 
