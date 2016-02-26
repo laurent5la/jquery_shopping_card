@@ -196,6 +196,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Cart'      => 'Darryldecode\Cart\Cart',
+		
 
 	],
 

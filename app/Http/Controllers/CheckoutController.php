@@ -8,7 +8,7 @@
     // use Cart;
     //use Request;
     use Illuminate\Http\Request;
-
+    use Config;
     class CheckoutController extends Controller
     {
 
@@ -78,6 +78,9 @@
             $productId = Input::get('productId');
             $priceId = Input::get('priceId');
             $price = ($dollars) + ($cents*0.01);
+            $j=Input::get('i');
+            $products  = Config::get('products_coo');
+            $footer = Config::get('footer');
 
 
             // Adding contents to the Cart
@@ -136,8 +139,7 @@
 
             
             return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 'taxC' => $taxC,
-                                         'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 'totalC' => $totalC,'productId'=> $productId,'priceId'=>$priceId)); 
-
+                                         'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 'totalC' => $totalC,'productId'=> $productId,'priceId'=>$priceId,'j'=>$j,'products'=>$products,'footer' => $footer)); 
         }
 
         public function coupon()
