@@ -1,4 +1,5 @@
 @import "utilities/variables";
+@import "mixins/form_labels";
 
 
 input {
@@ -37,20 +38,40 @@ input {
     }
 }
 
-#uname {
 
+#uname{
+	&.error {
+		border-color: red;
+	}
 	@extend %loginform_input;
 }
 
 #email {
+	&.error {
+		border-color: red;
+	}
 	@extend %loginform_input;	
 }
 
 #password1 {
+	&.error {
+		border-color: red;
+	}
 	@extend %loginform_input;	
 }
 
 #cpassword {
+	&.error {
+		border-color: red;
+	}
 	@extend %loginform_input;	
+}
+
+.login-form__label {
+	@extend %form_label;
+}
+
+.login-form__login-text{
+    color: $input_color_blue;
 }
 

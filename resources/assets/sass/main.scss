@@ -14,17 +14,16 @@ $container_margin :5%;
 
     margin-left: $container_margin;
     margin-right: $container_margin;
+    
 
     .row {
         &.second {
             margin-top:$billing_and_upsell_margin_top;
         }
 
-    }
-
-    .row {
         &.loginForm {
             @import "loginform.scss";
+            
         }
         &.billingForm {
             @import "billingform.scss";

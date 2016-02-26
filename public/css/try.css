@@ -3,6 +3,11 @@
   margin-right: 5%; }
   .container-fluid .row.second {
     margin-top: 30px; }
+  .container-fluid .row.loginForm .login-form__label, .container-fluid .row.loginForm .row.billingForm .billingform__label, .container-fluid .row.billingForm .row.loginForm .billingform__label {
+    float: left;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 30px; }
   .container-fluid .row.loginForm input {
     height: 65px;
     width: 500px;
@@ -28,6 +33,11 @@
       border-width: thin;
       border-top-style: double;
       border-left-style: double; }
+  .container-fluid .row.billingForm .row.loginForm .login-form__label, .container-fluid .row.loginForm .row.billingForm .login-form__label, .container-fluid .row.billingForm .billingform__label {
+    float: left;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 30px; }
   .container-fluid .row.billingForm .billingform-div input {
     height: 65px;
     width: 500px;
@@ -38,4 +48,4 @@
   .container-fluid .col-md-7 {
     margin-bottom: 50px; }
 
-/*# sourceMappingURL=try.css.map */
+/*# sourceMappingURL=main.css.map */

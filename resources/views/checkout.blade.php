@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="css/app.css"></link>
-<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
-<link rel-"stylesheet" type="text/css" href="css/style.css"></link>
-<link rel-"stylesheet" type="text/css" href="css/try.css"></link>
+<!-- <link rel="stylesheet" type="text/css" href="css/app.css"></link>
+ --><link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+<!-- <link rel-"stylesheet" type="text/css" href="css/style.css"></link> -->
+<link rel-"stylesheet" type="text/css" href="css/main.css"></link>
 
 @include("partials.head")
 
@@ -33,7 +33,7 @@
 			<div class="row shoppingCart">
 				@include('partials.shoppingcart')   
 			</div>
-			<div class="row second upsell">
+			<div class="row second Upsell">
 				@include('partials.upsell')
 			</div>
 

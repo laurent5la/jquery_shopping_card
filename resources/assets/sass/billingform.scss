@@ -1,4 +1,8 @@
 @import "utilities/variables";
+@import "mixins/form_labels";
+
+
+
 
 
 .billingform-div {
@@ -10,5 +14,15 @@
 	    color: $input_color_blue;
 	    font-weight: inherit;
 	}
-	
+
+}
+
+.billingform__label{
+
+		@extend %form_label;
+	}
+
+
+#billingform__input--div {
+		margin-bottom: 40px;
 }
