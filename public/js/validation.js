@@ -29,7 +29,6 @@ $(document).ready(function() {
                 alphanumericcheck:true
             },
             email: {
-                required: true,
                 email: true
             },
             password1: { 
@@ -55,6 +54,12 @@ $(document).ready(function() {
             cpassword: {
                 equalTo: "This field should be equal to password entered",
             }
+        },
+        success: function(label,element) {
+                label.parent().removeClass('error');
+                label.remove();
+                //var parent = $('.success').parent().get(0); // This would be the <a>'s parent <li>.
+                //$(parent).addClass('has-success');    
         }
 	});
 	$.validator.addMethod("pwcheck", function(value) {
@@ -178,8 +183,6 @@ $(document).ready(function() {
     }
 
     $.validator.addMethod("zipcodeCheck",function(value){
-        //return /([0-9]){5}\-|([0-9]){5}\b/g.test(value) ;
-        //var zipregex= '\d{5}(?:[-\s]\d{4})?$';
         return /^\d{5}(?:[-\s]\d{4})?$/.test(value);
     });
     /*billing validation ends here*/
@@ -241,7 +244,10 @@ $(document).ready(function() {
                         })).then(   
                                     function(outputLogin){loginResolve(outputLogin);},
                                     function(errorLogin){loginReject(errorLogin);}
-                                );
+                                )
+                        .finally(function() {
+
+                        });
 
                     function loginResolve(outputLogin){
                         $('#loginform-div').hide();
@@ -279,22 +285,25 @@ $(document).ready(function() {
                                         orderReject(errorOrder);
                                     }
                                 );
-                       
                     }
 
                     function loginReject(errorLogin){
-                        console.log('login error');
+                        if(errorLogin.status=='401'){
+                            $("#invalidUser-div").hide();
+                            $("#invalidUser-div").text('Invalid username or password. If new user please enter confirm password.');
+                            $("#invalidUser-div").show();
+                            resetLoginform();
+                        }
                     }
-
-                    
                 }else{  //confirm password entered
-                    if($('#cpassword').valid()){                                    // cpassword entered and is valid
+                    if($('#cpassword').valid()){    
+                        console.log('calling register');                                // cpassword entered and is valid
                         username = $('#uname').val();
                         password = $('#password1').val();
                         JSONRegisterObject= {"userid":username , "password": password };
 
                         //call to register php
-                        var registerPromise = Q($.ajax({url: 'http://api.local/login.php',
+                        var registerPromise = Q($.ajax({url: 'http://api.local/register.php',
                             type: 'POST',
                             data:JSON.stringify(JSONRegisterObject),
                             dataType:'json',
@@ -346,7 +355,14 @@ $(document).ready(function() {
                         }
 
                         function registerReject(errorRegister){
-                            console.log('register error');
+                            if(errorRegister.status=='408'){
+                                console.log('request timed out');
+                                registerPromise;
+                                $("#invalidUser-div").hide();
+                                $("#invalidUser-div").text('Invalid username or password. If new user please enter confirm password.');
+                                $("#invalidUser-div").show();
+                                resetLoginform();
+                            }   
                         } 
                     }
                 }  
@@ -383,6 +399,26 @@ $(document).ready(function() {
 
     function cyberSourceReject(errorCybersource){
         console.log('cybersource reject');
+    }
+
+    function resetLoginform(){
+        if(!$('#cpassword').valid()){
+            $('#cpassword').removeClass("error");
+            $('label[for=cpassword]').remove();
+        }
+        if(!$('#email').valid()){
+            $('#email').removeClass("error");
+            $('label[for=email]').remove();
+        }
+        if(!$('#password1').valid()){
+            $('#password1').removeClass("error");
+            $('label[for=password1]').remove();
+        }
+        if(!$('#uname').valid()){
+            $('#uname').removeClass("error");
+            $('label[for=uname]').remove();
+        }
+
     }
 
 
