@@ -1,0 +1,14 @@
+@import "utilities/variables";
+
+
+.billingform-div {
+	input {
+	    height: $input_height;
+    	width: $input_width;
+    	line-height: $input_line-height;
+	    font-size: 21px;
+	    color: $input_color_blue;
+	    font-weight: inherit;
+	}
+	
+}

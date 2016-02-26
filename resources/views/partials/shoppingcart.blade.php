@@ -1,14 +1,12 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 pd" >
-            <h2>Account Login Information</h2>
-        </div>
-        <div class="col-md-6 pd" >
-            <h2>Cart</h2>
+
+        <label class="cart__label">Cart</label>
+            
             <br>  
             <div class="cart"> 
                 <div class="row padd">
-                    <div class="col-md-6" ><h3>{{$ProductName}}<sup>TM</sup></h3></div>
+                    <div class="col-md-6" >
+                        <h3>{{$ProductName}}<sup>TM</sup></h3>
+                    </div>
                     <div class="col-md-6" ><h1 class="cep right-float"><sup>$</sup>{{$dollars}}<sup>{{$cents}}</sup></h1></div>
                     <div class="col-md-6" ><p class="black"> Adobe Systems Inc. </p> </div>
                     <div class="col-md-6" ><p class="black right-float"> per month </p> </div>
@@ -45,7 +43,6 @@
                 </div>
                         
             </div>
-        </div>
-    </div>
-</div>
+
+
 <br>

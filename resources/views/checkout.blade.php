@@ -3,51 +3,51 @@
 <link rel="stylesheet" type="text/css" href="css/app.css"></link>
 <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
 <link rel-"stylesheet" type="text/css" href="css/style.css"></link>
-		
-		@include("partials.head")
+<link rel-"stylesheet" type="text/css" href="css/try.css"></link>
 
-		<div id="main-container" class="container">
+@include("partials.head")
+
+<div id="main-container" class="container">
 
 
-		@include('partials.header')
-		@yield('header')
+	@include('partials.header')
+	@yield('header')
 
-		<div class="row checkout-title ">
-			Almost finished! Enter your details below.
+	<div class="row checkout-title ">
+		Almost finished! Enter your details below.
+	</div>
+
+	<div class="container-fluid">
+		<div class="col-md-5">
+			<div class="row loginForm">
+				@include('partials.loginform')  
+			</div>
+
+			<div class="row second billingForm">
+				@include('partials.billingform')   
+			</div>
+
 		</div>
-		
-		<div class="row">
-				<div class="col-md-5" style="margin-left:70px; margin-right:70px;">
-			            <div class="row">
-			            	@include('partials.loginform')  
-			        	</div>
+		<div class="col-md-7">
 
-			            <div class="row">
-			           		@include('partials.billingform')   
-			            </div>
-			        
-			    </div>
-			    <div class="col-md-7">
-			    	
-			            <div class="row">
-			           		@include('partials.shoppingcart')   
-			            </div>
+			<div class="row shoppingCart">
+				@include('partials.shoppingcart')   
+			</div>
+			<div class="row second upsell">
+				@include('partials.upsell')
+			</div>
 
-			            <div class="row">
-			           		@include('partials.upsell')   
-			            </div>
-			        
-			    </div>              
+		</div>              
 
-					@yield('content')
-				
-		</div>
-		
+		@yield('content')
 
-		@include('partials.footer')
-		@yield('footer')
-		
-		</div>
+	</div>
 
-	</body>
+
+	@include('partials.footer')
+	@yield('footer')
+
+</div>
+
+</body>
 </html>

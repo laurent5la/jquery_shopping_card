@@ -1,0 +1,101 @@
+$color_one: green;
+$color_two: red;
+$login_font_name: Avenir, "Avenir Next", AvenirLTStd-Book;
+$checkout_title : #01516F;
+$login_font_color : #3096B1;
+$login_onFocus_border_color: #66afe9;
+$billing_and_upsell_margin_top : 30px;
+$container_margin :5%;
+
+
+
+
+.container-fluid {
+
+    margin-left: $container_margin;
+    margin-right: $container_margin;
+
+    .row {
+        &.second {
+            margin-top:$billing_and_upsell_margin_top;
+        }
+
+    }
+
+    .row {
+        &.loginForm {
+            @import "loginform.scss";
+        }
+        &.billingForm {
+            @import "billingform.scss";
+        }
+    }
+
+
+    .col-md-7 {
+        margin-bottom:50px;
+    }
+}
+
+// body {
+//     background-color: $color_one;
+//     .welcome {
+//         background-color: $color_two;
+//     }
+// }
+
+
+// .container {
+    
+//     	.row{
+//     		.main{
+
+//     		margin-left:$login_margin;
+//     		margin-right:$login_margin;
+//     	}
+//     }
+	
+// }
+
+// %loginform_input{
+
+// 	line-height: 25px;
+//     font-size: 21px;
+//     font-weight: inherit;
+//     color: #3096B1;
+//     padding-left: 45px;
+//     background-color: #fff;
+//     background-image: none;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+//     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+//     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+
+//     &:hover {
+
+//    	border-color: #66afe9;
+//     outline: 0;
+//     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+//     border-width: thin;
+//     border-top-style: double;
+//     border-left-style: double;
+//     }
+// }
+
+// #uname {
+
+// 	@extend %loginform_input;
+// }
+
+// #email {
+// 	@extend %loginform_input;	
+// }
+
+// #password1 {
+// 	@extend %loginform_input;	
+// }
+
+// #cpassword {
+// 	@extend %loginform_input;	
+// }
