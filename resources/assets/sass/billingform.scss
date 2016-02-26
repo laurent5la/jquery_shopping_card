@@ -1,0 +1,28 @@
+@import "utilities/variables";
+@import "mixins/form_labels";
+
+
+
+
+
+.billingform-div {
+	input {
+	    height: $input_height;
+    	width: $input_width;
+    	line-height: $input_line-height;
+	    font-size: 21px;
+	    color: $input_color_blue;
+	    font-weight: inherit;
+	}
+
+}
+
+.billingform__label{
+
+		@extend %form_label;
+	}
+
+
+#billingform__input--div {
+		margin-bottom: 40px;
+}

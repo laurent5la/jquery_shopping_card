@@ -33,16 +33,6 @@
       border-width: thin;
       border-top-style: double;
       border-left-style: double; }
-  .container-fluid .row.loginForm #uname.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #email.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #password1.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #cpassword.error {
-    border-color: red; }
-  .container-fluid .row.loginForm .login-form__login-text {
-    color: #3096B1; }
   .container-fluid .row.billingForm .row.loginForm .login-form__label, .container-fluid .row.loginForm .row.billingForm .login-form__label, .container-fluid .row.billingForm .billingform__label {
     float: left;
     font-size: 32px;
@@ -55,9 +45,7 @@
     font-size: 21px;
     color: #3096B1;
     font-weight: inherit; }
-  .container-fluid .row.billingForm #billingform__input--div {
-    margin-bottom: 40px; }
   .container-fluid .col-md-7 {
     margin-bottom: 50px; }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=main.css.map */
