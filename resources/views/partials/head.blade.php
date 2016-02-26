@@ -36,6 +36,8 @@
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>   
     <script src="js/pwstrength-bootstrap-1.2.9.js"></script> 
     <script src="js/bootstrap-formhelpers-phone.js"></script>  
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/q.js/1.1.0/q.js"></script> -->
+    <script src="js/q.js"></script>
     <script src="js/validation.js"></script>   
 
 

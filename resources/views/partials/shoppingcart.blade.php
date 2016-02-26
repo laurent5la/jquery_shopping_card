@@ -6,8 +6,8 @@
         <div class="col-md-6 pd" >
             <h2>Cart</h2>
             <br>  
-            <div class="cart" style="display:none;"> 
-                <div class="products" >
+            <div class="cart" > 
+                <div class="products" style="display:none;">
                     <div id="productId">{{$productId}}</div>
                     <div id="priceId">{{$priceId}}</div>
                 </div>

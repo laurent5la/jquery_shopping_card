@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 	"use strict";
 
+    var priceId, productId, orderJsonObject, orderId, username,password,JSONLoginObject,JSONRegisterObject;
+
     // displaying password strength
     $('#password1').keyup(function(){
         if(!$('#password1').val()){
@@ -60,11 +62,12 @@ $(document).ready(function() {
        	&& /[a-z]/.test(value) // has a lowercase letter
        	&& /\d/.test(value) // has a digit
 	});
-
     $.validator.addMethod("alphanumericcheck", function(value) {
         return /^[a-z0-9]+$/i.test(value) // consists of only these
     });
+    /* login validation ends here*/
 
+    //password strength 
     var options = {};
     options.ui = {
         container: "#pwd-container",
@@ -84,8 +87,7 @@ $(document).ready(function() {
         }
     };
     $('#password1').pwstrength(options);
-    /* login validation ends here*/
-
+    
 
     /* billing validation starts here*/
     $('#billingform').blur(function () {
@@ -145,41 +147,6 @@ $(document).ready(function() {
         }
     });
 
-    //Coupon code
-    $("#coupon_btn").on("click", function(){
-        //event.PreventDefault();
-        alert("Success!");
-        $.ajax({
-            type: 'POST',
-            url: '/coupon',
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function(data) {
-                alert(data);
-            }
-        });
-   });  
-
-    $("#annual_btn").on("click", function(){
-        //event.PreventDefault();
-        var product_id = document.getElementById("annual_btn").value;
-        alert("Value = " +product_id);
-        $.ajax({
-            type: 'POST',
-            url: '/coupon',
-            data: { product_id: product_id },
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function(data) {
-                alert(data);
-            }
-        });
-   });  
-    //Coupon code end
-
-
     $.validator.addMethod("ccexpdate", function (value, element) {
         var match=value.match(/^\s*(0?[1-9]|1[0-2])\/(\d\d|\d{4})\s*$/);
         if (!match){
@@ -217,120 +184,207 @@ $(document).ready(function() {
     });
     /*billing validation ends here*/
 
+
+    //Coupon code
+    $("#coupon_btn").on("click", function(){
+        //event.PreventDefault();
+        alert("Success!");
+        $.ajax({
+            type: 'POST',
+            url: '/coupon',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                alert(data);
+            }
+        });
+   });  
+
+    $("#annual_btn").on("click", function(){
+        //event.PreventDefault();
+        var product_id = document.getElementById("annual_btn").value;
+        alert("Value = " +product_id);
+        $.ajax({
+            type: 'POST',
+            url: '/coupon',
+            data: { product_id: product_id },
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                alert(data);
+            }
+        });
+   });  
+    //Coupon code end
+
+
+    
     /*login or register php call starts here*/
     $('#cardname').focus(function(){
         if( $('#password1').val() && $('#uname').val() ){                           //username & password field not empty
             if($('#password1').valid() && $('#uname').valid()){                     //valid username & password entered
                 if(!$('#cpassword').val()){                                         //if confirm password not entered
-                    var username = $('#uname').val();
-                    var password = $('#password1').val();
-                    var JSONObject= {"userid":username , "password": password };
-                    $.ajax({                                                        //call to login php
-                        url: 'http://api.local/login.php',
-                        type: 'POST',
-                        data:JSON.stringify(JSONObject),
-                        dataType:'json',
-                        headers : {
-                            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                        },
-                        success: function(outputLogin) {
-
-                            //page changes
-                            $('#loginform-div').hide();
-                            $('.checkout-title').html('Hello '+ outputLogin.userid + '.Complete your purchase below.');
-                            $('#cardname').val(outputLogin.userid);        
-                            
-                            //order details
-                            var priceId = $('#priceId').text();
-                            var productId = $('#productId').text();
-                            /* var products =[];
-                            products.push(product); 
-                            for each when multiple products
-                            */
-                            var orderJsonObject= {
-                              "userid": outputLogin.userid,
-                              "products": [
-                                {
-                                  "productid": productId,
-                                  "priceid": priceId
-                                }
-                              ]
-                            };
-                            //call to order php
-                            $.ajax({                                                        
-                                url: 'http://api.local/order.php',
-                                type: 'POST',
-                                data:JSON.stringify(orderJsonObject),
-                                dataType:'json',
-                                headers : {
-                                    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                                },
-                                success: function(outputOrder) {
-                                    var orderId = outputOrder.orderId;
-                                    console.log(orderId);
-                                    //call to cybersource
-                                    $.ajax({
-                                        url: 'http://api.local/cybersource.php',  
-                                    });
-                                }
-                            });
-                        }
-                    });
-                }else{  //confirm password entered
-                    if($('#cpassword').valid()){                                    // cpassword entered and is valid
-                        $.ajax({                                                    //call to register.php
-                            url: 'http://api.local/register.php',
+                    username = $('#uname').val();
+                    password = $('#password1').val();
+                    JSONLoginObject= {"userid":username , "password": password };
+        
+                    /* login Promise */
+                    var loginPromise = Q($.ajax({url: 'http://api.local/login.php',
                             type: 'POST',
-                            data:JSON.stringify(JSONObject),
+                            data:JSON.stringify(JSONLoginObject),
                             dataType:'json',
                             headers : {
                                 'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                            },
-                            success: function(outputRegister) {
-                                $('#loginform-div').hide();
-                                $('.checkout-title').html('Hello '+ outputRegister.userid + '.Complete your purchase below.');
-                                $('#cardname').val(outputRegister.userid);
-                                
-                                //order details
-                                var priceId = $('#priceId').text();
-                                var productId = $('#productId').text();
-                                var orderJsonObject= {
-                                    "userid": outputRegister.userid,
-                                    "products": [
-                                        {
-                                            "productid": productId,
-                                            "priceid": priceId
-                                        }
-                                    ]
-                                };
-
-                                //call to order php
-                                $.ajax({                                                        
-                                    url: 'http://api.local/order.php',
-                                    type: 'POST',
-                                    data:JSON.stringify(orderJsonObject),
-                                    dataType:'json',
-                                    headers : {
-                                        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                                    },
-                                    success: function(outputOrder) {
-                                        var orderId = outputOrder.orderid;
-                                        console.log(orderId);
-                                        //call to cybersource
-                                        $.ajax({
-                                            url: 'http://api.local/cybersource.php',
-                                            
-                                        });
-                                    }
-                                });
                             }
-                        });
+                        })).then(   
+                                    function(outputLogin){loginResolve(outputLogin);},
+                                    function(errorLogin){loginReject(errorLogin);}
+                                );
+
+                    function loginResolve(outputLogin){
+                        $('#loginform-div').hide();
+                        $('.checkout-title').html('Hello '+ outputLogin.userid + '.Complete your purchase below.');
+                        $('#cardname').val(outputLogin.userid);
+                        //order details
+                        priceId = $('#priceId').text();
+                        productId = $('#productId').text();
+                        /* var products =[];
+                        products.push(product); 
+                        for each when multiple products
+                        */
+                        orderJsonObject= {
+                          "userid": outputLogin.userid,
+                          "products": [
+                            {
+                              "productid": productId,
+                              "priceid": priceId
+                            }
+                          ]
+                        };
+                        return Q($.ajax({                                                        
+                            url: 'http://api.local/order.php',
+                            type: 'POST',
+                            data:JSON.stringify(orderJsonObject),
+                            dataType:'json',
+                            headers : {
+                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        })).then(   
+                                    function(outputOrder){
+                                        orderResolve(outputOrder);
+                                    },
+                                    function(errorOrder){
+                                        orderReject(errorOrder);
+                                    }
+                                );
+                       
+                    }
+
+                    function loginReject(errorLogin){
+                        console.log('login error');
+                    }
+
+                    
+                }else{  //confirm password entered
+                    if($('#cpassword').valid()){                                    // cpassword entered and is valid
+                        username = $('#uname').val();
+                        password = $('#password1').val();
+                        JSONRegisterObject= {"userid":username , "password": password };
+
+                        //call to register php
+                        var registerPromise = Q($.ajax({url: 'http://api.local/login.php',
+                            type: 'POST',
+                            data:JSON.stringify(JSONRegisterObject),
+                            dataType:'json',
+                            headers : {
+                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        })).then(   
+                                    function(outputRegister){registerResolve(outputRegister);},
+                                    function(errorRegister){registerReject(errorRegister);}
+                                );
+
+                        function registerResolve(outputRegister){
+                        $('#loginform-div').hide();
+                        $('.checkout-title').html('Hello '+ outputRegister.userid + '.Complete your purchase below.');
+                        $('#cardname').val(outputRegister.userid);
+                        //order details
+                        priceId = $('#priceId').text();
+                        productId = $('#productId').text();
+                        /* var products =[];
+                        products.push(product); 
+                        for each when multiple products
+                        */
+                        orderJsonObject= {
+                          "userid": outputRegister.userid,
+                          "products": [
+                            {
+                              "productid": productId,
+                              "priceid": priceId
+                            }
+                          ]
+                        };
+                        return Q($.ajax({                                                        
+                            url: 'http://api.local/order.php',
+                            type: 'POST',
+                            data:JSON.stringify(orderJsonObject),
+                            dataType:'json',
+                            headers : {
+                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                            }
+                        })).then(   
+                                    function(outputOrder){
+                                        orderResolve(outputOrder);
+                                    },
+                                    function(errorOrder){
+                                        orderReject(errorOrder);
+                                    }
+                                );
+                       
+                        }
+
+                        function registerReject(errorRegister){
+                            console.log('register error');
+                        } 
                     }
                 }  
             }
         }
     });
-    /*login or register php call ends here */
+
+    function orderResolve(outputOrder){
+        orderId = outputOrder.orderid;
+        return Q($.ajax({                                                        
+            url: 'http://api.local/cybersource.php',
+            type: 'POST',
+            data:orderId,
+            headers : {
+                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
+        })).then(   
+                    function(outputCybersource){
+                        cyberSourceResolve(outputCybersource);
+                    },
+                    function(errorCybersource){
+                        orderReject(errorCybersource);
+                    }
+                );          
+    }
+
+    function orderReject(errorOrder){
+        console.log(orderError);
+    }
+
+    function cyberSourceResolve(outputCybersource){
+        console.log('cybersource success');
+    }
+
+    function cyberSourceReject(errorCybersource){
+        console.log('cybersource reject');
+    }
+
 
  });
 
