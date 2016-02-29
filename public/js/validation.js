@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	"use strict";
 
-    var priceId, productId, orderJsonObject, orderId, username,password,JSONLoginObject,JSONRegisterObject;
+    var priceId, productId, orderJsonObject, orderId, username,password,JSONLoginObject,JSONRegisterObject,JSONTaxObject;
 
     // displaying password strength
     $('#password1').keyup(function(){
@@ -85,12 +85,7 @@ $(document).ready(function() {
             wordLength: "Your password should be of minimum length 6"
         }
     };
-    options.common = {
-        debug: true,
-        onLoad: function () {
-            $('#messages').text('Start typing password');
-        }
-    };
+
     $('#password1').pwstrength(options);
     
 
@@ -222,7 +217,27 @@ $(document).ready(function() {
    });  
     //Coupon code end
 
+    //tax call
+    JSONTaxObject={};
+    var taxPromise = Q($.ajax({url: 'http://api.local/login.php',
+        type: 'POST',
+        data:JSON.stringify(JSONTaxObject),
+        dataType:'json',
+        headers : {
+            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+    })).then(
+        function(outputTax){taxResolve(outputTax);},
+        function(errorTax){taxReject(errorTax);}
+    );
 
+    function taxResolve(outputTax){
+
+    }
+
+    function taxReject(errorTax){
+
+    }
     
     /*login or register php call starts here*/
     $('#cardname').focus(function(){
@@ -244,57 +259,8 @@ $(document).ready(function() {
                         })).then(   
                                     function(outputLogin){loginResolve(outputLogin);},
                                     function(errorLogin){loginReject(errorLogin);}
-                                )
-                        .finally(function() {
-
-                        });
-
-                    function loginResolve(outputLogin){
-                        $('#loginform-div').hide();
-                        $('.checkout-title').html('Hello '+ outputLogin.userid + '.Complete your purchase below.');
-                        $('#cardname').val(outputLogin.userid);
-                        //order details
-                        priceId = $('#priceId').text();
-                        productId = $('#productId').text();
-                        /* var products =[];
-                        products.push(product); 
-                        for each when multiple products
-                        */
-                        orderJsonObject= {
-                          "userid": outputLogin.userid,
-                          "products": [
-                            {
-                              "productid": productId,
-                              "priceid": priceId
-                            }
-                          ]
-                        };
-                        return Q($.ajax({                                                        
-                            url: 'http://api.local/order.php',
-                            type: 'POST',
-                            data:JSON.stringify(orderJsonObject),
-                            dataType:'json',
-                            headers : {
-                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                            }
-                        })).then(   
-                                    function(outputOrder){
-                                        orderResolve(outputOrder);
-                                    },
-                                    function(errorOrder){
-                                        orderReject(errorOrder);
-                                    }
                                 );
-                    }
-
-                    function loginReject(errorLogin){
-                        if(errorLogin.status=='401'){
-                            $("#invalidUser-div").hide();
-                            $("#invalidUser-div").text('Invalid username or password. If new user please enter confirm password.');
-                            $("#invalidUser-div").show();
-                            resetLoginform();
-                        }
-                    }
+                        //TODO add exception handling
                 }else{  //confirm password entered
                     if($('#cpassword').valid()){    
                         console.log('calling register');                                // cpassword entered and is valid
@@ -314,61 +280,152 @@ $(document).ready(function() {
                                     function(outputRegister){registerResolve(outputRegister);},
                                     function(errorRegister){registerReject(errorRegister);}
                                 );
-
-                        function registerResolve(outputRegister){
-                        $('#loginform-div').hide();
-                        $('.checkout-title').html('Hello '+ outputRegister.userid + '.Complete your purchase below.');
-                        $('#cardname').val(outputRegister.userid);
-                        //order details
-                        priceId = $('#priceId').text();
-                        productId = $('#productId').text();
-                        /* var products =[];
-                        products.push(product); 
-                        for each when multiple products
-                        */
-                        orderJsonObject= {
-                          "userid": outputRegister.userid,
-                          "products": [
-                            {
-                              "productid": productId,
-                              "priceid": priceId
-                            }
-                          ]
-                        };
-                        return Q($.ajax({                                                        
-                            url: 'http://api.local/order.php',
-                            type: 'POST',
-                            data:JSON.stringify(orderJsonObject),
-                            dataType:'json',
-                            headers : {
-                                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                            }
-                        })).then(   
-                                    function(outputOrder){
-                                        orderResolve(outputOrder);
-                                    },
-                                    function(errorOrder){
-                                        orderReject(errorOrder);
-                                    }
-                                );
-                       
-                        }
-
-                        function registerReject(errorRegister){
-                            if(errorRegister.status=='408'){
-                                console.log('request timed out');
-                                registerPromise;
-                                $("#invalidUser-div").hide();
-                                $("#invalidUser-div").text('Invalid username or password. If new user please enter confirm password.');
-                                $("#invalidUser-div").show();
-                                resetLoginform();
-                            }   
-                        } 
                     }
                 }  
             }
         }
     });
+
+    function loginResolve(outputLogin){
+        $('#loginform-div').hide();
+        $('.checkout-title').html('Hello '+ outputLogin.userid + '.Complete your purchase below.');
+        $('#cardname').val(outputLogin.userid);
+        //order details
+        priceId = $('#priceId').text();
+        productId = $('#productId').text();
+        /* var products =[];
+         products.push(product);
+         for each when multiple products
+         */
+        orderJsonObject= {
+            "userid": outputLogin.userid,
+            "products": [
+                {
+                    "productid": productId,
+                    "priceid": priceId
+                }
+            ]
+        };
+        return Q($.ajax({
+            url: 'http://api.local/order.php',
+            type: 'POST',
+            data:JSON.stringify(orderJsonObject),
+            dataType:'json',
+            headers : {
+                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
+        })).then(
+            function(outputOrder){
+                orderResolve(outputOrder);
+            },
+            function(errorOrder){
+                orderReject(errorOrder);
+            }
+        );
+    }
+
+    function loginReject(errorLogin){
+        if(errorLogin.status=='401'){
+            $("#invalidUser-div").hide();
+            $("#invalidUser-div").text('Invalid username or password. If new user please enter confirm password.');
+            $("#invalidUser-div").show();
+            resetLoginform();
+        }
+        if(errorRegister.status=='408'){
+            console.log('request timed out once');
+            var loginPromise = Q($.ajax({url: 'http://api.local/login.php',
+                type: 'POST',
+                data:JSON.stringify(JSONLoginObject),
+                dataType:'json',
+                headers : {
+                    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                }
+            })).then(
+                function(outputLogin){loginResolve(outputLogin);},
+                function(errorLogin){login2Reject(errorLogin);}
+            )
+                .finally(function() {
+
+                });
+            $("#invalidUser-div").hide();
+            resetLoginform();
+        }
+    }
+
+    function login2Reject(errorLogin){
+        if(errorRegister.status=='408'){
+            console.log('request timed out twice');
+            $("#invalidUser-div").hide();
+            resetLoginform();
+        }
+    }
+
+
+    function registerResolve(outputRegister){
+        $('#loginform-div').hide();
+        $('.checkout-title').html('Hello '+ outputRegister.userid + '.Complete your purchase below.');
+        $('#cardname').val(outputRegister.userid);
+        //order details
+        priceId = $('#priceId').text();
+        productId = $('#productId').text();
+        /* var products =[];
+         products.push(product);
+         for each when multiple products
+         */
+        orderJsonObject= {
+            "userid": outputRegister.userid,
+            "products": [
+                {
+                    "productid": productId,
+                    "priceid": priceId
+                }
+            ]
+        };
+        return Q($.ajax({
+            url: 'http://api.local/order.php',
+            type: 'POST',
+            data:JSON.stringify(orderJsonObject),
+            dataType:'json',
+            headers : {
+                'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
+        })).then(
+            function(outputOrder){
+                orderResolve(outputOrder);
+            },
+            function(errorOrder){
+                orderReject(errorOrder);
+            }
+        );
+
+    }
+
+    function registerReject(errorRegister){
+        if(errorRegister.status=='408'){
+            console.log('request timed out once');
+            var registerPromise = Q($.ajax({url: 'http://api.local/register.php',
+                type: 'POST',
+                data:JSON.stringify(JSONRegisterObject),
+                dataType:'json',
+                headers : {
+                    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                }
+            })).then(
+                function(outputRegister){registerResolve(outputRegister);},
+                function(errorRegister){register2Reject(errorRegister);}
+            );
+            $("#invalidUser-div").hide();
+            resetLoginform();
+        }
+    }
+
+    function register2Reject(errorRegister){
+        if(errorRegister.status=='408'){
+            console.log('request timed out twice');
+            $("#invalidUser-div").hide();
+            resetLoginform();
+        }
+    }
 
     function orderResolve(outputOrder){
         orderId = outputOrder.orderid;
