@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="css/app.css"></link>
-<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
-<link rel-"stylesheet" type="text/css" href="css/style.css"></link>
-		
-		@include("partials.head")
+<!-- <link rel="stylesheet" type="text/css" href="css/app.css"></link>
+ --><link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+<!-- <link rel-"stylesheet" type="text/css" href="css/style.css"></link> -->
+<link rel-"stylesheet" type="text/css" href="css/main.css"></link>
 
-		<div id="main-container" class="container">
+@include("partials.head")
+
+<div id="main-container" class="container">
 
 
-		@include('partials.header')
-		@yield('header')
+	@include('partials.header')
+	@yield('header')
 
-		<div class="row checkout-title ">
-			Almost finished! Enter your details below.
+	<div class="row checkout-title ">
+		Almost finished! Enter your details below.
+	</div>
+
+	<div class="container-fluid">
+		<div class="col-md-5">
+			<div class="row loginForm">
+				@include('partials.loginform')  
+			</div>
+
+			<div class="row second billingForm">
+				@include('partials.billingform')   
+			</div>
+
 		</div>
-		
-		<div class="row">
-				<div id="content col" >
-		            <div class="login-form-page row">
-		            	@include('partials.loginform')  
-		        	</div>
+		<div class="col-md-7">
 
-		            <div class="billing-form-page row">
-		           		@include('partials.billingform')   
-		            </div> 
+			<div class="row shoppingCart">
+				@include('partials.shoppingcart')   
+			</div>
+			<div class="row second Upsell">
+				@include('partials.upsell')
+			</div>
 
-		            <div class="shopping-cart row">
-		           		@include('partials.shoppingcart')   
-		            </div>
+		</div>              
 
-		            <div class="shopping-cart row">
-		           		@include('partials.upsell')   
-		            </div>              
+		@yield('content')
 
-					@yield('content')
-				</div>
-		</div>
-		
+	</div>
 
-		@include('partials.footer')
-		@yield('footer')
-		
-		</div>
 
-	</body>
+	@include('partials.footer')
+	@yield('footer')
+
+</div>
+
+</body>
 </html>

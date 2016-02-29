@@ -1,4 +1,4 @@
-<div class="billingform-div" style="margin-bottom: 13px;">
+<div class="billingform-div">
 	<label class="billingform__label" for="billingform">Billing Information</label>
 
 	<form role="form" id="billingform" class="form-group">

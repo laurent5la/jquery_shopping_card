@@ -14,7 +14,7 @@
     line-height: 25px;
     color: #3096B1;
     font-size: 28px; }
-  .container-fluid .row.loginForm #uname, .container-fluid .row.loginForm #email, .container-fluid .row.loginForm #password1, .container-fluid .row.loginForm #cpassword {
+  .container-fluid .row.loginForm #email, .container-fluid .row.loginForm #password1, .container-fluid .row.loginForm #cpassword {
     line-height: 25px;
     font-size: 21px;
     font-weight: inherit;
@@ -26,21 +26,13 @@
     border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
-    .container-fluid .row.loginForm #uname:focus, .container-fluid .row.loginForm #email:focus, .container-fluid .row.loginForm #password1:focus, .container-fluid .row.loginForm #cpassword:focus {
+    .container-fluid .row.loginForm #email:focus, .container-fluid .row.loginForm #password1:focus, .container-fluid .row.loginForm #cpassword:focus {
       border-color: #66afe9;
       outline: 0;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
       border-width: thin;
       border-top-style: double;
       border-left-style: double; }
-  .container-fluid .row.loginForm #uname.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #email.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #password1.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #cpassword.error {
-    border-color: red; }
   .container-fluid .row.loginForm .login-form__login-text {
     color: #3096B1; }
   .container-fluid .row.billingForm .row.loginForm .login-form__label, .container-fluid .row.loginForm .row.billingForm .login-form__label, .container-fluid .row.billingForm .billingform__label {
@@ -60,4 +52,4 @@
   .container-fluid .col-md-7 {
     margin-bottom: 50px; }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=main.css.map */
