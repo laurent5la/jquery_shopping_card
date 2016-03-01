@@ -28,25 +28,25 @@
 		</div>
 
 		<div id="billingform__input--div" class="form-group">
-			<input type="text" name="address" placeholder="Address Line 1" class="form-control"/>
+			<input type="text" id="bill_to_address_line1"name="address" placeholder="Address Line 1" class="form-control"/>
 		</div>
 		<div id="billingform__input--div" class="form-group">
 			<input type="text" name="address" placeholder="Address Line 2" class="form-control"/>
 		</div>
 		<div id="billingform__input--div" class="form-group">
-			<input type="text" name="city" placeholder="City" class="form-control"/>
+			<input type="text" id="bill_to_address_city" name="city" placeholder="City" class="form-control"/>
 		</div>
 		<div id="billingform__input--div" class="form-group">
-			<select class="form-control bfh-states" data-country="countries_states1"></select>
+			<select id="bill_to_address_state" class="form-control bfh-states" data-country="bill_to_address_country"></select>
 		</div>
 		<div id="billingform__input--div" class="form-group">
-			<input type="text" name="zipcode" placeholder="Zipcode" class="form-control"/>
+			<input type="text" id='postal_code'name="zipcode" placeholder="Zipcode" class="form-control"/>
 		</div>
 		<div id="billingform__input--div" class="form-group">
-			<select id="countries_states1" class="form-control bfh-countries" data-country="US"></select>
+			<select id="bill_to_address_country" class="form-control bfh-countries" data-country="US"></select>
 		</div>
 		<div id="billingform__input--div" class="form-group">
-			<input type="text" name="phonenumber" placeholder="Phone Number" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"/>
+			<input type="text" id="number"name="phonenumber" placeholder="Phone Number" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"/>
 		</div>
 	</form>
 </div>
