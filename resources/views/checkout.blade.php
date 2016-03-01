@@ -22,6 +22,12 @@
 			<div class="row loginForm">
 				@include('partials.loginform')  
 			</div>
+
+
+			<div class="row personalinfoForm">
+				@include('partials.personalInformation')
+			</div>
+
 			<div class="row second billingForm">
 				@include('partials.billingform')   
 			</div>

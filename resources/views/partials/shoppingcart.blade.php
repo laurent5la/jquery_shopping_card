@@ -2,7 +2,11 @@
         <label class="cart__label">Cart</label>
             
             <br>  
-            <div class="cart"> 
+            <div class="cart" > 
+                <div class="products" style="display:none;">
+                    <div id="productId">{{$productId}}</div>
+                    <div id="priceId">{{$priceId}}</div>
+                </div>
                 <div class="row padd">
                     <div class="col-md-6" >
                         <h3>{{$ProductName}}<sup>TM</sup></h3>

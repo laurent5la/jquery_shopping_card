@@ -1,4 +1,5 @@
 <div id="loginform-div">
+	<div id="invalidUser-div" class="error" style="display:none;"></div>
 		<label class="login-form__label" for="loginform">Create Account or <span class="login-form__login-text">Login</span></label>
 		<form class=" form-group"id="loginform" role="form">
 			<div class="form-group">

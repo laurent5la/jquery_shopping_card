@@ -76,6 +76,7 @@
             $dollars = Input::get('dollars');
             $cents = Input::get('cents');
             $productId = Input::get('productId');
+            $priceId = Input::get('priceId');
             $price = ($dollars) + ($cents*0.01);
             $j=Input::get('i');
             $products  = Config::get('products_coo');
@@ -92,7 +93,7 @@
                 'name' => 'VAT 12.5%',
                 'type' => 'tax',
                 'target' => 'subtotal',
-                'value' => '6.50',
+                'value' => '---',
             ));
 
             // Applying the condition to the Cart
@@ -136,12 +137,9 @@
             else
                 $totalC = '00';
 
-            //$request->session()->put('key', 'value');
-
-            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD,
-                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'productId' => $productId,'j'=>$j,'products'=>$products,'footer' => $footer));
-
+            
+            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 'taxC' => $taxC,
+                                         'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 'totalC' => $totalC,'productId'=> $productId,'priceId'=>$priceId,'j'=>$j,'products'=>$products,'footer' => $footer)); 
         }
 
         public function coupon()
