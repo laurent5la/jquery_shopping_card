@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	"use strict";
 
-    var priceId, productId, orderJsonObject, orderId, username,password,JSONLoginObject,JSONRegisterObject,JSONTaxObject;
+    var priceId, productId, orderJsonObject, orderId, username,password,JSONLoginObject,JSONRegisterObject,JSONTaxObject,postal,country,city,street,state;
 
     // displaying password strength
     $('#password1').keyup(function(){
@@ -182,37 +182,85 @@ $(document).ready(function() {
     });
     /*billing validation ends here*/
 
+    //personal information form validation
+    $('#personalinfoform').validate({
+        rules: {
+            fname: {
+                required: true,
+                minlength: 2
+            },
+            lname:{
+                required: true,
+                minlength: 2
+            },
+            cvv:{
+                required:true,
+                number: true,
+                minlength: 3
+            },
+            address:{
+                required: true,
+                minlength: 3
+            },
+            city: {
+                required: true,
+                minlength: 2
+            },
+            zipcode:{
+                required: true,
+                zipcodeCheck: true
+            }
+        },
+        messages: {
+            zipcode: {
+                zipcodeCheck: "Please enter valid zipcode"
+            }
+        }
+    });
 
     //tax call
-    JSONTaxObject={};
-    var taxPromise = Q($.ajax({url: 'http://api.local/login.php',
-        type: 'POST',
-        data:JSON.stringify(JSONTaxObject),
-        dataType:'json',
-        headers : {
-            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+    /* on entering valid zipcode */
+    $('#number').focus(function(){
+        if(isSetInput('#bill_to_address_city')&& isSetInput('#bill_to_address_line1')  ){
+        //isSetInput('#bill_to_address_postal_code') && isSetInput('#bill_to_address_country') && && isSetInput('#bill_to_address_state')  )
+            postal = $('#postal_code').val();
+            country = $('#bill_to_address_country').val();
+            city=$('#bill_to_address_city').val();
+            street=$('#bill_to_address_line1').val();
+            state=$('#bill_to_address_state').val();
+
+            JSONTaxObject={"city":city,"country":country,"postal":postal,"state":state,"street":street};
+            console.log(JSONTaxObject);
+            var taxPromise = Q($.ajax({
+                url: 'http://api.local/tax.php',
+                type: 'GET',
+                data:JSONTaxObject
+            })).then(
+                function(outputTax){taxResolve(outputTax);},
+                function(errorTax){taxReject(errorTax);}
+            );
         }
-    })).then(
-        function(outputTax){taxResolve(outputTax);},
-        function(errorTax){taxReject(errorTax);}
-    );
+    })
 
     function taxResolve(outputTax){
-
+        console.log("TAX output"+ outputTax);
     }
 
     function taxReject(errorTax){
-
+        console.log(outputTax);
     }
     
     /*login or register php call starts here*/
     $('#cardname').focus(function(){
+        $(this).off('focus');                                                       // event removed
         if( $('#password1').val() && $('#uname').val() ){                           //username & password field not empty
             if($('#password1').valid() && $('#uname').valid()){                     //valid username & password entered
                 if(!$('#cpassword').val()){                                         //if confirm password not entered
                     username = $('#uname').val();
                     password = $('#password1').val();
                     JSONLoginObject= {"userid":username , "password": password };
+
+
         
                     /* login Promise */
                     var loginPromise = Q($.ajax({url: 'http://api.local/login.php',
@@ -253,6 +301,7 @@ $(document).ready(function() {
     });
 
     function loginResolve(outputLogin){
+        console.log('login success');
         $('#loginform-div').hide();
         $('.checkout-title').html('Hello '+ outputLogin.userid + '.Complete your purchase below.');
         $('#cardname').val(outputLogin.userid);
@@ -394,6 +443,7 @@ $(document).ready(function() {
     }
 
     function orderResolve(outputOrder){
+        console.log('order sucess');
         orderId = outputOrder.orderid;
         return Q($.ajax({                                                        
             url: 'http://api.local/cybersource.php',
@@ -554,6 +604,19 @@ $(document).ready(function() {
     });
     //Close button code end
 
+    //$('#cardname').off('focus');
+
+    function isSetInput(fieldid){
+        //console.log($(fieldId).val());
+        if ($(fieldid).val()){
+           // console.log($(fieldid).valid());
+            if($(fieldid).valid()){
+                console.log('true');
+                return true;
+            }
+        }
+        return false;
+    }
 
  });
 

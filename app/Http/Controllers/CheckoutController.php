@@ -95,7 +95,7 @@
                 'name' => 'VAT 12.5%',
                 'type' => 'tax',
                 'target' => 'subtotal',
-                'value' => '6.50',
+                'value' => '---',
             ));
 
             // Applying the condition to the Cart
