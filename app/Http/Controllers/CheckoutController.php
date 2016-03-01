@@ -9,6 +9,8 @@
     //use Request;
     use Illuminate\Http\Request;
     use Config;
+    use Session;
+
     class CheckoutController extends Controller
     {
 
@@ -67,25 +69,25 @@
 
         public function index(Request $request) {
 
-            //$this->instantiateCart();
-            $shoppingCart = app('cartlist');
+            //Upsell 
+            $j=Input::get('i');
+            $products  = Config::get('products_coo');
+            $footer = Config::get('footer');
 
-            //$shoppingCart::add(455, 'Sample Item', 100.99, 2, array());
+            //Shopping Cart
+
+            // Using the instantiated shopping cart
+            $shoppingCart = app('cartlist');
 
             $ProductName = Input::get('ProductName');
             $dollars = Input::get('dollars');
             $cents = Input::get('cents');
             $productId = Input::get('productId');
-            $priceId = Input::get('priceId');
             $price = ($dollars) + ($cents*0.01);
-            $j=Input::get('i');
-            $products  = Config::get('products_coo');
-            $footer = Config::get('footer');
 
 
             // Adding contents to the Cart
             $shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1, array()));
-                            //array('id' => 568,'name' => 'Product 2','price' => 10.00,'quantity' => $q2),
 
 
             // Adding conditions to the whole Cart
@@ -99,14 +101,11 @@
             // Applying the condition to the Cart
             $shoppingCart->condition($condition1);
 
-            // Passing all the contents to the view
-            $items = $shoppingCart->getContent();
-
+            
             // Passing conditions to the view
-            //$cartConditions = Cart::getConditions();
             $cartCondition = $shoppingCart->getCondition('VAT 12.5%');
             $tax = $cartCondition->getValue();
-            //Converting to dollars & cents
+            //Converting to dollars & cents for display purpose
             $arr = explode(".", $tax);
             $taxD = $arr[0];
             if(sizeof($arr) > 1)
@@ -116,8 +115,7 @@
 
             // Total amount without conditions applied
             $subTotal =$shoppingCart->getSubTotal();
-
-            //Converting to dollars & cents
+            //Converting to dollars & cents for display purpose
             $arr = explode(".", $subTotal);
             $subTotalD = $arr[0];
             if(sizeof($arr) > 1)
@@ -125,10 +123,9 @@
             else
                 $subTotalC = '00';
 
-            // Totak amount with all the conditions applied
+            // Total amount with all the conditions applied
             $total = $shoppingCart->getTotal();
-
-            //Converting to dollars & cents
+            //Converting to dollars & cents for display purpose
             $arr = explode(".", $total);
             $totalD = $arr[0];
             if(sizeof($arr) > 1)
@@ -137,32 +134,155 @@
             else
                 $totalC = '00';
 
+
+            //Setting promo Variables to 0
+            $promoD = 0;
+            $promoC = 0;
+
+            // Passing all the contents to the view
+            $items = $shoppingCart->getContent();
+
+            return view('checkout',array('items' => $items, 'dollars'=>$dollars, 'cents'=>$cents, 'taxD' => $taxD,
+                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
+                'totalC' => $totalC, 'promoD' => $promoD, 'promoC' => $promoC, 'j'=>$j));
+
+        }
+
+        public function annual()
+        {
+
+            $itemId = Input::get('product_id');
+            $priceD = Input::get('next_priceD');
+            $priceC = Input::get('next_priceC');
+
+            $shoppingCart = app('cartlist');
+
+
+            $price = ($priceD) + ($priceC*0.01);
+
+            // Update shopping cart contents with the new price
+            $shoppingCart->update($itemId, array('price' => $price));
+    
+    
+            $subTotal = $shoppingCart->getSubTotal();
+            //Converting to dollars & cents for display purpose
+            $arr = explode(".", $subTotal);
+            $subTotalD = $arr[0];
+            if(sizeof($arr) > 1)
+                $subTotalC = $arr[1];
+            else
+                $subTotalC = '00';
+
+            $total = $shoppingCart->getTotal();
+            //Converting to dollars & cents for display purpose
+            $arr = explode(".", $total);
+            $totalD = $arr[0];
+            if(sizeof($arr) > 1)
+                $totalC = $arr[1];
+
+            else
+                $totalC = '00';
             
-            return view('checkout',array('ProductName'=>$ProductName, 'dollars'=>$dollars, 'cents'=>$cents,'items' => $items, 'taxD' => $taxD, 'taxC' => $taxC,
-                                         'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD, 'totalC' => $totalC,'productId'=> $productId,'priceId'=>$priceId,'j'=>$j,'products'=>$products,'footer' => $footer)); 
+            echo json_encode(array('subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,'totalC' => $totalC));
+        
         }
 
         public function coupon()
         {
+            $shoppingCart = app('cartlist');
+            $condition = new \Darryldecode\Cart\CartCondition(array(
+            'name' => 'Discount 4.99',
+            'type' => 'coupon',
+            'target' => 'subtotal',
+            'value' => '-4.99',
+            ));
 
+            // Applying the condition to the Cart
+            $shoppingCart->condition($condition);
+
+            $subTotal = $shoppingCart->getSubTotal();
+            //Converting to dollars & cents for display purpose
+            $arr = explode(".", $subTotal);
+            $subTotalD = $arr[0];
+            if(sizeof($arr) > 1)
+                $subTotalC = $arr[1];
+            else
+                $subTotalC = '00';
+
+            $total = $shoppingCart->getTotal();
+            //Converting to dollars & cents for display purpose
+            $arr = explode(".", $total);
+            $totalD = $arr[0];
+            if(sizeof($arr) > 1)
+                $totalC = $arr[1];
+
+            else
+                $totalC = '00';
+            
+            echo json_encode(array('subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,'totalC' => $totalC));
+        }
+
+        public function close()
+        {
             $itemId = Input::get('product_id');
 
             $shoppingCart = app('cartlist');
 
-            //Cart::instance('cartlist')->(455, 'Sample Item', 100.99, 2, array());
+            //Remove the item
+            $shoppingCart->remove($itemId);
 
-            $a = $shoppingCart->get($itemId);
-            //$a = $shoppingCart::get('455');
+            $items = $shoppingCart->getContent();
+            $count = $items->count();
+            
+            if($count > 0)
+            {   
+                // Passing conditions to the view
+                $cartCondition = $shoppingCart->getCondition('VAT 12.5%');
+                $tax = $cartCondition->getValue();
+                //Converting to dollars & cents for display purpose
+                $arr = explode(".", $tax);
+                $taxD = $arr[0];
+                if(sizeof($arr) > 1)
+                    $taxC = $arr[1];
+                else
+                    $taxC = '00';
 
-            //$a = $shoppingCart::getSubTotal();
-            $data = $request->session()->all();
-            echo $data;
-            /*
-            if($a)
-                echo $a;
+                // Total amount without conditions applied
+                $subTotal =$shoppingCart->getSubTotal();
+                //Converting to dollars & cents for display purpose
+                $arr = explode(".", $subTotal);
+                $subTotalD = $arr[0];
+                if(sizeof($arr) > 1)
+                    $subTotalC = $arr[1];
+                else
+                    $subTotalC = '00';
+
+                // Total amount with all the conditions applied
+                $total = $shoppingCart->getTotal();
+                //Converting to dollars & cents for display purpose
+                $arr = explode(".", $total);
+                $totalD = $arr[0];
+                if(sizeof($arr) > 1)
+                    $totalC = $arr[1];
+
+                else
+                    $totalC = '00';
+
+
+                //Setting promo Variables to 0
+                $promoD = 0;
+                $promoC = 0;
+
+
+                return view('partials.shoppingcart',array('items' => $items, 'taxD' => $taxD,
+                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
+                'totalC' => $totalC, 'promoD' => $promoD, 'promoC' => $promoC,));
+            }
             else
-                echo "fail";
-            */
+            {
+                return "Shopping Cart Empty!";
+            }
+
         }
 
     }

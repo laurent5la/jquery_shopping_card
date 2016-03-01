@@ -183,40 +183,6 @@ $(document).ready(function() {
     /*billing validation ends here*/
 
 
-    //Coupon code
-    $("#coupon_btn").on("click", function(){
-        //event.PreventDefault();
-        alert("Success!");
-        $.ajax({
-            type: 'POST',
-            url: '/coupon',
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function(data) {
-                alert(data);
-            }
-        });
-   });  
-
-    $("#annual_btn").on("click", function(){
-        //event.PreventDefault();
-        var product_id = document.getElementById("annual_btn").value;
-        alert("Value = " +product_id);
-        $.ajax({
-            type: 'POST',
-            url: '/coupon',
-            data: { product_id: product_id },
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function(data) {
-                alert(data);
-            }
-        });
-   });  
-    //Coupon code end
-
     //tax call
     JSONTaxObject={};
     var taxPromise = Q($.ajax({url: 'http://api.local/login.php',
@@ -477,6 +443,116 @@ $(document).ready(function() {
         }
 
     }
+
+    //Coupon code
+    $("#coupon_btn").on("click", function(){
+        var code = $("#promoC").val();
+        if(code == "")
+            alert("Please enter a Promo Code");
+        else
+        {
+            var divElement = document.getElementById("promoAmt");
+            
+            $.ajax({
+                type: 'POST',
+                url: '/coupon',
+                dataType: "json",
+                data: { code: code},
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(data) {
+                    // Displaying Promo Code 
+                    if(divElement.className == "hidden")
+                    {
+                        divElement.className = "unhidden";
+                        $("#subTotal").html("<sup>$</sup>" +data["subTotalD"]+ "<sup>" +data["subTotalC"]+ "</sup>");
+                        $("#total").html("<sup>$</sup>" +data["totalD"]+ "<sup>" +data["totalC"]+ "</sup>");
+                        $("#promoAply").html("<div><p class='promoAply'><h3>Promo Code Applied</h3></p></div>");
+                        $("#promo").html("<sup>$</sup>4<sup>99</sup>");             //************* ---- HARD CODED ----
+                    }        
+                    else
+                        divElement.className = "hidden";
+                }
+            }); 
+        }
+    });
+    //Coupon code end  
+
+    //Annual price code
+    $("#annual_btn").on("click", function(){
+        var product_id = document.getElementById("product_id").value;
+        var priceD = document.getElementById("priceD").value;
+        var priceC = document.getElementById("priceC").value;
+       
+        var duration = $("#duration").text();
+
+
+        if(duration == "per month")
+        {
+            var next_priceD = document.getElementById("next_priceD").value;
+            var next_priceC = document.getElementById("next_priceC").value;
+        }
+        else
+        {
+            var next_priceD = priceD;       //************* ---- HARD CODED ---- Should change based on annual logic **********
+            var next_priceC = priceC;                                           // being pickd up from front end - next_price
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '/annual',
+            dataType: "json",
+            data: { product_id: product_id, next_priceD: next_priceD, next_priceC: next_priceC },
+            xhrFields: {
+                withCredentials: true
+            },
+            headers: {'X-Requested-With': 'XMLHttpRequest'},
+            success: function(data) {
+                if(duration == "per month")
+                {
+                    $("#price").html("<sup>$</sup>499<sup>99</sup>");
+                    $("#duration").html("For 12 months");
+                    $("#next_price").html("Monthly Pricing - <sup>$</sup>" +priceD+ "<sup>" +priceC+ "</sup>");
+                    $("#save").html("");
+                    $("#subTotal").html("<sup>$</sup>" +data["subTotalD"]+ "<sup>" +data["subTotalC"]+ "</sup>");
+                    $("#total").html("<sup>$</sup>" +data["totalD"]+ "<sup>" +data["totalC"]+ "</sup>");
+                }
+                else
+                {
+                    $("#price").html("<sup>$</sup>" +priceD+ "<sup>" +priceC+ "</sup>");
+                    $("#duration").html("per month");       
+                    $("#next_price").html("Annual Pricing - <sup>$</sup>499<sup>99</sup>");
+                    $("#save").html("Save 27%");
+                    $("#subTotal").html("<sup>$</sup>" +data["subTotalD"]+ "<sup>" +data["subTotalC"]+ "</sup>");
+                    $("#total").html("<sup>$</sup>" +data["totalD"]+ "<sup>" +data["totalC"]+ "</sup>");
+                    
+                }
+                
+            }
+        });
+   });  
+    //Annual price code end
+
+    //Close button code
+    $(document).on("click", '.close_btn', function(e){
+
+        var product_id = $(this).data("id");
+        
+        $.ajax({
+            type: 'POST',
+            url: '/close',
+            data: { product_id: product_id},
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(data) {
+                $("#shopping_cart").html(data);
+            }
+        }); 
+        
+    });
+    //Close button code end
 
 
  });

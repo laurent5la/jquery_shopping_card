@@ -1179,5 +1179,24 @@ hr {
 	height:45px;
 }
 
+.hidden{
+    display:none;
+}
+
+.unhidden{
+    display:block;
+}
+
+.promoAply{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 18px;
+}
+
+.hr-thick{
+    border-top: 8px solid #808080;
+}
+
+
 
 /*Shopping cart */
