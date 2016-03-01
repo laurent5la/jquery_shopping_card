@@ -7,3 +7,87 @@
     margin-bottom: 30px;
 
 }
+
+%label_error {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 25px;
+}
+
+%cart_upsell_layout {
+	border: 1px solid #ddd;
+  	border-top: 8px solid;
+  	border-top-color: #3095b4;
+  	width:80%;
+  	margin-top: 55px;
+  	margin-left: 100px;
+}
+
+
+@mixin padd{
+    padding: 20px 20px 30px 30px;
+}
+
+@mixin hr-padd{
+    margin: 0px 20px 0px 30px;
+}
+
+@mixin hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #eeeeee; 
+}
+@mixin black{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 18px;
+}
+@mixin amt{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 38px;
+  font-weight: 300;
+}
+
+@mixin amt-b{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+@mixin cep{
+  color: #3095b4;
+}
+
+@mixin right-float{
+  float: right;
+
+}
+
+@mixin grey{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #999;
+  font-size: 18px;
+}
+
+@mixin promo{
+  padding-left: 20px;
+  margin-left: 20px;
+  width: 500px;
+  height: 75px;
+}
+
+@mixin apply{
+  border-radius: 25px;
+  border: 1px solid gray;
+  width: 145px;
+  height: 40px;
+  border-color: #3095b4;
+  background-color: #fff;
+  color: #3095b4;
+  font-size: 16px;
+}

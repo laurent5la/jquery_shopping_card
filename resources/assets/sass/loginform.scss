@@ -1,20 +1,9 @@
 @import "utilities/variables";
 @import "mixins/form_labels";
 
-
-input {
-	height: $input_height;
-    width: $input_width;
-    line-height: $input_line-height;
-    color: $input_color_blue;
-	font-size: 28px;
-}
-
-
-
+/* Declaring mixins */
 %loginform_input{
-
-	line-height: 25px;
+    line-height: 25px;
     font-size: 21px;
     font-weight: inherit;
     color: $input_color_blue;
@@ -25,53 +14,72 @@ input {
     border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-
-
-    &:focus {
-
-   	border-color: #66afe9;
-    outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    border-width: thin;
-    border-top-style: double;
-    border-left-style: double;
-    }
+        &:focus {
+            border-color: #66afe9;
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            border-width: thin;
+            border-top-style: double;
+            border-left-style: double;
+        }
 }
 
+/* Ends here */
 
 #uname{
-	&.error {
-		border-color: red;
-	}
-	@extend %loginform_input;
+    &.error {
+        border-color: red;}
+    @extend %loginform_input;
 }
-
 #email {
-	&.error {
-		border-color: red;
-	}
-	@extend %loginform_input;	
+    &.error {
+        border-color: red;}
+    @extend %loginform_input;   
 }
-
 #password1 {
-	&.error {
-		border-color: red;
-	}
-	@extend %loginform_input;	
+    &.error {
+        border-color: red;}
+    @extend %loginform_input;   
+}
+#cpassword {
+    &.error {
+        border-color: red;}
+    @extend %loginform_input;   
 }
 
-#cpassword {
-	&.error {
-		border-color: red;
-	}
-	@extend %loginform_input;	
+
+input {
+    height: $input_height;
+    width: $input_width;
+    line-height: $input_line-height;
+    color: $input_color_blue;
+    font-size: 28px;
 }
 
 .login-form__label {
-	@extend %form_label;
+    @extend %form_label;
 }
 
 .login-form__login-text{
     color: $input_color_blue;
 }
 
+label.error{
+    @extend %label_error;
+}
+/* Adding the Glyphicon */
+.inner-addon {
+    position: relative;
+}
+.inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/* End here */

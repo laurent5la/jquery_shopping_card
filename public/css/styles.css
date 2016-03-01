@@ -19,31 +19,34 @@
 
 .login-icon{
     font-size: 34px;
-    line-height: 48px;
-    padding-top: 3px;
     color: #3096B1;
 }
 
-.inner-addon {
+/* for the glyphicon icons */
+/*.inner-addon {
     position: relative;
+    
 }
-
+*/
 /* style icon */
-.inner-addon .glyphicon {
+/*.inner-addon .glyphicon {
   position: absolute;
   padding: 10px;
   pointer-events: none;
 }
-
+*/
 /* align icon */
-.left-addon .glyphicon  { left:  0px;}
+/*.left-addon .glyphicon  { left:  0px;}
 .right-addon .glyphicon { right: 0px;}
-
+*/
 /* add padding  */
-.left-addon input  { padding-left:  30px; }
+/*.left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+*/
 
-.row.checkout-title {
+/* End here */
+
+/*.checkout-title {
     text-align: center;
     background-color: #01516F;
     height: 55px;
@@ -52,10 +55,10 @@
     line-height: 55px;
     color: white;
     font-weight: lighter;
-}
-input.error {
+}*/
+/*input.error {
     border-color: red;
-}
+}*/
 /*#uname{
     line-height: 25px;
     font-size: 21px;
@@ -169,16 +172,17 @@ input.error {
     font-size: 28px;
     color: #3096B1;
 }*/
-input#password1 {
+/*input#password1 {
     height: 65px;
-}
+}*/
 
-label.error{
+/*label.error{
     display: block;
     font-size: 14px;
     font-weight: normal;
     text-align: right;
-}
+    margin-right: 25px;
+}*/
 
 
 /*.login-form__label{
@@ -1078,7 +1082,7 @@ span.icon.pencil.white {
 
 
 /*Shopping cart */
-.cart {
+/*.cart {
 
   border: 1px solid #ddd;
   border-top: 8px solid;
@@ -1086,9 +1090,9 @@ span.icon.pencil.white {
   width:80%;
   margin-top: 55px;
   margin-left: 100px;
-}
+}*/
 
-.upsell {
+/*.upsell {
 
   border: 1px solid #ddd;
   border-top: 8px solid;
@@ -1098,36 +1102,36 @@ span.icon.pencil.white {
   margin-left: 100px;
  
 }
+*/
 
-
-.padd{
-  padding: 20px 20px 30px 30px;
+/*.padd{
+    padding: 20px 20px 30px 30px;
 }
 
 .hr-padd{
-  margin: 0px 20px 0px 30px;
+    margin: 0px 20px 0px 30px;
 }
 
 hr {
     margin-top: 10px;
     margin-bottom: 15px;
-  border: 0;
-  border-top: 1px solid #eeeeee; 
+    border: 0;
+    border-top: 1px solid #eeeeee; 
 }
 .black{
   font-family: Avenir Next,AvenirLTStd-Book;
   color: #000;
   font-size: 18px;
-}
+}*/
 
-.bl{
+/*.bl{
   font-family: Avenir Next,AvenirLTStd-Book;
   color: #000;
   font-size: 18px;
   font-weight: 600;
-}
+}*/
 
-.amt{
+/*.amt{
   font-family: Avenir Next,AvenirLTStd-Book;
   color: #000;
   font-size: 38px;
@@ -1139,9 +1143,9 @@ hr {
   color: #000;
   font-size: 38px;
   font-weight: 400;
-}
+}*/
 
-.cep{
+/*.cep{
   color: #3095b4;
 }
 
@@ -1172,7 +1176,7 @@ hr {
   background-color: #fff;
   color: #3095b4;
   font-size: 16px;
-}
+}*/
 
 .social {
 	width:45px;

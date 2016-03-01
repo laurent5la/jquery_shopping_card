@@ -26,3 +26,12 @@
 #billingform__input--div {
 		margin-bottom: 40px;
 }
+
+
+label.error{
+    @extend %label_error;
+}
+
+input.error {
+    border-color: red;
+}

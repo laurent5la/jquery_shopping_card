@@ -1,63 +1,216 @@
-.container-fluid {
+.container .checkout-title {
+  text-align: center;
+  background-color: #01516F;
+  height: 55px;
+  margin-bottom: 77px;
+  font-size: 24px;
+  line-height: 55px;
+  color: white;
+  font-weight: lighter; }
+
+.container .container-fluid {
   margin-left: 5%;
   margin-right: 5%; }
-  .container-fluid .row.second {
+  .container .container-fluid .row.second {
     margin-top: 30px; }
-  .container-fluid .row.loginForm .login-form__label, .container-fluid .row.loginForm .row.billingForm .billingform__label, .container-fluid .row.billingForm .row.loginForm .billingform__label {
+  .container .container-fluid .row.loginForm {
+    /* Declaring mixins */
+    /* Ends here */
+    /* Adding the Glyphicon */
+    /* End here */ }
+    .container .container-fluid .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.loginForm .billingform__label {
+      float: left;
+      font-size: 32px;
+      font-weight: 100;
+      margin-bottom: 30px; }
+    .container .container-fluid .row.loginForm label.error {
+      display: block;
+      font-size: 14px;
+      font-weight: normal;
+      text-align: right;
+      margin-right: 25px; }
+    .container .container-fluid .row.loginForm .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.loginForm .cart, .container .container-fluid .row.loginForm .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.loginForm .upsell {
+      border: 1px solid #ddd;
+      border-top: 8px solid;
+      border-top-color: #3095b4;
+      width: 80%;
+      margin-top: 55px;
+      margin-left: 100px; }
+    .container .container-fluid .row.loginForm #uname, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword {
+      line-height: 25px;
+      font-size: 21px;
+      font-weight: inherit;
+      color: #3096B1;
+      padding-left: 45px;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+      .container .container-fluid .row.loginForm #uname:focus, .container .container-fluid .row.loginForm #email:focus, .container .container-fluid .row.loginForm #password1:focus, .container .container-fluid .row.loginForm #cpassword:focus {
+        border-color: #66afe9;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        border-width: thin;
+        border-top-style: double;
+        border-left-style: double; }
+    .container .container-fluid .row.loginForm #uname.error {
+      border-color: red; }
+    .container .container-fluid .row.loginForm #email.error {
+      border-color: red; }
+    .container .container-fluid .row.loginForm #password1.error {
+      border-color: red; }
+    .container .container-fluid .row.loginForm #cpassword.error {
+      border-color: red; }
+    .container .container-fluid .row.loginForm input {
+      height: 65px;
+      width: 500px;
+      line-height: 25px;
+      color: #3096B1;
+      font-size: 28px; }
+    .container .container-fluid .row.loginForm .login-form__login-text {
+      color: #3096B1; }
+    .container .container-fluid .row.loginForm .inner-addon {
+      position: relative; }
+    .container .container-fluid .row.loginForm .inner-addon .glyphicon {
+      position: absolute;
+      padding: 10px;
+      pointer-events: none; }
+    .container .container-fluid .row.loginForm .left-addon .glyphicon {
+      left: 0px; }
+    .container .container-fluid .row.loginForm .right-addon .glyphicon {
+      right: 0px; }
+    .container .container-fluid .row.loginForm .left-addon input {
+      padding-left: 30px; }
+    .container .container-fluid .row.loginForm .right-addon input {
+      padding-right: 30px; }
+  .container .container-fluid .row.billingForm .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.billingForm .login-form__label, .container .container-fluid .row.billingForm .billingform__label {
     float: left;
     font-size: 32px;
     font-weight: 100;
     margin-bottom: 30px; }
-  .container-fluid .row.loginForm input {
-    height: 65px;
-    width: 500px;
-    line-height: 25px;
-    color: #3096B1;
-    font-size: 28px; }
-  .container-fluid .row.loginForm #uname, .container-fluid .row.loginForm #email, .container-fluid .row.loginForm #password1, .container-fluid .row.loginForm #cpassword {
-    line-height: 25px;
-    font-size: 21px;
-    font-weight: inherit;
-    color: #3096B1;
-    padding-left: 45px;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
-    .container-fluid .row.loginForm #uname:focus, .container-fluid .row.loginForm #email:focus, .container-fluid .row.loginForm #password1:focus, .container-fluid .row.loginForm #cpassword:focus {
-      border-color: #66afe9;
-      outline: 0;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-      border-width: thin;
-      border-top-style: double;
-      border-left-style: double; }
-  .container-fluid .row.loginForm #uname.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #email.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #password1.error {
-    border-color: red; }
-  .container-fluid .row.loginForm #cpassword.error {
-    border-color: red; }
-  .container-fluid .row.loginForm .login-form__login-text {
-    color: #3096B1; }
-  .container-fluid .row.billingForm .row.loginForm .login-form__label, .container-fluid .row.loginForm .row.billingForm .login-form__label, .container-fluid .row.billingForm .billingform__label {
-    float: left;
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container-fluid .row.billingForm .billingform-div input {
+  .container .container-fluid .row.billingForm label.error {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 25px; }
+  .container .container-fluid .row.billingForm .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.billingForm .cart, .container .container-fluid .row.billingForm .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.billingForm .upsell {
+    border: 1px solid #ddd;
+    border-top: 8px solid;
+    border-top-color: #3095b4;
+    width: 80%;
+    margin-top: 55px;
+    margin-left: 100px; }
+  .container .container-fluid .row.billingForm .billingform-div input {
     height: 65px;
     width: 500px;
     line-height: 25px;
     font-size: 21px;
     color: #3096B1;
     font-weight: inherit; }
-  .container-fluid .row.billingForm #billingform__input--div {
+  .container .container-fluid .row.billingForm #billingform__input--div {
     margin-bottom: 40px; }
-  .container-fluid .col-md-7 {
+  .container .container-fluid .row.billingForm input.error {
+    border-color: red; }
+  .container .container-fluid .row.shoppingCart .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.shoppingCart .login-form__label, .container .container-fluid .row.shoppingCart .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.shoppingCart .billingform__label {
+    float: left;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 30px; }
+  .container .container-fluid .row.shoppingCart .row.loginForm label.error, .container .container-fluid .row.loginForm .row.shoppingCart label.error, .container .container-fluid .row.shoppingCart .row.billingForm label.error, .container .container-fluid .row.billingForm .row.shoppingCart label.error {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 25px; }
+  .container .container-fluid .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.shoppingCart .upsell {
+    border: 1px solid #ddd;
+    border-top: 8px solid;
+    border-top-color: #3095b4;
+    width: 80%;
+    margin-top: 55px;
+    margin-left: 100px; }
+  .container .container-fluid .row.shoppingCart .padd {
+    padding: 20px 20px 30px 30px; }
+  .container .container-fluid .row.shoppingCart .hr-padd {
+    margin: 0px 20px 0px 30px; }
+  .container .container-fluid .row.shoppingCart hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #eeeeee; }
+  .container .container-fluid .row.shoppingCart .black {
+    font-family: Avenir Next,AvenirLTStd-Book;
+    color: #000;
+    font-size: 18px; }
+  .container .container-fluid .row.shoppingCart .amt-b {
+    font-family: Avenir Next,AvenirLTStd-Book;
+    color: #000;
+    font-size: 38px;
+    font-weight: 400; }
+  .container .container-fluid .row.shoppingCart .amt {
+    font-family: Avenir Next,AvenirLTStd-Book;
+    color: #000;
+    font-size: 38px;
+    font-weight: 300; }
+  .container .container-fluid .row.shoppingCart .cep {
+    color: #3095b4; }
+  .container .container-fluid .row.shoppingCart .right-float {
+    float: right; }
+  .container .container-fluid .row.shoppingCart .grey {
+    font-family: Avenir Next,AvenirLTStd-Book;
+    color: #999;
+    font-size: 18px; }
+  .container .container-fluid .row.shoppingCart .promo {
+    padding-left: 20px;
+    margin-left: 20px;
+    width: 500px;
+    height: 75px; }
+  .container .container-fluid .row.shoppingCart .apply {
+    border-radius: 25px;
+    border: 1px solid gray;
+    width: 145px;
+    height: 40px;
+    border-color: #3095b4;
+    background-color: #fff;
+    color: #3095b4;
+    font-size: 16px; }
+  .container .container-fluid .row.Upsell .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.Upsell .login-form__label, .container .container-fluid .row.Upsell .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.Upsell .billingform__label {
+    float: left;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 30px; }
+  .container .container-fluid .row.Upsell .row.loginForm label.error, .container .container-fluid .row.loginForm .row.Upsell label.error, .container .container-fluid .row.Upsell .row.billingForm label.error, .container .container-fluid .row.billingForm .row.Upsell label.error {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 25px; }
+  .container .container-fluid .row.Upsell .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.Upsell .cart, .container .container-fluid .row.Upsell .upsell {
+    border: 1px solid #ddd;
+    border-top: 8px solid;
+    border-top-color: #3095b4;
+    width: 80%;
+    margin-top: 55px;
+    margin-left: 100px; }
+  .container .container-fluid .row.Upsell .padd {
+    padding: 20px 20px 30px 30px; }
+  .container .container-fluid .row.Upsell hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #eeeeee; }
+  .container .container-fluid .row.Upsell .black {
+    font-family: Avenir Next,AvenirLTStd-Book;
+    color: #000;
+    font-size: 18px; }
+  .container .container-fluid .row.Upsell .cep {
+    color: #3095b4; }
+  .container .container-fluid .row.Upsell .right-float {
+    float: right; }
+  .container .container-fluid .col-md-7 {
     margin-bottom: 50px; }
 
 /*# sourceMappingURL=app.css.map */

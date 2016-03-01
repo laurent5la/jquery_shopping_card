@@ -1,0 +1,50 @@
+@import "utilities/variables";
+@import "mixins/form_labels";
+
+
+.cart {
+	 @extend %cart_upsell_layout;
+}
+
+.padd{
+    @include padd;
+}
+
+.hr-padd{
+    @include hr-padd;
+}
+
+hr {
+    @include hr; 
+}
+.black{
+  @include black;
+}
+
+.amt-b {
+	@include amt-b;
+}
+.amt{
+	@include amt;
+}
+
+.cep{
+  @include cep;
+}
+
+.right-float{
+  @include right-float;
+
+}
+
+.grey{
+	@include grey;
+  }
+
+.promo{
+	@include promo;
+  }
+
+.apply{
+	@include apply;
+  }

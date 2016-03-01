@@ -3,14 +3,15 @@
 		<form class=" form-group"id="loginform" role="form">
 			<div class="form-group">
 				<span class="login-icon inner-addon left-addon">
-					<i class="  glyphicon glyphicon-user"></i>
+					<i class="glyphicon glyphicon-user"></i>
 				</span>	
 				<input class=""id="uname" type="text" name="uname" placeholder="Username"> 
 			</div>
 			<br>
+
 			<div class="form-group">
 				<span class="login-icon inner-addon left-addon">
-					<i class="  glyphicon glyphicon-envelope"></i>
+					<i class="glyphicon glyphicon-envelope"></i>
 				</span>	
 			    <input id="email" type="text" name="email" placeholder="Email"/>
 			</div>
