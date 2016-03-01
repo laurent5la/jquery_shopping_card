@@ -34,7 +34,7 @@
 		</div>
 		<div class="col-md-7">
 
-			<div class="row shoppingCart">
+			<div class="row shoppingCart" id="shopping_cart">
 				@include('partials.shoppingcart')   
 			</div>
 			<div class="row second Upsell">
