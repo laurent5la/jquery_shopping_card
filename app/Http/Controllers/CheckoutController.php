@@ -144,7 +144,7 @@
 
             return view('checkout',array('items' => $items, 'dollars'=>$dollars, 'cents'=>$cents, 'taxD' => $taxD,
                 'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'promoD' => $promoD, 'promoC' => $promoC, 'j'=>$j));
+                'totalC' => $totalC, 'promoD' => $promoD, 'promoC' => $promoC, 'j'=>$j, 'products' =>$products));
 
         }
 
