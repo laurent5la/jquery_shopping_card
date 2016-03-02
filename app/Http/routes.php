@@ -14,4 +14,8 @@
 Route::get('/cos', 'ProductsController@index');
 Route::get('/coo', 'ProductsController@index');
 Route::post('/checkout', 'CheckoutController@index');
+
+// AJAX Calls
+Route::post('/annual','CheckoutController@annual');
 Route::post('/coupon','CheckoutController@coupon');
+Route::post('/close','CheckoutController@close');
