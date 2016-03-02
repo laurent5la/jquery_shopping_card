@@ -23,10 +23,9 @@
 		<div id="billingform__input--div" class="form-group">
 			<input type="text" name="cvv" placeholder="CVV" class="form-control"/>
 		</div>
-		<div id="billingform__input--div" class="form-group">
-			<input type="checkbox" name="" value="" class="form-control">Save payment information for future use<br>
+		<div id="billingform__input--div" class="checkbox">
+			<label><input type="checkbox" name="" value="" id="savePaymentInfo" class="">Save payment information for future use</label><br>
 		</div>
-
 		<div id="billingform__input--div" class="form-group">
 			<input type="text" id="bill_to_address_line1"name="address" placeholder="Address Line 1" class="form-control"/>
 		</div>

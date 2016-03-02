@@ -1,11 +1,9 @@
-$color_one: green;
-$color_two: red;
-$login_font_name: Avenir, "Avenir Next", AvenirLTStd-Book;
-$checkout_title : #01516F;
-$login_font_color : #3096B1;
-$login_onFocus_border_color: #66afe9;
-$billing_and_upsell_margin_top : 30px;
-$container_margin :5%;
+@import "utilities/variables";
+@import "mixins/form_labels";
+
+* {
+  font-family: Avenir, "Avenir Next", AvenirLTStd-Book; 
+}
 
 .container{
     .checkout-title {
@@ -33,6 +31,9 @@ $container_margin :5%;
                 @import "loginform.scss";
             
             }
+            &.personalinfoForm {
+                @import "personalinfoForm.scss";
+            }
             &.billingForm {
                 @import "billingform.scss";
             }
@@ -42,9 +43,26 @@ $container_margin :5%;
             &.Upsell{
                 @import "upsell.scss";
             }
+
         }
         .col-md-7 {
             margin-bottom:50px;
+        }
+
+        .terms_conditions {
+            // background-color:red;
+            //width:95%;
+
+            .termsconditions__label {
+                @extend %form_label1;
+
+            }
+            #terms{
+                border:solid 1px;
+                padding: 20px 20px 20px 20px;
+                margin-top:35x;
+            }
+            
         }
     }
 }

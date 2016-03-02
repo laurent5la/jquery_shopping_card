@@ -1,25 +1,13 @@
 @import "utilities/variables";
 @import "mixins/form_labels";
 
+@import "combined_cart_upsell.scss";
+
 
 .upsell {
 	 @extend %cart_upsell_layout;
 }
-.padd{
-    @include padd;
-}
 
-hr {
-    @include hr; 
-}
-.black{
-  @include black;
-}
-.cep{
-  @include cep;
-}
-
-.right-float{
-  @include right-float;
-
+.upsell__label {
+	@extend %form_label2;
 }

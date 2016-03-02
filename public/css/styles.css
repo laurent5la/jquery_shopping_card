@@ -1,8 +1,94 @@
 
+
+
 /*starts here*/
 /* enable absolute positioning */
 
-.cart__label{
+/*    Footer Code 
+#footer #contact-us-section .title {
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#footer #links-section .links a {
+    font-size: 13px;
+}
+#footer #links-section a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (min-width: 992px)
+.col-md-3 {
+    width: 25%;
+}
+
+@media (min-width: 992px)
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}
+
+.text-uppercase, .initialism {
+    text-transform: uppercase;
+}
+
+#footer #contact-us-section li, #footer #contact-us-section a {
+    color: #FFF;
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+#footer #contact-us-section {
+    background-color: #005172;
+    color: #FFF;
+    margin: 0 auto;
+    padding: 40px 10%;
+}
+
+#footer #links-section {
+    background-color: #232323;
+    color: #868686;
+    margin: 0px auto;
+    padding: 50px 10% 25px 10%;
+}
+
+#footer #links-section .links {
+    margin-bottom: 70px;
+}
+#footer #links-section .links .col-sm-12 {
+    padding-bottom: 5px;
+}
+@media (min-width: 992px)
+.col-md-2 {
+    width: 16.66666667%;
+}
+
+img {
+    height:20px;
+}
+ Footer Code Ends here ...............*/
+
+/*#footer{
+    display: block;
+    background-color: #005172;
+}*/
+
+/*.cart__label{
     float: left;
     font-size: 32px;
     font-weight: 100;
@@ -15,12 +101,12 @@
     font-weight: 100;
     margin-left: 100px;
     margin-bottom: 30px;
-}
+}*/
 
-.login-icon{
+/*.login-icon{
     font-size: 34px;
     color: #3096B1;
-}
+}*/
 
 /* for the glyphicon icons */
 /*.inner-addon {
@@ -1178,10 +1264,36 @@ hr {
   font-size: 16px;
 }*/
 
+/*.productName{
+
+    font-size: 30px;
+
+}
+
+.productPrice{
+
+    font-size: 35px;
+
+}*/
 .social {
 	width:45px;
 	height:45px;
 }
 
 
+/*#main-container {
+    background-color:green;
+}
+
+@media only screen and (max-width: 1150px) {
+    #main-container{
+        background-color: blue;
+
+    }
+    .col-md-5{
+        width: 100%;
+    }
+}
+
+*/
 /*Shopping cart */

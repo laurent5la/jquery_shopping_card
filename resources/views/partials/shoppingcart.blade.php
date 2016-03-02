@@ -9,15 +9,15 @@
                 </div>
                 <div class="row padd">
                     <div class="col-md-6" >
-                        <h3>{{$ProductName}}<sup>TM</sup></h3>
+                        <p class="productName">{{$ProductName}}<sup>TM</sup></p>
                     </div>
-                    <div class="col-md-6" ><h1 class="cep right-float"><sup>$</sup>{{$dollars}}<sup>{{$cents}}</sup></h1></div>
+                    <div class="col-md-6" ><p class="cep right-float productPrice"><sup>$</sup>{{$dollars}}<sup>{{$cents}}</sup></p></div>
                     <div class="col-md-6" ><p class="black"> Adobe Systems Inc. </p> </div>
                     <div class="col-md-6" ><p class="black right-float"> per month </p> </div>
                     <div class="col-md-6" ><p class="grey"> #15-048-3782 </p> </div>        
                 </div>
-                <hr class="hr-padd padd">
-                <div class="row padd cmargin">
+                <hr>
+                <div class="row padd">
                     <div class="col-md-5" ><p class="black"> Annual Pricing - <sup>$</sup>499<sup>99</sup> </p> </div>
                     <div class="col-md-3" ><p class="bl"> Save 27% </p> </div>
                     <div class="col-md-4" ><button type="submit" class="apply" id="annual_btn" value="{{$productId}}">Apply to Price</button></div>

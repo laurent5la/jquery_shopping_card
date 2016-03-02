@@ -2,23 +2,14 @@
 @import "mixins/form_labels";
 
 
+
+@import "combined_cart_upsell.scss";
+
 .cart {
 	 @extend %cart_upsell_layout;
 }
-
-.padd{
-    @include padd;
-}
-
-.hr-padd{
-    @include hr-padd;
-}
-
-hr {
-    @include hr; 
-}
-.black{
-  @include black;
+.cart__label{
+  @extend %form_label2;
 }
 
 .amt-b {
@@ -27,16 +18,6 @@ hr {
 .amt{
 	@include amt;
 }
-
-.cep{
-  @include cep;
-}
-
-.right-float{
-  @include right-float;
-
-}
-
 .grey{
 	@include grey;
   }
@@ -45,6 +26,5 @@ hr {
 	@include promo;
   }
 
-.apply{
-	@include apply;
-  }
+
+

@@ -1,0 +1,34 @@
+
+.padd{
+    @include padd;
+}
+
+hr {
+    @include hr; 
+}
+
+.black{
+  @include black;
+}
+
+.cep{
+  @include cep;
+}
+
+.right-float{
+  @include right-float;
+
+}
+
+.productName {
+	font-size:30px;
+
+}
+
+.productPrice {
+	font-size:35px;
+}
+
+.apply{
+	@include apply;
+  }

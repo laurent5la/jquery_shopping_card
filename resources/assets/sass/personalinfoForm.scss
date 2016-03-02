@@ -1,11 +1,7 @@
 @import "utilities/variables";
 @import "mixins/form_labels";
 
-
-
-
-
-.billingform-div {
+.personalinfoform-div {
 	input {
 	    height: $input_height;
     	width: $input_width;
@@ -14,19 +10,14 @@
 	    color: $input_color_blue;
 	    font-weight: inherit;
 	}
-
 }
+.personalinfoform__label{
 
-.billingform__label{
-
-		@extend %form_label;
-	}
-
-
-#billingform__input--div {
+		@extend %form_label1;
+}
+#personalinfoform__input--div {
 		margin-bottom: 40px;
 }
-
 
 label.error{
     @extend %label_error;
@@ -35,10 +26,10 @@ label.error{
 input.error {
     border-color: red;
 }
-
 .form-control{
 	@extend %dropdown;
 }
-#savePaymentInfo{
-	height:15px;
+
+#addressSame{
+    height:15px;
 }

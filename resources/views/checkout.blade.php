@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <link rel="stylesheet" type="text/css" href="css/app.css"></link>
- --><link rel="stylesheet" type="text/css" href="css/styles.css"></link>
-<!-- <link rel-"stylesheet" type="text/css" href="css/style.css"></link> -->
-<link rel-"stylesheet" type="text/css" href="css/main.css"></link>
 
 @include("partials.head")
 
+<body>
 <div class="container" id="main-container">
 
 
@@ -18,13 +15,13 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="col-md-5">
+		<div class="col-md-5" style="overflow:auto;">
 			<div class="row loginForm">
 				@include('partials.loginform')  
 			</div>
 
 
-			<div class="row personalinfoForm">
+			<div class="row second personalinfoForm">
 				@include('partials.personalInformation')
 			</div>
 
@@ -32,7 +29,7 @@
 				@include('partials.billingform')   
 			</div>
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-7" style="overflow:auto;">
 			<div class="row shoppingCart">
 				@include('partials.shoppingcart')   
 			</div>
@@ -42,13 +39,16 @@
 		</div> 
 		
 
-		<div class="row" style="width:95%;">
-		<br>
-		<br>
-			<div style="float:left;font-size:32px;font-weight:100;margin-bottom:30px;">Terms and Conditions
-				<p style="border:solid 1px;padding: 20px 20px 20px 20px;margin-top:10px;">Lorem ipsum dolor sit amet, mea reque iusto quaerendum id, zril commodo persequeris ut has. Cu sit admodum vulputate, eos in decore audiam, in magna eirmod periculis per. Nisl diam ponderum eu has, te assum solet accusamus sea, munere minimum mnesarchum quo eu. Alia habeo pri ea, eum id verear definitiones.
-				</p>
-			</div>
+		<div class="terms_conditions col-md-12 second">
+		<!-- <br>
+		<br>-->
+			<label class="termsconditions__label">Terms and Conditions</label>
+			<br>
+
+				<p id="terms">Lorem ipsum dolor sit amet, mea reque iusto quaerendum id, zril commodo persequeris ut has. Cu sit admodum vulputate, eos in decore audiam, in magna eirmod periculis per. Nisl diam ponderum eu has, te assum solet accusamus sea, munere minimum mnesarchum quo eu. Alia habeo pri ea, eum id verear definitiones.
+				</p> 
+
+		
 		</div>
 
 
