@@ -21,7 +21,7 @@
   border-top: 8px solid;
   margin-top: 55px; }
 
-.container .container-fluid .row.loginForm #uname, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword, .container .container-fluid .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.billingForm .billingform-div input {
+.container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword, .container .container-fluid .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.billingForm .billingform-div input {
   height: 75px;
   width: 90%;
   line-height: 25px;
@@ -75,7 +75,7 @@
       border: 1px solid #ddd;
       border-top: 8px solid;
       margin-top: 55px; }
-    .container .container-fluid .row.loginForm #uname, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.loginForm input, .container .container-fluid .row.loginForm .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.loginForm input {
+    .container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.loginForm input, .container .container-fluid .row.loginForm .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.loginForm input {
       height: 75px;
       width: 90%;
       line-height: 25px;
@@ -85,19 +85,19 @@
     .container .container-fluid .row.loginForm .row.personalinfoForm .form-control, .container .container-fluid .row.personalinfoForm .row.loginForm .form-control, .container .container-fluid .row.loginForm .row.billingForm .form-control, .container .container-fluid .row.billingForm .row.loginForm .form-control {
       width: 90%;
       height: 70px; }
-    .container .container-fluid .row.loginForm #uname, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword {
+    .container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword {
       padding-left: 45px;
       border: 1px solid #ccc;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
-      .container .container-fluid .row.loginForm #uname:focus, .container .container-fluid .row.loginForm #email:focus, .container .container-fluid .row.loginForm #password1:focus, .container .container-fluid .row.loginForm #cpassword:focus {
+      .container .container-fluid .row.loginForm #username:focus, .container .container-fluid .row.loginForm #email:focus, .container .container-fluid .row.loginForm #password1:focus, .container .container-fluid .row.loginForm #cpassword:focus {
         border-color: #66afe9;
         outline: 0;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
         border-width: thin;
         border-top-style: double;
         border-left-style: double; }
-    .container .container-fluid .row.loginForm #uname.error {
+    .container .container-fluid .row.loginForm #username.error {
       border-color: red; }
     .container .container-fluid .row.loginForm #email.error {
       border-color: red; }
@@ -145,7 +145,7 @@
     border: 1px solid #ddd;
     border-top: 8px solid;
     margin-top: 55px; }
-  .container .container-fluid .row.personalinfoForm .row.loginForm #uname, .container .container-fluid .row.loginForm .row.personalinfoForm #uname, .container .container-fluid .row.personalinfoForm .row.loginForm #email, .container .container-fluid .row.loginForm .row.personalinfoForm #email, .container .container-fluid .row.personalinfoForm .row.loginForm #password1, .container .container-fluid .row.loginForm .row.personalinfoForm #password1, .container .container-fluid .row.personalinfoForm .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.personalinfoForm #cpassword, .container .container-fluid .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.personalinfoForm input {
+  .container .container-fluid .row.personalinfoForm .row.loginForm #username, .container .container-fluid .row.loginForm .row.personalinfoForm #username, .container .container-fluid .row.personalinfoForm .row.loginForm #email, .container .container-fluid .row.loginForm .row.personalinfoForm #email, .container .container-fluid .row.personalinfoForm .row.loginForm #password1, .container .container-fluid .row.loginForm .row.personalinfoForm #password1, .container .container-fluid .row.personalinfoForm .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.personalinfoForm #cpassword, .container .container-fluid .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.personalinfoForm input {
     height: 75px;
     width: 90%;
     line-height: 25px;
@@ -182,7 +182,7 @@
     border: 1px solid #ddd;
     border-top: 8px solid;
     margin-top: 55px; }
-  .container .container-fluid .row.billingForm .row.loginForm #uname, .container .container-fluid .row.loginForm .row.billingForm #uname, .container .container-fluid .row.billingForm .row.loginForm #email, .container .container-fluid .row.loginForm .row.billingForm #email, .container .container-fluid .row.billingForm .row.loginForm #password1, .container .container-fluid .row.loginForm .row.billingForm #password1, .container .container-fluid .row.billingForm .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.billingForm #cpassword, .container .container-fluid .row.billingForm .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.billingForm input, .container .container-fluid .row.billingForm .billingform-div input {
+  .container .container-fluid .row.billingForm .row.loginForm #username, .container .container-fluid .row.loginForm .row.billingForm #username, .container .container-fluid .row.billingForm .row.loginForm #email, .container .container-fluid .row.loginForm .row.billingForm #email, .container .container-fluid .row.billingForm .row.loginForm #password1, .container .container-fluid .row.loginForm .row.billingForm #password1, .container .container-fluid .row.billingForm .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.billingForm #cpassword, .container .container-fluid .row.billingForm .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.billingForm input, .container .container-fluid .row.billingForm .billingform-div input {
     height: 75px;
     width: 90%;
     line-height: 25px;
@@ -219,7 +219,7 @@
     border: 1px solid #ddd;
     border-top: 8px solid;
     margin-top: 55px; }
-  .container .container-fluid .row.shoppingCart .row.loginForm #uname, .container .container-fluid .row.loginForm .row.shoppingCart #uname, .container .container-fluid .row.shoppingCart .row.loginForm #email, .container .container-fluid .row.loginForm .row.shoppingCart #email, .container .container-fluid .row.shoppingCart .row.loginForm #password1, .container .container-fluid .row.loginForm .row.shoppingCart #password1, .container .container-fluid .row.shoppingCart .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.shoppingCart #cpassword, .container .container-fluid .row.shoppingCart .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.shoppingCart input, .container .container-fluid .row.shoppingCart .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.shoppingCart input {
+  .container .container-fluid .row.shoppingCart .row.loginForm #username, .container .container-fluid .row.loginForm .row.shoppingCart #username, .container .container-fluid .row.shoppingCart .row.loginForm #email, .container .container-fluid .row.loginForm .row.shoppingCart #email, .container .container-fluid .row.shoppingCart .row.loginForm #password1, .container .container-fluid .row.loginForm .row.shoppingCart #password1, .container .container-fluid .row.shoppingCart .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.shoppingCart #cpassword, .container .container-fluid .row.shoppingCart .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.shoppingCart input, .container .container-fluid .row.shoppingCart .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.shoppingCart input {
     height: 75px;
     width: 90%;
     line-height: 25px;
@@ -298,7 +298,7 @@
     border: 1px solid #ddd;
     border-top: 8px solid;
     margin-top: 55px; }
-  .container .container-fluid .row.Upsell .row.loginForm #uname, .container .container-fluid .row.loginForm .row.Upsell #uname, .container .container-fluid .row.Upsell .row.loginForm #email, .container .container-fluid .row.loginForm .row.Upsell #email, .container .container-fluid .row.Upsell .row.loginForm #password1, .container .container-fluid .row.loginForm .row.Upsell #password1, .container .container-fluid .row.Upsell .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.Upsell #cpassword, .container .container-fluid .row.Upsell .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.Upsell input, .container .container-fluid .row.Upsell .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.Upsell input {
+  .container .container-fluid .row.Upsell .row.loginForm #username, .container .container-fluid .row.loginForm .row.Upsell #username, .container .container-fluid .row.Upsell .row.loginForm #email, .container .container-fluid .row.loginForm .row.Upsell #email, .container .container-fluid .row.Upsell .row.loginForm #password1, .container .container-fluid .row.loginForm .row.Upsell #password1, .container .container-fluid .row.Upsell .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.Upsell #cpassword, .container .container-fluid .row.Upsell .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.Upsell input, .container .container-fluid .row.Upsell .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.Upsell input {
     height: 75px;
     width: 90%;
     line-height: 25px;
