@@ -26,43 +26,52 @@
             &.second {
                 margin-top:$billing_and_upsell_margin_top;
             }
-
             &.loginForm {
-                @import "loginform.scss";
-            
+                @import "_loginform.scss";
             }
             &.personalinfoForm {
-                @import "personalinfoForm.scss";
+                @import "_personalinfoForm.scss";
             }
             &.billingForm {
-                @import "billingform.scss";
+                @import "_billingform.scss";
             }
             &.shoppingCart{
-                @import "shoppingCart.scss";
+                @import "_shoppingCart.scss";
             }
             &.Upsell{
-                @import "upsell.scss";
+                @import "_upsell.scss";
             }
-
         }
         .col-md-7 {
             margin-bottom:50px;
         }
-
         .terms_conditions {
-            // background-color:red;
-            //width:95%;
-
             .termsconditions__label {
                 @extend %form_label1;
-
             }
             #terms{
                 border:solid 1px;
                 padding: 20px 20px 20px 20px;
                 margin-top:35x;
             }
-            
+        }
+        .finish_button {
+            float:right;
+            font-size:20px;
+            margin-top:40px;
+            margin-bottom:60px;
+
+            #company_taxExempt{
+                margin-top:10px;
+            }
+            #agree_terms {
+                margin-top:10px;
+            }
+            .finish {
+                margin-top:10px;
+                float:right;
+                @include button_black;
+            }
         }
     }
 }

@@ -3,15 +3,9 @@
 
 /* Declaring mixins */
 %loginform_input{
-    line-height: 25px;
-    font-size: 21px;
-    font-weight: inherit;
-    color: $input_color_blue;
+    @extend %input_textbox;
     padding-left: 45px;
-    background-color: #fff;
-    background-image: none;
     border: 1px solid #ccc;
-    border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
         &:focus {
@@ -47,17 +41,8 @@
     @extend %loginform_input;   
 }
 
-
-input {
-    height: $input_height;
-    width: $input_width;
-    line-height: $input_line-height;
-    color: $input_color_blue;
-    font-size: 28px;
-}
-
 .login-form__label {
-    @extend %form_label;
+    @extend %form_label1;
 }
 
 .login-form__login-text{
@@ -67,6 +52,7 @@ input {
 label.error{
     @extend %label_error;
 }
+
 /* Adding the Glyphicon */
 .inner-addon {
     position: relative;
@@ -86,5 +72,7 @@ label.error{
     font-size: 34px;
     color: $input_color_blue;
 }
-
+.progress {
+    width: 90%;
+}
 /* End here */

@@ -1275,10 +1275,10 @@ hr {
     font-size: 35px;
 
 }*/
-.social {
+/*.social {
 	width:45px;
 	height:45px;
-}
+}*/
 
 .hidden{
     display:none;
@@ -1300,19 +1300,5 @@ hr {
 
 
 
-/*#main-container {
-    background-color:green;
-}
 
-@media only screen and (max-width: 1150px) {
-    #main-container{
-        background-color: blue;
-
-    }
-    .col-md-5{
-        width: 100%;
-    }
-}
-
-*/
 /*Shopping cart */

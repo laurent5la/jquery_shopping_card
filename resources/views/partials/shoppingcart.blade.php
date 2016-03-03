@@ -21,16 +21,16 @@ $times = 0;
 		<div class="col-md-5" >
 			<p class="productName">{{$item->name}}<sup>TM</sup></p>
 		</div>
-		<div class="col-md-5"><p class="cep right-float productPrice" id="price"><sup>$</sup>{{$dollars}}<sup>{{$cents}}</sup></p></div>
-		<div class="col-md-2">
+		<div class="col-md-6"><p class="cep right-float productPrice" id="price"><sup>$</sup>{{$dollars}}<sup>{{$cents}}</sup></p></div>
+		<div class="col-md-1">
 			<button type="button" class="close close_btn" aria-label="Close" data-id="{{$id}}">
-				<span aria-hidden="true"> × </span>
+				 × 
 			</button>
 			<input type="hidden" id="product_id" value="{{$id}}"></input>
 		</div>
 
 		<div class="col-md-5" ><p class="black"> Adobe Systems Inc. </p> </div>
-		<div class="col-md-5" ><p class="black right-float"> per month </p> </div>
+		<div class="col-md-6" ><p class="black right-float"> per month </p> </div>
 		<div class="col-md-6" ><p class="grey"> #15-048-3782 </p> </div>
 		<div class="col-md-6" ></div>          
 	</div>

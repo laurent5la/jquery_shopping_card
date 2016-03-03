@@ -1,13 +1,18 @@
 @import "utilities/variables";
 @import "mixins/form_labels";
 
-@import "combined_cart_upsell.scss";
+@import "_combined_cart_upsell.scss";
 
 
 .upsell {
 	 @extend %cart_upsell_layout;
+	 border-top-color: #898989;
 }
 
 .upsell__label {
 	@extend %form_label2;
+}
+
+#upsellApply {
+	@include button_black;
 }

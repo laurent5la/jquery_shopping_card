@@ -5,7 +5,7 @@
             <p class="productName">{{$products[$j]['name']}} <sup>TM</sup></p>
         </div>
         <div class="col-md-4">
-            <p class="cep right-float productPrice"><sup>$</sup>{{$products[$j]['quantity'][0]['price']['dollars']}}</p>
+            <p class="black right-float productPrice"><sup>$</sup>{{$products[$j]['quantity'][0]['price']['dollars']}}</p>
         </div>
         <div class="col-md-8" >
             <p class="black">{{$products[$j]['description_title']}}</p>

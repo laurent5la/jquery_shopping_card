@@ -19,7 +19,7 @@
         </div>
         <div id="personalinfoform__input--div" class="form-group">
             <select class="form-control bfh-states" data-country="countries_states1">
-                <option value="" disabled selected>State</option>
+                <option value="" selected disabled>State</option>
             </select>
         </div>
         <div id="personalinfoform__input--div" class="form-group">

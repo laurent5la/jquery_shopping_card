@@ -8,11 +8,9 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/app.css"></link>
-    
+    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <link rel="stylesheet" type="text/css" href="css/style.css"></link>
     <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css"></link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -23,10 +21,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/app.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="css/app.css"></link>
-     --><!-- <link rel="stylesheet" type="text/css" href="css/style.css"></link> -->
     <link href="css/bootstrap-formhelpers.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"></link> -->
     
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css"></link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> 

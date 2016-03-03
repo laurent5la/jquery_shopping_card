@@ -1,43 +1,29 @@
 @import "utilities/variables";
 @import "mixins/form_labels";
 
-
-
-
-
 .billingform-div {
 	input {
-	    height: $input_height;
-    	width: $input_width;
-    	line-height: $input_line-height;
-	    font-size: 21px;
-	    color: $input_color_blue;
-	    font-weight: inherit;
+	   @extend %input_textbox;
 	}
 
 }
-
 .billingform__label{
-
-		@extend %form_label;
-	}
-
+		@extend %form_label1;
+}
 
 #billingform__input--div {
 		margin-bottom: 40px;
 }
 
-
 label.error{
     @extend %label_error;
 }
-
 input.error {
     border-color: red;
 }
-
 .form-control{
 	@extend %dropdown;
+	border-radius: 0px;
 }
 #savePaymentInfo{
 	height:15px;

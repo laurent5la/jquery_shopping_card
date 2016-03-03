@@ -3,12 +3,7 @@
 
 .personalinfoform-div {
 	input {
-	    height: $input_height;
-    	width: $input_width;
-    	line-height: $input_line-height;
-	    font-size: 21px;
-	    color: $input_color_blue;
-	    font-weight: inherit;
+	    @extend %input_textbox;
 	}
 }
 .personalinfoform__label{
@@ -28,6 +23,7 @@ input.error {
 }
 .form-control{
 	@extend %dropdown;
+	border-radius: 0px;
 }
 
 #addressSame{
