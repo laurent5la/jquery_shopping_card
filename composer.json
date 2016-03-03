@@ -11,6 +11,7 @@
 	         "darryldecode/cart": "dev-master"
         },
 	"require-dev": {
+		"mockery/mockery": "dev-master@dev",
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1"
 	},

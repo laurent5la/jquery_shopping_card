@@ -14,11 +14,11 @@ class Kernel extends ConsoleKernel {
 		'App\Console\Commands\Inspire',
 	];
 
-	protected $middleware = [
-        //...
-        \Illuminate\Session\Middleware\StartSession::class,
-        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-];
+// 	protected $middleware = [
+//         //...
+//         \Illuminate\Session\Middleware\StartSession::class,
+//         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+// ];
 
 	/**
 	 * Define the application's command schedule.
