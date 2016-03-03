@@ -1,9 +1,13 @@
-<div class="personalinfoform-div">
+<div id="personalinfoform-div" class="personalinfoform-div">
     <label class="personalinfoform__label" for="personalinfoform">Personal Information</label>
+
+    <div id="personalinfoform__input--div" class="form-group" >
+        <textarea type="text" id="verifiedUserDetails" class="" style="display: none;"></textarea>
+    </div>
 
     <form role="form" id="personalinfoform" class="form-group">
         <div id="personalinfoform__input--div"class="form-group ">
-            <input type="text" name="fname" id="fname" placeholder="First Name" class="form-control"/>
+            <input type="text" name="fname" id="forename" placeholder="First Name" class="form-control"/>
         </div>
         <div id="personalinfoform__input--div" class="form-group">
             <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control"/>
@@ -31,8 +35,16 @@
         <div id="personalinfoform__input--div" class="form-group">
             <input type="text" name="phonenumber" placeholder="Phone Number" class="form-control bfh-phone" data-format="+1 (ddd) ddd-dddd"/>
         </div>
-        <div id="personalinfoform__input--div" class="checkbox">
-            <label><input type="checkbox" name="" value="" id="addressSame" class="">Billing address is same as personal address</label><br>
-        </div>
+
+
     </form>
+</div>
+    <div id="personalinfoform__input--div" class="checkbox">
+        <label><input type="checkbox" name="sameBillingAddressCheckbox" value="addressSame" class="">Billing address is same as personal address</label><br>
+    </div>
+
+
+    <div id="newAddress--div" class="checkbox" style="display: none" >
+        <label><input type="checkbox" name="" value="" id="newAddress" class="">Add new address</label><br>
+    </div>
 </div>

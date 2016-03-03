@@ -42,3 +42,7 @@
     <script src="js/bootstrap-formhelpers.min.js"></script>
     <script src="js/validation.js"></script>
     <script src="js/cybersource.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/billing.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/personalInformation.js"></script>
