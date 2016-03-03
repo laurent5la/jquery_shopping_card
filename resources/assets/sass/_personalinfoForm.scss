@@ -1,0 +1,31 @@
+@import "utilities/variables";
+@import "mixins/form_labels";
+
+.personalinfoform-div {
+	input {
+	    @extend %input_textbox;
+	}
+}
+.personalinfoform__label{
+
+		@extend %form_label1;
+}
+#personalinfoform__input--div {
+		margin-bottom: 40px;
+}
+
+label.error{
+    @extend %label_error;
+}
+
+input.error {
+    border-color: red;
+}
+.form-control{
+	@extend %dropdown;
+	border-radius: 0px;
+}
+
+#addressSame{
+    height:15px;
+}

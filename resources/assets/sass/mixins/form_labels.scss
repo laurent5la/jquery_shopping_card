@@ -1,9 +1,119 @@
-%form_label {
+@import "utilities/variables";
 
+%form_label1 {
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 30px;
+
+}
+%form_label2 {
     float: left;
     font-size: 32px;
     font-weight: 100;
-   
     margin-bottom: 30px;
+}
 
+%label_error {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    margin-right: 25px;
+}
+
+%cart_upsell_layout {
+	border: 1px solid #ddd;
+  	border-top: 8px solid;
+  	
+  	margin-top: 55px;
+  	
+}
+
+%input_textbox {
+    height: 75px;
+    width: 90%;
+    line-height: 25px;
+    font-size: 21px;      
+    color: $input_color_blue;
+    font-weight: inherit0
+}
+
+%dropdown {
+    width: 90%;
+    height: 70px;
+}
+
+@mixin padd{
+    padding: 5px 20px 10px 30px;
+}
+
+// @mixin hr-padd{
+//     margin: 0px 20px 0px 30px;
+// }
+
+@mixin hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #eeeeee; 
+}
+@mixin black{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 18px;
+}
+@mixin amt{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 38px;
+  font-weight: 300;
+}
+
+@mixin amt-b{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #000;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+@mixin cep{
+  color: $input_color_blue;
+}
+
+@mixin right-float{
+  float: right;
+
+}
+
+@mixin grey{
+  font-family: Avenir Next,AvenirLTStd-Book;
+  color: #999;
+  font-size: 18px;
+}
+
+@mixin promo{
+  padding-left: 20px;
+  margin-left: 20px;
+  width: 500px;
+  height: 75px;
+}
+
+@mixin apply{
+  border-radius: 25px;
+  border: 1px solid gray;
+  width: 145px;
+  height: 40px;
+  border-color: $input_color_blue ;
+  color: $input_color_blue ;
+  font-size: 16px;
+}
+
+@mixin button_black {
+  border-radius: 25px;
+  border: 1px solid gray;
+  width: 145px;
+  height: 40px;
+  border-color: #898989 ;
+  color: #898989 ;
+  font-size: 16px;
 }

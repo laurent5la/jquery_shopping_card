@@ -421,9 +421,9 @@
 			<div class="col-md-3 col-sm-12">
 				<ul class="list-inline">
 					<li>
-						<a href="" target="_blank"><img class="social" src="/images/twitter-icon.png"></a>
-						<a href="" target="_blank"><img class="social" src="/images/linkedin-icon.png"></a>
-						<a href="" target="_blank"><img class="social" src="/images/facebook-icon.png"></a>
+						<a href="" target="_blank"><img class="social" style="width:45px;height:45px;" src="/images/twitter-icon.png"></a>
+						<a href="" target="_blank"><img class="social" style="width:45px;height:45px;" src="/images/linkedin-icon.png"></a>
+						<a href="" target="_blank"><img class="social" style="width:45px;height:45px;" src="/images/facebook-icon.png"></a>
 					</li>
 				</ul>
 			</div>

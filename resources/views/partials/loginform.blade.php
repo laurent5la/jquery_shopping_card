@@ -12,8 +12,8 @@
 			<br>
 			<div class="form-group">
 				<span class="login-icon inner-addon left-addon">
-					<i class="  glyphicon glyphicon-envelope"></i>
-				</span>
+					<i class="glyphicon glyphicon-envelope"></i>
+				</span>	
 			    <input id="email" type="text" name="email" placeholder="Email"/>
 			</div>
 			<br>

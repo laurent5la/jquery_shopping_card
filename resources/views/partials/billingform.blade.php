@@ -49,7 +49,7 @@
 			<input type="text" id="cvv" name="cvv" placeholder="CVV" class="form-control"/>
 		</div>
 		<div id="billingform__input--div" class="form-group">
-			<input type="checkbox" id="save_payment_info_future" name="save_payment_info_future" value="" class="form-control">Save payment information for future use<br>
+			<input type="checkbox" id="save_payment_info_future" name="save_payment_info_future" value="" class="">Save payment information for future use<br>
 		</div>
 		<div id="billingform__input--div-address">
 			<div id="billingform__input--div" class="form-group">

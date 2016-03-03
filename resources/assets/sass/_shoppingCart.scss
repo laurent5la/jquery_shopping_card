@@ -1,0 +1,33 @@
+@import "utilities/variables";
+@import "mixins/form_labels";
+@import "_combined_cart_upsell.scss";
+
+.cart {
+	 @extend %cart_upsell_layout;
+	 border-top-color: $input_color_blue;
+}
+.cart__label{
+  @extend %form_label2;
+}
+
+.amt-b {
+	@include amt-b;
+}
+.amt{
+	@include amt;
+}
+.grey{
+	@include grey;
+  }
+
+.promo{
+	@include promo;
+  }
+.close {
+	    width: 40px;
+}
+.apply{
+	@include apply;
+  }
+
+
