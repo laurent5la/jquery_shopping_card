@@ -88,6 +88,11 @@
 
             // Adding contents to the Cart
             $shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1, array()));
+            if(! isset($dog) ) {
+                $dog = 'hi';
+            }
+            $dog = 'yo';
+
 
 
             // Adding conditions to the whole Cart
@@ -208,6 +213,7 @@
                 $subTotalC = $arr[1];
             else
                 $subTotalC = '00';
+
 
             $total = $shoppingCart->getTotal();
             //Converting to dollars & cents for display purpose

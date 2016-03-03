@@ -39,6 +39,10 @@
     <script src="js/pwstrength-bootstrap-1.2.9.js"></script>
     <script src="js/q.js"></script>
     <script src="js/bootstrap-formhelpers.min.js"></script>
-    <script src="js/validation.js"></script>   
+    <script src="js/login.js"></script>
+    <script src="js/billing.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/personalInformation.js"></script>
+    {{--<script src="js/validation.js"></script>   --}}
 
 
