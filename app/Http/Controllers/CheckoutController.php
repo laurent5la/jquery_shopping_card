@@ -3,13 +3,12 @@
 
     use GuzzleHttp\Client;
     use GuzzleHttp\Exception\RequestException;
-    use App\Providers\CartServiceProvider;
+    use App\Providers\CartProvider;
     use Input;
-    // use Cart;
-    //use Request;
-    use Illuminate\Http\Request;
+    use App\Http\Requests;
     use Config;
     use Session;
+    use Request;
 
     class CheckoutController extends Controller
     {
@@ -20,6 +19,8 @@
          * @return void
          */
 
+        private $shoppingCart;
+        private $promoValue;
 
         public function __construct(array $attributes = array())
         {
@@ -28,6 +29,12 @@
         //    $this->clientID = $this->config->get('owl.client_id');
         //    $this->clientSecret = $this->config->get('owl.client_secret');
         //    $this->cacheKeyForOWLToken = 'OWL-TOKEN' . '-' . $this->clientID;
+            $this->shoppingCart = app('cartlist');
+            $this->promoValue = array(
+                "dollar" => 0,
+                "cents"  => 0
+                );
+
 
         }
 
@@ -67,222 +74,169 @@
             return null;
         }
 
-        public function index(Request $request) {
+        public function index() {
 
             //Upsell 
-            $j=Input::get('i');
+            //$j=Input::get('i');
             $products  = Config::get('products_coo');
             $footer = Config::get('footer');
 
             //Shopping Cart
 
-            // Using the instantiated shopping cart
-            $shoppingCart = app('cartlist');
+            $params = Request::all();
 
-            $ProductName = Input::get('ProductName');
-            $dollars = Input::get('dollars');
-            $cents = Input::get('cents');
-            $productId = Input::get('productId');
-            $price = ($dollars) + ($cents*0.01);
-
+            $cartData = array(
+                'id' => $params['productId'],
+                'name' => $params['ProductName'],
+                'price' => $params['dollars'] + ($params['cents'] * 0.01) ,
+                'quantity' => 1
+                );
 
             // Adding contents to the Cart
-            $shoppingCart->add(array('id' => $productId,'name' => $ProductName,'price' => $price,'quantity' => 1, array()));
-
+            $this->shoppingCart->add($cartData);
 
             // Adding conditions to the whole Cart
-            $condition1 = new \Darryldecode\Cart\CartCondition(array(
+            $taxCondition = $this->applyCartCondition(array(
                 'name' => 'VAT 12.5%',
                 'type' => 'tax',
                 'target' => 'subtotal',
-                'value' => '---',
+                'value' => '4.99',
             ));
 
-            // Applying the condition to the Cart
-            $shoppingCart->condition($condition1);
+            $getViewVariables = $this->getViewVariables(__FUNCTION__, $params);
 
-            
-            // Passing conditions to the view
-            $cartCondition = $shoppingCart->getCondition('VAT 12.5%');
-            $tax = $cartCondition->getValue();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $tax);
-            $taxD = $arr[0];
-            if(sizeof($arr) > 1)
-                $taxC = $arr[1];
-            else
-                $taxC = '00';
+            $getViewVariables['products'] = $products;
 
-            // Total amount without conditions applied
-            $subTotal =$shoppingCart->getSubTotal();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $subTotal);
-            $subTotalD = $arr[0];
-            if(sizeof($arr) > 1)
-                $subTotalC = $arr[1];
-            else
-                $subTotalC = '00';
-
-            // Total amount with all the conditions applied
-            $total = $shoppingCart->getTotal();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $total);
-            $totalD = $arr[0];
-            if(sizeof($arr) > 1)
-                $totalC = $arr[1];
-
-            else
-                $totalC = '00';
-
-
-            //Setting promo Variables to 0
-            $promoD = 0;
-            $promoC = 0;
-
-            // Passing all the contents to the view
-            $items = $shoppingCart->getContent();
-
-            return view('checkout',array('items' => $items, 'dollars'=>$dollars, 'cents'=>$cents, 'taxD' => $taxD,
-                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'promoD' => $promoD, 'promoC' => $promoC, 'j'=>$j, 'products' =>$products));
+            return view('checkout', $getViewVariables);
 
         }
 
         public function annual()
         {
 
-            $itemId = Input::get('product_id');
-            $priceD = Input::get('next_priceD');
-            $priceC = Input::get('next_priceC');
+            $params = Request::all();
 
-            $shoppingCart = app('cartlist');
-
-
-            $price = ($priceD) + ($priceC*0.01);
+            $priceValue = $params['next_priceD'] + ($params['next_priceC'] * 0.01);
 
             // Update shopping cart contents with the new price
-            $shoppingCart->update($itemId, array('price' => $price));
+            $this->shoppingCart->update($params['product_id'], array('price' => $priceValue));
     
-    
-            $subTotal = $shoppingCart->getSubTotal();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $subTotal);
-            $subTotalD = $arr[0];
-            if(sizeof($arr) > 1)
-                $subTotalC = $arr[1];
-            else
-                $subTotalC = '00';
-
-            $total = $shoppingCart->getTotal();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $total);
-            $totalD = $arr[0];
-            if(sizeof($arr) > 1)
-                $totalC = $arr[1];
-
-            else
-                $totalC = '00';
+            $getViewVariables = $this->getViewVariables(__FUNCTION__);
             
-            echo json_encode(array('subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,'totalC' => $totalC));
+            return json_encode($getViewVariables);
         
         }
 
         public function coupon()
         {
-            $shoppingCart = app('cartlist');
-            $condition = new \Darryldecode\Cart\CartCondition(array(
-            'name' => 'Discount 4.99',
-            'type' => 'coupon',
-            'target' => 'subtotal',
-            'value' => '-4.99',
+            //$this->shoppingCart = app('cartlist');
+            $couponCondition = $this->applyCartCondition(array(
+                'name' => 'Discount 4.99',
+                'type' => 'coupon',
+                'target' => 'subtotal',
+                'value' => '-4.99',
             ));
 
-            // Applying the condition to the Cart
-            $shoppingCart->condition($condition);
-
-            $subTotal = $shoppingCart->getSubTotal();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $subTotal);
-            $subTotalD = $arr[0];
-            if(sizeof($arr) > 1)
-                $subTotalC = $arr[1];
-            else
-                $subTotalC = '00';
-
-            $total = $shoppingCart->getTotal();
-            //Converting to dollars & cents for display purpose
-            $arr = explode(".", $total);
-            $totalD = $arr[0];
-            if(sizeof($arr) > 1)
-                $totalC = $arr[1];
-
-            else
-                $totalC = '00';
+            $getViewVariables = $this->getViewVariables(__FUNCTION__);
             
-            echo json_encode(array('subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,'totalC' => $totalC));
+            return json_encode($getViewVariables);
         }
 
         public function close()
         {
-            $itemId = Input::get('product_id');
-
-            $shoppingCart = app('cartlist');
+            $params = Request::all();
 
             //Remove the item
-            $shoppingCart->remove($itemId);
+            $this->shoppingCart->remove($params['product_id']);
 
-            $items = $shoppingCart->getContent();
-            $count = $items->count();
+            $getViewVariables = $this->getViewVariables(__FUNCTION__);
             
-            if($count > 0)
+            if(!is_null($getViewVariables))
             {   
-                // Passing conditions to the view
-                $cartCondition = $shoppingCart->getCondition('VAT 12.5%');
-                $tax = $cartCondition->getValue();
-                //Converting to dollars & cents for display purpose
-                $arr = explode(".", $tax);
-                $taxD = $arr[0];
-                if(sizeof($arr) > 1)
-                    $taxC = $arr[1];
-                else
-                    $taxC = '00';
-
-                // Total amount without conditions applied
-                $subTotal =$shoppingCart->getSubTotal();
-                //Converting to dollars & cents for display purpose
-                $arr = explode(".", $subTotal);
-                $subTotalD = $arr[0];
-                if(sizeof($arr) > 1)
-                    $subTotalC = $arr[1];
-                else
-                    $subTotalC = '00';
-
-                // Total amount with all the conditions applied
-                $total = $shoppingCart->getTotal();
-                //Converting to dollars & cents for display purpose
-                $arr = explode(".", $total);
-                $totalD = $arr[0];
-                if(sizeof($arr) > 1)
-                    $totalC = $arr[1];
-
-                else
-                    $totalC = '00';
-
-
-                //Setting promo Variables to 0
-                $promoD = 0;
-                $promoC = 0;
-
-
-                return view('partials.shoppingcart',array('items' => $items, 'taxD' => $taxD,
-                'taxC' => $taxC,'subTotalD' => $subTotalD, 'subTotalC' => $subTotalC, 'totalD' => $totalD,
-                'totalC' => $totalC, 'promoD' => $promoD, 'promoC' => $promoC,));
+                return view('partials.shoppingcart',$getViewVariables);
             }
             else
             {
                 return "Shopping Cart Empty!";
             }
 
+        }
+
+        private function applyCartCondition($params)
+        {
+            // Adding conditions to the whole Cart
+            $condition = new \Darryldecode\Cart\CartCondition($params);
+            $this->shoppingCart->condition($condition);
+            return $condition;
+        }
+
+        private function splitAmount($params)
+        {
+            $amount = explode(".", $params);
+            if(count($amount) == 1)
+                $amount[1] = '00';
+            return $amount;
+        }
+
+        private function calculateCartAmount($functionName)
+        {
+            $cartAmount = array();
+            if($functionName == "index" or $functionName == "close")
+            {
+                //Tax Amount
+                $cartCondition = $this->shoppingCart->getCondition('VAT 12.5%');
+                $getTax = $cartCondition->getValue();
+                $cartAmount['taxValue'] = $this->splitAmount($getTax);
+
+            }
+
+            // Total amount without conditions applied
+            $getSubTotal = $this->shoppingCart->getSubTotal();
+            $cartAmount['subTotalValue'] = $this->splitAmount($getSubTotal);
+
+            // Total amount with all the conditions applied
+            $getTotal = $this->shoppingCart->getTotal();
+            $cartAmount['totalValue'] = $this->splitAmount($getTotal);
+          
+            return $cartAmount;
+        }
+
+        private function getViewVariables($functionName, $params=array())
+        {
+            
+            $getCartAmount = $this->calculateCartAmount($functionName);
+
+            // Passing all the contents to the view
+            $cartItems = $this->shoppingCart->getContent();
+
+            if($cartItems->count() == 0)
+                return null;
+
+
+            $viewVariables = array(   
+                'subTotalD' => $getCartAmount['subTotalValue'][0], 
+                'subTotalC' => $getCartAmount['subTotalValue'][1], 
+                'totalD' => $getCartAmount['totalValue'][0],
+                'totalC' => $getCartAmount['totalValue'][1],
+                'items' => $cartItems, 
+                'promoD' => $this->promoValue['dollar'],
+                'promoC' => $this->promoValue['cents'],
+                );
+
+            if($functionName == "index")
+            { 
+                $viewVariables['dollars'] = $params['dollars'];
+                $viewVariables['cents'] = $params['cents']; 
+                $viewVariables['j'] = $params['i']; 
+            }
+            if($functionName == "index" or $functionName == "close")
+            {
+                $viewVariables['taxD'] = $getCartAmount['taxValue'][0];
+                $viewVariables['taxC'] = $getCartAmount['taxValue'][1];
+            }
+
+            return $viewVariables;
+                
         }
 
     }
