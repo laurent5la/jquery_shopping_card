@@ -38,7 +38,6 @@
 
 
     </form>
-</div>
     <div id="personalinfoform__input--div" class="checkbox">
         <label><input type="checkbox" name="sameBillingAddressCheckbox" value="addressSame" class="">Billing address is same as personal address</label><br>
     </div>
