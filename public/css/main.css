@@ -56,35 +56,6 @@
     /* Ends here */
     /* Adding the Glyphicon */
     /* End here */ }
-    .container .container-fluid .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.personalinfoForm .personalinfoform__label, .container .container-fluid .row.personalinfoForm .row.loginForm .personalinfoform__label, .container .container-fluid .row.loginForm .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.loginForm .billingform__label, .container .container-fluid .row.loginForm .terms_conditions .termsconditions__label, .container .container-fluid .terms_conditions .row.loginForm .termsconditions__label {
-      font-size: 32px;
-      font-weight: 100;
-      margin-bottom: 30px; }
-    .container .container-fluid .row.loginForm .row.shoppingCart .cart__label, .container .container-fluid .row.shoppingCart .row.loginForm .cart__label, .container .container-fluid .row.loginForm .row.Upsell .upsell__label, .container .container-fluid .row.Upsell .row.loginForm .upsell__label {
-      float: left;
-      font-size: 32px;
-      font-weight: 100;
-      margin-bottom: 30px; }
-    .container .container-fluid .row.loginForm label.error {
-      display: block;
-      font-size: 14px;
-      font-weight: normal;
-      text-align: right;
-      margin-right: 25px; }
-    .container .container-fluid .row.loginForm .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.loginForm .cart, .container .container-fluid .row.loginForm .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.loginForm .upsell {
-      border: 1px solid #ddd;
-      border-top: 8px solid;
-      margin-top: 55px; }
-    .container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.loginForm input, .container .container-fluid .row.loginForm .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.loginForm input {
-      height: 75px;
-      width: 90%;
-      line-height: 25px;
-      font-size: 21px;
-      color: #3096B1;
-      font-weight: inherit0; }
-    .container .container-fluid .row.loginForm .row.personalinfoForm .form-control, .container .container-fluid .row.personalinfoForm .row.loginForm .form-control, .container .container-fluid .row.loginForm .row.billingForm .form-control, .container .container-fluid .row.billingForm .row.loginForm .form-control {
-      width: 90%;
-      height: 70px; }
     .container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword {
       padding-left: 45px;
       border: 1px solid #ccc;
@@ -163,35 +134,8 @@
     border-radius: 0px; }
   .container .container-fluid .row.personalinfoForm #addressSame {
     height: 15px; }
-  .container .container-fluid .row.billingForm .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.billingForm .login-form__label, .container .container-fluid .row.billingForm .row.personalinfoForm .personalinfoform__label, .container .container-fluid .row.personalinfoForm .row.billingForm .personalinfoform__label, .container .container-fluid .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .terms_conditions .termsconditions__label, .container .container-fluid .terms_conditions .row.billingForm .termsconditions__label {
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.billingForm .row.shoppingCart .cart__label, .container .container-fluid .row.shoppingCart .row.billingForm .cart__label, .container .container-fluid .row.billingForm .row.Upsell .upsell__label, .container .container-fluid .row.Upsell .row.billingForm .upsell__label {
-    float: left;
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.billingForm label.error {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    text-align: right;
-    margin-right: 25px; }
-  .container .container-fluid .row.billingForm .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.billingForm .cart, .container .container-fluid .row.billingForm .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.billingForm .upsell {
-    border: 1px solid #ddd;
-    border-top: 8px solid;
-    margin-top: 55px; }
-  .container .container-fluid .row.billingForm .row.loginForm #username, .container .container-fluid .row.loginForm .row.billingForm #username, .container .container-fluid .row.billingForm .row.loginForm #email, .container .container-fluid .row.loginForm .row.billingForm #email, .container .container-fluid .row.billingForm .row.loginForm #password1, .container .container-fluid .row.loginForm .row.billingForm #password1, .container .container-fluid .row.billingForm .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.billingForm #cpassword, .container .container-fluid .row.billingForm .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.billingForm input, .container .container-fluid .row.billingForm .billingform-div input {
-    height: 75px;
-    width: 90%;
-    line-height: 25px;
-    font-size: 21px;
-    color: #3096B1;
-    font-weight: inherit0; }
-  .container .container-fluid .row.billingForm .form-control {
-    width: 90%;
-    height: 70px; }
+  .container .container-fluid .row.personalinfoForm #newAddress {
+    height: 15px; }
   .container .container-fluid .row.billingForm #billingform__input--div {
     margin-bottom: 40px; }
   .container .container-fluid .row.billingForm input.error {
@@ -200,35 +144,6 @@
     border-radius: 0px; }
   .container .container-fluid .row.billingForm #savePaymentInfo {
     height: 15px; }
-  .container .container-fluid .row.shoppingCart .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.shoppingCart .login-form__label, .container .container-fluid .row.shoppingCart .row.personalinfoForm .personalinfoform__label, .container .container-fluid .row.personalinfoForm .row.shoppingCart .personalinfoform__label, .container .container-fluid .row.shoppingCart .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.shoppingCart .billingform__label, .container .container-fluid .row.shoppingCart .terms_conditions .termsconditions__label, .container .container-fluid .terms_conditions .row.shoppingCart .termsconditions__label {
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.shoppingCart .cart__label, .container .container-fluid .row.shoppingCart .row.Upsell .upsell__label, .container .container-fluid .row.Upsell .row.shoppingCart .upsell__label {
-    float: left;
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.shoppingCart .row.loginForm label.error, .container .container-fluid .row.loginForm .row.shoppingCart label.error, .container .container-fluid .row.shoppingCart .row.personalinfoForm label.error, .container .container-fluid .row.personalinfoForm .row.shoppingCart label.error, .container .container-fluid .row.shoppingCart .row.billingForm label.error, .container .container-fluid .row.billingForm .row.shoppingCart label.error {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    text-align: right;
-    margin-right: 25px; }
-  .container .container-fluid .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.shoppingCart .upsell {
-    border: 1px solid #ddd;
-    border-top: 8px solid;
-    margin-top: 55px; }
-  .container .container-fluid .row.shoppingCart .row.loginForm #username, .container .container-fluid .row.loginForm .row.shoppingCart #username, .container .container-fluid .row.shoppingCart .row.loginForm #email, .container .container-fluid .row.loginForm .row.shoppingCart #email, .container .container-fluid .row.shoppingCart .row.loginForm #password1, .container .container-fluid .row.loginForm .row.shoppingCart #password1, .container .container-fluid .row.shoppingCart .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.shoppingCart #cpassword, .container .container-fluid .row.shoppingCart .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.shoppingCart input, .container .container-fluid .row.shoppingCart .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.shoppingCart input {
-    height: 75px;
-    width: 90%;
-    line-height: 25px;
-    font-size: 21px;
-    color: #3096B1;
-    font-weight: inherit0; }
-  .container .container-fluid .row.shoppingCart .row.personalinfoForm .form-control, .container .container-fluid .row.personalinfoForm .row.shoppingCart .form-control, .container .container-fluid .row.shoppingCart .row.billingForm .form-control, .container .container-fluid .row.billingForm .row.shoppingCart .form-control {
-    width: 90%;
-    height: 70px; }
   .container .container-fluid .row.shoppingCart .padd {
     padding: 5px 20px 10px 30px; }
   .container .container-fluid .row.shoppingCart hr {
@@ -267,47 +182,19 @@
   .container .container-fluid .row.shoppingCart .promo {
     padding-left: 20px;
     margin-left: 20px;
-    width: 500px;
-    height: 75px; }
+    width: 91%;
+    height: 75px;
+    border: 1px solid gray; }
   .container .container-fluid .row.shoppingCart .close {
     width: 40px; }
   .container .container-fluid .row.shoppingCart .apply {
     border-radius: 25px;
     border: 1px solid gray;
-    width: 145px;
+    width: 91%;
     height: 40px;
     border-color: #3096B1;
     color: #3096B1;
     font-size: 16px; }
-  .container .container-fluid .row.Upsell .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.Upsell .login-form__label, .container .container-fluid .row.Upsell .row.personalinfoForm .personalinfoform__label, .container .container-fluid .row.personalinfoForm .row.Upsell .personalinfoform__label, .container .container-fluid .row.Upsell .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.Upsell .billingform__label, .container .container-fluid .row.Upsell .terms_conditions .termsconditions__label, .container .container-fluid .terms_conditions .row.Upsell .termsconditions__label {
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.Upsell .row.shoppingCart .cart__label, .container .container-fluid .row.shoppingCart .row.Upsell .cart__label, .container .container-fluid .row.Upsell .upsell__label {
-    float: left;
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.Upsell .row.loginForm label.error, .container .container-fluid .row.loginForm .row.Upsell label.error, .container .container-fluid .row.Upsell .row.personalinfoForm label.error, .container .container-fluid .row.personalinfoForm .row.Upsell label.error, .container .container-fluid .row.Upsell .row.billingForm label.error, .container .container-fluid .row.billingForm .row.Upsell label.error {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    text-align: right;
-    margin-right: 25px; }
-  .container .container-fluid .row.Upsell .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.Upsell .cart, .container .container-fluid .row.Upsell .upsell {
-    border: 1px solid #ddd;
-    border-top: 8px solid;
-    margin-top: 55px; }
-  .container .container-fluid .row.Upsell .row.loginForm #username, .container .container-fluid .row.loginForm .row.Upsell #username, .container .container-fluid .row.Upsell .row.loginForm #email, .container .container-fluid .row.loginForm .row.Upsell #email, .container .container-fluid .row.Upsell .row.loginForm #password1, .container .container-fluid .row.loginForm .row.Upsell #password1, .container .container-fluid .row.Upsell .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.Upsell #cpassword, .container .container-fluid .row.Upsell .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .personalinfoform-div .row.Upsell input, .container .container-fluid .row.Upsell .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.Upsell input {
-    height: 75px;
-    width: 90%;
-    line-height: 25px;
-    font-size: 21px;
-    color: #3096B1;
-    font-weight: inherit0; }
-  .container .container-fluid .row.Upsell .row.personalinfoForm .form-control, .container .container-fluid .row.personalinfoForm .row.Upsell .form-control, .container .container-fluid .row.Upsell .row.billingForm .form-control, .container .container-fluid .row.billingForm .row.Upsell .form-control {
-    width: 90%;
-    height: 70px; }
   .container .container-fluid .row.Upsell .padd {
     padding: 5px 20px 10px 30px; }
   .container .container-fluid .row.Upsell hr {

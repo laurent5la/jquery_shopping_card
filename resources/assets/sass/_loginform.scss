@@ -1,6 +1,3 @@
-@import "utilities/variables";
-@import "mixins/form_labels";
-
 /* Declaring mixins */
 %loginform_input{
     @extend %input_textbox;

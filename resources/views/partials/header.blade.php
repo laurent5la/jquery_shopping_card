@@ -1,4 +1,4 @@
-<header>
+<header id="header">
 	<nav id="desktop-header" class="hidden-xs">
 		<div class="container-fluid">
 			<div class="row row-1">

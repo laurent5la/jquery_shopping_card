@@ -94,14 +94,15 @@
 @mixin promo{
   padding-left: 20px;
   margin-left: 20px;
-  width: 500px;
+  width: 91%;
   height: 75px;
+  border: 1px solid gray;
 }
 
 @mixin apply{
   border-radius: 25px;
   border: 1px solid gray;
-  width: 145px;
+  width: 91%;
   height: 40px;
   border-color: $input_color_blue ;
   color: $input_color_blue ;

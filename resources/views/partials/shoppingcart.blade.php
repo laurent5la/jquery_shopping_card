@@ -53,7 +53,7 @@ $times = 0;
 	<div class="row padd" id="promoAply">       
 		<p class="black"> <input class="promo" id="promoC" type="text" placeholder="Promo Code"></input></p>
 		<div class="col-md-8" ></div>
-		<div class="col-md-4" ><button type="submit" class="apply" id="coupon_btn" >Apply</button></div>                 
+		<div class="col-md-4" ><button type="submit" class="apply btn btn-default btn-responsive" id="coupon_btn" >Apply</button></div>                 
 	</div>
 	<hr>
 	<div class="row padd">

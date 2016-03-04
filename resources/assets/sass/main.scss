@@ -5,7 +5,17 @@
   font-family: Avenir, "Avenir Next", AvenirLTStd-Book; 
 }
 
+
+
+
 .container{
+
+    // #header,
+    // #footer {
+    //     @import "_header-footer.scss";
+
+    // }
+
     .checkout-title {
             text-align: center;
             background-color: $checkout_title;
@@ -74,4 +84,6 @@
             }
         }
     }
+
+
 }

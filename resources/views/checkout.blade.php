@@ -8,7 +8,7 @@
 
 
 	@include('partials.header')
-	@yield('header')
+	<!-- @yield('header') -->
 
 	<div class="checkout-title">
 		Almost finished! Enter your details below.
@@ -52,7 +52,7 @@
 	</div>
 	
 	@include('partials.footer')
-	@yield('footer')
+	<!-- @yield('footer') -->
 </div>
 
 </body>
