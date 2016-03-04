@@ -1,0 +1,152 @@
+.clickable {
+    color: #3095b4;
+    cursor: pointer; }
+.title {
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin-bottom: 25px; }
+ .USER {
+    display: none; }
+ .USER .radio {
+    border: 1px solid #3095b4;
+    padding: 20px; }
+.USER .radio input {
+    margin-right: 15px; }
+ .USER .radio .info {
+    color: #3095b4;
+    font-family: "Avenir Next";
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 20px; }
+.halfWidth {
+    display: inline-block !important;
+    width: 49.5% !important; }
+
+.fullWidth {
+    display: block !important;
+    width: 100% !important; }
+
+.container {
+    color: #000000;
+    font-family: "Avenir"; }
+
+.halfWidth {
+    display: inline-block !important;
+    width: 49.5% !important; }
+
+.fullWidth {
+    display: block !important;
+    width: 100% !important; }
+
+.populated {
+    border: 1px solid #3095b4 !important; }
+
+.active {
+    border: 2px solid #3095b4 !important; }
+
+.input-error {
+    border: 1px solid #FF0000 !important; }
+
+.color-theme {
+    color: #3095b4 !important; }
+
+#cart-left input[type=checkbox] {
+    display: none !important; }
+#cart-left input[type=checkbox] + label:before {
+    border: 1px solid #A6A6A6;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 20px; }
+#cart-left input[type=checkbox]:checked + label:before {
+    background-color: #3095b4;
+    border: 1px solid #3095b4;
+    color: #FFFFFF;
+    content: "\e013";
+    line-height: 15px;
+    text-align: center; }
+#cart-left .check-label {
+    display: block; }
+#cart-left .check-label label {
+    color: #A6A6A6;
+    font-family: "Avenir Next";
+    font-size: 18px;
+    font-weight: 300; }
+#cart-left .section {
+    margin-bottom: 40px; }
+#cart-left .section button {
+    background-color: transparent;
+    border: 1px solid #3095b4;
+    border-radius: 50px;
+    color: #3095b4;
+    outline: none;
+    padding: 10px;
+    text-align: center;
+    width: 150px; }
+#cart-left .section input {
+    border: 1px solid #A6A6A6;
+    color: #3095b4;
+    display: block;
+    font-family: "Avenir Next";
+    font-size: 22px;
+    font-weight: 100;
+    margin-bottom: 30px;
+    outline: none;
+    padding: 20px 15px;
+    width: 100%; }
+#cart-left .section select {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #A6A6A6;
+    border-radius: 0px;
+    font-family: "Avenir Next";
+    font-size: 22px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 20px 15px;
+    -webkit-appearance: none; }
+#cart-left .section .title {
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin-bottom: 25px; }
+#cart-left .section .title .clickable {
+    color: #3095b4;
+    cursor: pointer; }
+#cart-left .USER {
+    display: none; }
+#cart-left .USER .radio {
+    border: 1px solid #3095b4;
+    padding: 20px; }
+#cart-left .USER .radio input {
+    margin-right: 15px; }
+#cart-left .USER .radio .info {
+    color: #3095b4;
+    font-family: "Avenir Next";
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 20px; }
+#cart-left .USER .USER_ADDRESS_NEW, #cart-left .USER .USER_BILLING_ADDRESS_NEW, #cart-left .USER .USER_CC_NEW {
+    display: none; }
+
+#cart-right .cart {
+    border: 1px solid #C1C1C1;
+    border-top: 10px solid #3095b4; }
+#cart-right .cart .row {
+    padding: 0px 25px; }
+#cart-right .lightGrey {
+    color: #C1C1C1; }
+#cart-right .fit {
+    font-weight: 300; }
+#cart-right .slim {
+    font-weight: 100; }
+#cart-right .color {
+    color: #3095b4; }
+#cart-right .content {
+    margin-bottom: 20px; }
+
+
