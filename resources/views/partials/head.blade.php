@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"></link>
     <link rel="stylesheet" type="text/css" href="css/style.css"></link>
     <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/login-register.css"></link>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css"></link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -32,6 +33,8 @@
     <script src="js/bootstrap-formhelpers.min.js"></script>
     <script src="js/validation.js"></script>
     <script src="js/cybersource.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/chooseForm.js"></script>
     <script src="js/login.js"></script>
     <script src="js/billing.js"></script>
     <script src="js/register.js"></script>

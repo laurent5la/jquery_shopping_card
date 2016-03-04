@@ -1,9 +1,9 @@
 <div id="personalinfoform-div" class="personalinfoform-div">
     <label class="personalinfoform__label" for="personalinfoform">Personal Information</label>
 
-    <div id="personalinfoform__input--div" class="form-group" >
-        <textarea type="text" id="verifiedUserDetails" class="" style="display: none;"></textarea>
-    </div>
+    {{--<div id="personalinfoform__input--div" class="form-group" >--}}
+        {{--<textarea type="text" id="verifiedUserDetails" class="" style="display: none;"></textarea>--}}
+    {{--</div>--}}
 
     <form role="form" id="personalinfoform" class="form-group">
         <div id="personalinfoform__input--div"class="form-group ">

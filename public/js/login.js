@@ -10,6 +10,11 @@ $(document).ready(function () {
         var loginAPIUrl = 'http://api.local/loginverified.php';
         var orderAPIUrl = 'http://api.local/order.php';
         var cybersourceAPIUrl = 'http://api.local/cybersource.php';
+        var useNewAddress = false;
+        var isNewCreditCard = false;
+        var isNewBillingAddress = false;
+        var isTaxExempt = false;
+        var isAgreeTAC = false;
 
 
         options.ui = {
@@ -95,22 +100,35 @@ $(document).ready(function () {
 
 
         var loginUser = function () {
-            $('#forename').focus(function () {
-                //$(this).off('focus');
-                if (isSetInput('#password1') && isSetInput('#username')) {
-                    if (!$('#cpassword').val()) {
-                        username = $('#username').val();
-                        password = $('#password1').val();
-                        loginData = {"userid": username, "password": password};
-                        loginVerifiedPromise();
+
+                $("#password1").blur(function(){
+                    if(!isNewUser) {
+                        console.log("isNewUser=" + isNewUser);
+                        if (isSetInput('#password1') && isSetInput('#username')) {
+                            username = $('#username').val();
+                            password = $('#password1').val();
+                            loginData = {"userid": username, "password": password};
+                            loginVerifiedPromise();
+                        }
                     }
-                }
-            });
+                });
+
+            //$('#forename').focus(function () {
+            //    //$(this).off('focus');
+            //    if (isSetInput('#password1') && isSetInput('#username')) {
+            //        if (!$('#cpassword').val()) {
+            //            username = $('#username').val();
+            //            password = $('#password1').val();
+            //            loginData = {"userid": username, "password": password};
+            //            loginVerifiedPromise();
+            //        }
+            //    }
+            //});
         }
 
 
         var loginVerifiedPromise = function () {
-            //console.log("in loginVerifiedPromise");
+            console.log("in loginVerifiedPromise");
             return Q($.ajax({
                 url: loginAPIUrl,
                 type: 'POST',
@@ -130,7 +148,7 @@ $(document).ready(function () {
         }
 
         function loginVerifiedPromiseResolve(outputloginVerifiedPromise) {
-            //console.log("in loginVerifiedPromiseResolve");
+            console.log("in loginVerifiedPromiseResolve");
             postal = outputloginVerifiedPromise.personalInfo.postal;
             country = outputloginVerifiedPromise.personalInfo.country;
             city = outputloginVerifiedPromise.personalInfo.city;
@@ -163,7 +181,7 @@ $(document).ready(function () {
 
 
         function loginVerifiedPromiseReject(errorLoginVerified){
-            //console.log("in loginVerifiedPromiseReject");
+            console.log("in loginVerifiedPromiseReject");
             $("#invalidUser-div").hide();
             if (isUnauthorizedUser(errorLoginPromise)) {
                 $("#invalidUser-div").text('Invalid username or password. If new user please enter confirm password.');
@@ -209,7 +227,7 @@ $(document).ready(function () {
 
 
         var orderPromise = function () {
-            //console.log("in orderPromise");
+            console.log("in orderPromise");
             return Q($.ajax({
                 url: orderAPIUrl,
                 type: 'POST',
@@ -229,7 +247,7 @@ $(document).ready(function () {
         }
 
         function orderPromiseResolve(outputOrderPromise) {
-            //console.log("in orderPromiseResolve");
+            console.log("in orderPromiseResolve");
             orderId = outputOrderPromise.orderid;
             cybersourceData = orderId;
             console.log(orderId);
@@ -243,7 +261,7 @@ $(document).ready(function () {
 
 
         var cybersourcePromise = function(){
-            //console.log("in cybersourcePromise");
+            console.log("in cybersourcePromise");
             return Q($.ajax({
                 url: cybersourceAPIUrl,
                 type: 'POST',
@@ -271,7 +289,7 @@ $(document).ready(function () {
 
 
         var taxPromiseVerifiedUser = function(){
-            //console.log("in taxPromiseVerifiedUser");
+            console.log("in taxPromiseVerifiedUser");
             return Q($.ajax({
                 url: 'http://api.local/tax.php',
                 type: 'GET',
@@ -283,18 +301,19 @@ $(document).ready(function () {
         }
 
         function taxPromiseVerifiedUserResolve(outputTaxVerified){
-            //console.log("in taxPromiseVerifiedUserResolve");
+            console.log("in taxPromiseVerifiedUserResolve");
             console.log(outputTaxVerified);
         }
 
         function taxPromiseVerifiedUserReject(errorTaxVerified){
-            //console.log("in taxPromiseVerifiedUserReject");
+            console.log("in taxPromiseVerifiedUserReject");
             console.log(errorTaxVerified);
         }
 
         var isSetInput = function (fieldid) {
             if ($(fieldid).val()) {
                 if ($(fieldid).valid()) {
+                    console.log("valid" + fieldid);
                     return true;
                 }
             }
@@ -336,30 +355,40 @@ $(document).ready(function () {
         }
 
         var verifiedUserUpdateDisplay= function(){
-            console.log("in verifiedUserUpdateDisplay");
-            $('#loginform-div').hide();
+            //console.log("in verifiedUserUpdateDisplay");
             $('.checkout-title').html('Hello '+ firstName+ '.Complete your purchase below.');
-            $('#personalinfoform').hide();
-            $('#verifiedUserDetails').show();
-            $('#verifiedUserDetails').val(firstName +" " + lastName+"\n" + street+ "\n "+city +", "+state +" "+postal+"\n"+phone);
+            $(".LOGGED_IN").toggle("slide");
+            $(".USER").each(function(){
+                $(this).show("slide");
+            });
 
-            $('#billingform').hide();
+            $('#verifiedUserName').text(firstName +" " + lastName);
+            $('#verifiedUserStreet').text(street);
+            $('#verifiedUserCityStatePostal').text(city +", "+state +" "+postal);
+            $('#verifiedUserPhoneNumber').text(phone);
+            $("#verifiedUserCardType").text(cardType);
+            $("#verifiedUserCardNumber").text("xxxx xxxx xxxx "+cardNumber);
+            $("#verifiedUserExpDate").text(expiryDate);
 
-            $('#card_details').show();
-            $('#card_details').val(cardType+"   "+"xxxx xxxx xxxx"+cardNumber+"   "+expiryDate);
-            $('#newAddress--div').show();
-            $('#addCarddiv').show();
-            $('input[type="checkbox"]').change(function () {
-                console.log('change');
-                if($(this).attr("value")=="newCard"){
-                    if($(this).prop("checked") == true) {
-                        console.log('Add new card checked');
-                        $('#billingform').show();
-                    }
-                    if($(this).prop("checked") == false){
-                        $('#billingform').hide();
-                    }
-                }
+            $(".USER_ADD_ADDRESS").change(function() {
+                useNewAddress = ! useNewAddress;
+                $(".USER_ADDRESS").toggle("slide");
+                $(".USER_ADDRESS_NEW").toggle("slide");
+            });
+            $(".USER_BILLING_ADDRESS_SAME").change(function() {
+                isNewBillingAddress = ! isNewBillingAddress;
+                $(".USER_BILLING_ADDRESS_NEW").toggle("slide");
+            });
+            $(".USER_CC_ADD_NEW").change(function() {
+                isNewCreditCard = ! isNewCreditCard;
+                $(".USER_CC").toggle("slide");
+                $(".USER_CC_NEW").toggle("slide");
+            });
+            $(".TAX_EXEMPT").change(function() {
+                isTaxExempt = ! isTaxExempt;
+            });
+            $(".TAC").change(function() {
+                isAgreeTAC = ! isAgreeTAC;
             });
         }
 

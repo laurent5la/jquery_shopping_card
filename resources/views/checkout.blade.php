@@ -14,17 +14,25 @@
 		Almost finished! Enter your details below.
 	</div>
 
+
 	<div class="container-fluid">
 		<div class="col-md-5">
-			<div class="row loginForm">
-				@include('partials.loginform')  
+
+			<div class="row loginForm LOGGED_IN">
+				@include('partials.loginform')
 			</div>
-			<div class="row second personalinfoForm">
-				@include('partials.personalInformation')
+			<div class="NEW_USER">
+				<div class="row second personalinfoForm">
+					@include('partials.personalInformation')
+				</div>
+				<div class="row second billingForm">
+					@include('partials.billingform')
+				</div>
 			</div>
-			<div class="row second billingForm">
-				@include('partials.billingform')   
+			<div class="row second verifiedUserForm">
+				@include('partials.verifiedUser')
 			</div>
+
 		</div>
 		<div class="col-md-6 col-md-offset-1">
 			<div class="row shoppingCart">
