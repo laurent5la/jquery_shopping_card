@@ -1,7 +1,7 @@
 <div id="personalinfoform-div" class="personalinfoform-div">
     <label class="personalinfoform__label" for="personalinfoform">Personal Information</label>
 
-    <div id="personalinfoform__input--div" class="form-group" >
+    <div class="form-group personalinfoform__input--div" >
         <textarea type="text" id="verifiedUserDetails" class="" style="display: none;"></textarea>
     </div>
 
@@ -22,8 +22,9 @@
             <input type="text" name="city" placeholder="City" class="form-control"/>
         </div>
         <div class="form-group personalinfoform__input--div">
-            <select class="form-control bfh-states" data-country="countries_states1">
+            <select class="form-control bfh-states custom-select" data-country="countries_states1" style="border-radius:0px;">
                 <option value="" selected disabled>State</option>
+                <option value="1">1</option>
             </select>
         </div>
         <div class="form-group personalinfoform__input--div">
@@ -44,7 +45,7 @@
     </div>
 
 
-    <div id="newAddress--div" class="checkbox" style="display: none" >
+    <div id="newAddress--div" class="checkbox personalinfoform__input--div" style="display: none" >
         <label><input type="checkbox" name="" value="" id="newAddress" class="">Add new address</label><br>
     </div>
 </div>

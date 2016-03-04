@@ -1,27 +1,26 @@
-.container .container-fluid .row.loginForm .login-form__label, .container .container-fluid .row.personalinfoForm .personalinfoform__label, .container .container-fluid .row.billingForm .billingform__label, .container .container-fluid .terms_conditions .termsconditions__label {
+#main-container .container-fluid .row.loginForm #loginform-div .login-form__label, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__label, #main-container .container-fluid .row.billingForm .billingform__label, #main-container .container-fluid .terms_conditions .termsconditions__label {
   font-size: 32px;
-  font-weight: 100;
-  margin-bottom: 30px; }
+  font-weight: 100; }
 
-.container .container-fluid .row.shoppingCart .cart__label, .container .container-fluid .row.Upsell .upsell__label {
+#main-container .container-fluid .row.shoppingCart .cart__label, #main-container .container-fluid .row.Upsell .upsell__label {
   float: left;
   font-size: 32px;
   font-weight: 100;
   margin-bottom: 30px; }
 
-.container .container-fluid .row.loginForm label.error, .container .container-fluid .row.personalinfoForm label.error, .container .container-fluid .row.billingForm label.error {
+#main-container .container-fluid .row.loginForm #loginform-div label.error, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div label.error, #main-container .container-fluid .row.billingForm label.error {
   display: block;
   font-size: 14px;
   font-weight: normal;
   text-align: right;
-  margin-right: 25px; }
+  margin-right: 48px; }
 
-.container .container-fluid .row.shoppingCart .cart, .container .container-fluid .row.Upsell .upsell {
+#main-container .container-fluid .row.shoppingCart .cart, #main-container .container-fluid .row.Upsell .upsell {
   border: 1px solid #ddd;
   border-top: 8px solid;
   margin-top: 55px; }
 
-.container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword, .container .container-fluid .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.billingForm .billingform-div input {
+#main-container .container-fluid .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form #cpassword, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input, #main-container .container-fluid .row.billingForm .billingform-div input {
   height: 75px;
   width: 90%;
   line-height: 25px;
@@ -29,219 +28,447 @@
   color: #3096B1;
   font-weight: inherit0; }
 
-.container .container-fluid .row.personalinfoForm .form-control, .container .container-fluid .row.billingForm .form-control {
+#main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control, #main-container .container-fluid .row.billingForm .form-control {
   width: 90%;
   height: 70px; }
 
 * {
   font-family: Avenir, "Avenir Next", AvenirLTStd-Book; }
 
-.container .checkout-title {
-  text-align: center;
-  background-color: #01516F;
-  height: 55px;
-  margin-bottom: 77px;
-  font-size: 24px;
-  line-height: 55px;
-  color: white;
-  font-weight: lighter; }
-
-.container .container-fluid {
-  margin-left: 8%;
-  margin-right: 8%; }
-  .container .container-fluid .row.second {
-    margin-top: 45px; }
-  .container .container-fluid .row.loginForm {
-    /* Declaring mixins */
-    /* Ends here */
-    /* Adding the Glyphicon */
-    /* End here */ }
-    .container .container-fluid .row.loginForm #username, .container .container-fluid .row.loginForm #email, .container .container-fluid .row.loginForm #password1, .container .container-fluid .row.loginForm #cpassword {
-      padding-left: 45px;
-      border: 1px solid #ccc;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
-      .container .container-fluid .row.loginForm #username:focus, .container .container-fluid .row.loginForm #email:focus, .container .container-fluid .row.loginForm #password1:focus, .container .container-fluid .row.loginForm #cpassword:focus {
-        border-color: #66afe9;
-        outline: 0;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-        border-width: thin;
-        border-top-style: double;
-        border-left-style: double; }
-    .container .container-fluid .row.loginForm #username.error {
+#main-container {
+  background-color: #FFF;
+  margin: 0px;
+  padding: 0px;
+  width: 100%; }
+  @media all {
+    #main-container #header .bcText {
+      display: inline-block; }
+    #main-container #header .toggle-search {
+      cursor: pointer; }
+    #main-container #header #desktop-header {
+      background-color: #FFF;
+      margin: 0 auto;
+      padding: 40px 10% 15px 10%; }
+      #main-container #header #desktop-header .row-1 {
+        margin-bottom: 35px; }
+        #main-container #header #desktop-header .row-1 .pull-right ul li {
+          color: #000;
+          font-size: 18px;
+          margin-left: 20px;
+          text-decoration: none; }
+          #main-container #header #desktop-header .row-1 .pull-right ul li .bcText a {
+            margin: 0px; }
+          #main-container #header #desktop-header .row-1 .pull-right ul li a {
+            color: inherit;
+            margin-right: 10px;
+            vertical-align: middle; }
+      #main-container #header #desktop-header .row-2 .pull-left ul li {
+        margin-right: 60px; }
+        #main-container #header #desktop-header .row-2 .pull-left ul li a {
+          color: #005172;
+          font-size: 15px;
+          text-decoration: none; } }
+  @media all and (max-width: 1230px) and (min-width: 769px) {
+    #main-container #header #desktop-header .row-1 {
+      margin-bottom: 15px; }
+    #main-container #header #desktop-header .row-1 .pull-right {
+      padding-top: 25px; }
+    #main-container #header #desktop-header .row-2 .pull-left ul li {
+      margin-right: 10px; } }
+  @media all and (max-width: 768px) {
+    #main-container #header #mobile-header {
+      background-color: #FFF; }
+      #main-container #header #mobile-header .icon-bar {
+        background-color: #005172;
+        height: 3px; }
+      #main-container #header #mobile-header .logo {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%; }
+        #main-container #header #mobile-header .logo a {
+          background-image: url(/images/logo-dnb.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          display: inline-block;
+          height: 35px;
+          width: 100%; }
+      #main-container #header #mobile-header #mobile-menu {
+        background-color: #005172;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        width: 80%;
+        z-index: 10; }
+        #main-container #header #mobile-header #mobile-menu a {
+          background-color: transparent;
+          color: #D6D6D6; }
+        #main-container #header #mobile-header #mobile-menu li {
+          border-bottom: 1px solid #135e7c; } }
+  @media all {
+    #main-container #footer #contact-us-section {
+      background-color: #005172;
+      color: #FFF;
+      margin: 0 auto;
+      padding: 40px 10%; }
+      #main-container #footer #contact-us-section #toggle-contact-form {
+        cursor: pointer; }
+      #main-container #footer #contact-us-section ul {
+        margin-bottom: 0px; }
+      #main-container #footer #contact-us-section li, #main-container #footer #contact-us-section a {
+        color: #FFF;
+        font-size: 15px;
+        letter-spacing: .5px;
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none; }
+      #main-container #footer #contact-us-section .title {
+        font-size: 20px;
+        margin: 0px;
+        padding: 0px; }
+      #main-container #footer #contact-us-section img {
+        height: 26px;
+        margin-right: 10px;
+        vertical-align: text-bottom; }
+      #main-container #footer #contact-us-section span {
+        margin-left: 10px;
+        vertical-align: text-top; }
+    #main-container #footer #contact-form-section {
+      background-color: #FFF;
+      color: #000;
+      display: none;
+      margin: 0 auto;
+      padding: 30px 10%; }
+      #main-container #footer #contact-form-section .row {
+        margin-bottom: 50px; }
+        #main-container #footer #contact-form-section .row.thank-you {
+          margin-bottom: 0px; }
+      #main-container #footer #contact-form-section .row:nth-last-child(3) {
+        margin-bottom: 25px; }
+      #main-container #footer #contact-form-section .row:nth-last-child(2), #main-container #footer #contact-form-section .row:last-child {
+        margin-bottom: 15px; }
+      #main-container #footer #contact-form-section .title {
+        font-size: 25px; }
+      #main-container #footer #contact-form-section input[type=text], #main-container #footer #contact-form-section select {
+        background-color: transparent;
+        border: 0px;
+        border-bottom: 1px solid #D6D6D6;
+        border-radius: 0px;
+        outline: none;
+        padding-bottom: 10px;
+        width: 100%;
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 0 0px 1000px #FFF inset; }
+      #main-container #footer #contact-form-section textarea, #main-container #footer #contact-form-section textarea:focus {
+        border: 1px solid #D6D6D6;
+        height: 200px;
+        outline: none;
+        padding: 15px;
+        resize: none;
+        width: 100%; }
+      #main-container #footer #contact-form-section .input-error {
+        border-bottom: 1px solid #FF0000; }
+      #main-container #footer #contact-form-section .contact-error {
+        color: #FF0000;
+        margin: 5px 0px 25px 0px; }
+    #main-container #footer #links-section {
+      background-color: #232323;
+      color: #868686;
+      margin: 0px auto;
+      padding: 50px 10% 25px 10%; }
+      #main-container #footer #links-section hr {
+        background-image: url("/images/slash.svg");
+        background-repeat: repeat-x;
+        background-size: 10px 7px;
+        border: 0px;
+        height: 7px; }
+      #main-container #footer #links-section a {
+        color: inherit;
+        text-decoration: none; }
+      #main-container #footer #links-section a:hover {
+        color: #FFF; }
+      #main-container #footer #links-section .links {
+        margin-bottom: 70px; }
+        #main-container #footer #links-section .links .col-sm-12 {
+          padding-bottom: 5px; }
+        #main-container #footer #links-section .links .collapse {
+          display: block;
+          padding-top: 5px; }
+        #main-container #footer #links-section .links a {
+          font-size: 13px; }
+          #main-container #footer #links-section .links a.logo:after {
+            content: url("/images/logo-dnb-white.svg");
+            display: inline-block;
+            width: 200px; }
+          #main-container #footer #links-section .links a.group-link-heading {
+            cursor: default;
+            font-size: 15px;
+            font-weight: 600;
+            pointer-events: none; }
+        #main-container #footer #links-section .links img.social-icon {
+          width: 47px;
+          padding: 0px; }
+        #main-container #footer #links-section .links li {
+          padding-bottom: 10px; }
+      #main-container #footer #links-section .legal {
+        font-size: 12px;
+        text-align: right; }
+        #main-container #footer #links-section .legal li {
+          margin-left: 10px; } }
+  @media all and (max-width: 1230px) and (min-width: 769px) {
+    #main-container #footer #contact-us-section {
+      padding: 10px 10%; }
+      #main-container #footer #contact-us-section .col-sm-12 {
+        padding: 7px 0px; }
+    #main-container #footer #contact-form-section .row {
+      margin-bottom: 0px;
+      padding-bottom: 0px; }
+      #main-container #footer #contact-form-section .row .title {
+        margin-bottom: 10px; }
+      #main-container #footer #contact-form-section .row input, #main-container #footer #contact-form-section .row select, #main-container #footer #contact-form-section .row textarea, #main-container #footer #contact-form-section .row button {
+        margin: 14px 0px; }
+    #main-container #footer #links-section {
+      padding: 20px 10%; }
+      #main-container #footer #links-section .links {
+        margin-bottom: 0px; }
+        #main-container #footer #links-section .links a.logo {
+          margin-bottom: 15px; }
+        #main-container #footer #links-section .links a.group-link-heading {
+          margin-top: 15px; } }
+  @media all and (max-width: 768px) {
+    #main-container #footer #contact-us-section {
+      padding: 0px 35px; }
+      #main-container #footer #contact-us-section .col-sm-12 {
+        border-bottom: 1px solid rgba(134, 134, 134, 0.25);
+        padding: 15px 0px; }
+        #main-container #footer #contact-us-section .col-sm-12 ul, #main-container #footer #contact-us-section .col-sm-12 li {
+          margin: 0px;
+          padding: 0px; }
+      #main-container #footer #contact-us-section .col-sm-12:last-child {
+        border: 0px; }
+        #main-container #footer #contact-us-section .col-sm-12:last-child #toggle-contact-form-chevron {
+          float: right;
+          margin: 5px auto; }
+    #main-container #footer #contact-form-section {
+      padding: 20px 35px 0px 35px; }
+      #main-container #footer #contact-form-section .row, #main-container #footer #contact-form-section .row:nth-last-child(3), #main-container #footer #contact-form-section .row:nth-last-child(2), #main-container #footer #contact-form-section .row:last-child {
+        margin: 0px;
+        padding: 0px; }
+        #main-container #footer #contact-form-section .row .col-sm-12, #main-container #footer #contact-form-section .row:nth-last-child(3) .col-sm-12, #main-container #footer #contact-form-section .row:nth-last-child(2) .col-sm-12, #main-container #footer #contact-form-section .row:last-child .col-sm-12 {
+          padding: 0px 20px;
+          margin: 0px 0px 20px 0px; }
+    #main-container #footer #links-section {
+      padding: 20px 50px; }
+      #main-container #footer #links-section .links {
+        margin-bottom: inherit; }
+        #main-container #footer #links-section .links a.logo:after {
+          content: url("/images/logo-ampersand-white.svg");
+          display: inline-block;
+          width: 30px; }
+        #main-container #footer #links-section .links b {
+          font-weight: 500; }
+        #main-container #footer #links-section .links .col-sm-12 {
+          border-bottom: 1px solid rgba(134, 134, 134, 0.25);
+          padding: 15px 0px; }
+          #main-container #footer #links-section .links .col-sm-12 ul, #main-container #footer #links-section .links .col-sm-12 li {
+            margin: 0px;
+            padding: 0px; }
+        #main-container #footer #links-section .links .col-sm-12:last-child {
+          border: 0px; }
+      #main-container #footer #links-section .legal {
+        text-align: center; }
+        #main-container #footer #links-section .legal .col-sm-12 {
+          float: none;
+          margin: 0 auto; }
+          #main-container #footer #links-section .legal .col-sm-12 ul {
+            font-size: 10px; }
+            #main-container #footer #links-section .legal .col-sm-12 ul li:first-child {
+              clear: both;
+              display: block; }
+            #main-container #footer #links-section .legal .col-sm-12 ul li:nth-child(3) {
+              border-left: 1px solid rgba(134, 134, 134, 0.25);
+              border-right: 1px solid rgba(134, 134, 134, 0.25);
+              padding: 0px 16px; } }
+  #main-container .checkout-title {
+    text-align: center;
+    background-color: #01516F;
+    height: 55px;
+    margin-bottom: 77px;
+    font-size: 24px;
+    line-height: 55px;
+    color: white;
+    font-weight: lighter; }
+  #main-container .container-fluid {
+    margin-left: 8%;
+    margin-right: 8%; }
+    #main-container .container-fluid .row.second {
+      margin-top: 45px; }
+    #main-container .container-fluid .row.loginForm {
+      /* Declaring mixins */
+      /* Ends here */
+      /* Adding the Glyphicon */
+      /* End here */ }
+      #main-container .container-fluid .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form #cpassword {
+        padding-left: 45px;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+        #main-container .container-fluid .row.loginForm #loginform-div form #username:focus, #main-container .container-fluid .row.loginForm #loginform-div form #email:focus, #main-container .container-fluid .row.loginForm #loginform-div form #password1:focus, #main-container .container-fluid .row.loginForm #loginform-div form #cpassword:focus {
+          border-color: #66afe9;
+          outline: 0;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          border-width: thin;
+          border-top-style: double;
+          border-left-style: double; }
+      #main-container .container-fluid .row.loginForm #loginform-div .login-form__login-text {
+        color: #3096B1; }
+      #main-container .container-fluid .row.loginForm #loginform-div form #username.error {
+        border-color: red; }
+      #main-container .container-fluid .row.loginForm #loginform-div form #email.error {
+        border-color: red; }
+      #main-container .container-fluid .row.loginForm #loginform-div form #password1.error {
+        border-color: red; }
+      #main-container .container-fluid .row.loginForm #loginform-div form #cpassword.error {
+        border-color: red; }
+      #main-container .container-fluid .row.loginForm .inner-addon {
+        position: relative; }
+      #main-container .container-fluid .row.loginForm .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none; }
+      #main-container .container-fluid .row.loginForm .left-addon .glyphicon {
+        left: 0px; }
+      #main-container .container-fluid .row.loginForm .right-addon .glyphicon {
+        right: 0px; }
+      #main-container .container-fluid .row.loginForm .left-addon input {
+        padding-left: 30px; }
+      #main-container .container-fluid .row.loginForm .right-addon input {
+        padding-right: 30px; }
+      #main-container .container-fluid .row.loginForm .login-icon {
+        font-size: 34px;
+        color: #3096B1; }
+      #main-container .container-fluid .row.loginForm .progress {
+        width: 90%; }
+    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div .login-form__label, #main-container .container-fluid .row.loginForm #loginform-div .row.personalinfoForm .login-form__label, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__label, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billingform__label, #main-container .container-fluid .row.billingForm .row.personalinfoForm .billingform__label, #main-container .container-fluid .row.personalinfoForm .terms_conditions .termsconditions__label, #main-container .container-fluid .terms_conditions .row.personalinfoForm .termsconditions__label {
+      font-size: 32px;
+      font-weight: 100; }
+    #main-container .container-fluid .row.personalinfoForm .row.shoppingCart .cart__label, #main-container .container-fluid .row.shoppingCart .row.personalinfoForm .cart__label, #main-container .container-fluid .row.personalinfoForm .row.Upsell .upsell__label, #main-container .container-fluid .row.Upsell .row.personalinfoForm .upsell__label {
+      float: left;
+      font-size: 32px;
+      font-weight: 100;
+      margin-bottom: 30px; }
+    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div label.error, #main-container .container-fluid .row.loginForm #loginform-div .row.personalinfoForm label.error, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div label.error, #main-container .container-fluid .row.personalinfoForm .row.billingForm label.error, #main-container .container-fluid .row.billingForm .row.personalinfoForm label.error {
+      display: block;
+      font-size: 14px;
+      font-weight: normal;
+      text-align: right;
+      margin-right: 48px; }
+    #main-container .container-fluid .row.personalinfoForm .row.shoppingCart .cart, #main-container .container-fluid .row.shoppingCart .row.personalinfoForm .cart, #main-container .container-fluid .row.personalinfoForm .row.Upsell .upsell, #main-container .container-fluid .row.Upsell .row.personalinfoForm .upsell {
+      border: 1px solid #ddd;
+      border-top: 8px solid;
+      margin-top: 55px; }
+    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #username, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #email, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #password1, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #cpassword, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #cpassword, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billingform-div input, #main-container .container-fluid .row.billingForm .billingform-div .row.personalinfoForm input {
+      height: 75px;
+      width: 90%;
+      line-height: 25px;
+      font-size: 21px;
+      color: #3096B1;
+      font-weight: inherit0; }
+    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control, #main-container .container-fluid .row.personalinfoForm .row.billingForm .form-control, #main-container .container-fluid .row.billingForm .row.personalinfoForm .form-control {
+      width: 90%;
+      height: 70px; }
+    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input.error {
       border-color: red; }
-    .container .container-fluid .row.loginForm #email.error {
+    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div {
+      margin-bottom: 35px; }
+      #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control {
+        border-radius: 0px; }
+      #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .error {
+        color: red; }
+    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .checkbox #addressSame {
+      height: 15px; }
+    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .checkbox #newAddress {
+      height: 15px; }
+    #main-container .container-fluid .row.billingForm #billingform__input--div {
+      margin-bottom: 40px; }
+    #main-container .container-fluid .row.billingForm input.error {
       border-color: red; }
-    .container .container-fluid .row.loginForm #password1.error {
-      border-color: red; }
-    .container .container-fluid .row.loginForm #cpassword.error {
-      border-color: red; }
-    .container .container-fluid .row.loginForm .login-form__login-text {
-      color: #3096B1; }
-    .container .container-fluid .row.loginForm .inner-addon {
-      position: relative; }
-    .container .container-fluid .row.loginForm .inner-addon .glyphicon {
-      position: absolute;
-      padding: 10px;
-      pointer-events: none; }
-    .container .container-fluid .row.loginForm .left-addon .glyphicon {
-      left: 0px; }
-    .container .container-fluid .row.loginForm .right-addon .glyphicon {
-      right: 0px; }
-    .container .container-fluid .row.loginForm .left-addon input {
-      padding-left: 30px; }
-    .container .container-fluid .row.loginForm .right-addon input {
-      padding-right: 30px; }
-    .container .container-fluid .row.loginForm .login-icon {
-      font-size: 34px;
-      color: #3096B1; }
-    .container .container-fluid .row.loginForm .progress {
-      width: 90%; }
-  .container .container-fluid .row.personalinfoForm .row.loginForm .login-form__label, .container .container-fluid .row.loginForm .row.personalinfoForm .login-form__label, .container .container-fluid .row.personalinfoForm .personalinfoform__label, .container .container-fluid .row.personalinfoForm .row.billingForm .billingform__label, .container .container-fluid .row.billingForm .row.personalinfoForm .billingform__label, .container .container-fluid .row.personalinfoForm .terms_conditions .termsconditions__label, .container .container-fluid .terms_conditions .row.personalinfoForm .termsconditions__label {
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.personalinfoForm .row.shoppingCart .cart__label, .container .container-fluid .row.shoppingCart .row.personalinfoForm .cart__label, .container .container-fluid .row.personalinfoForm .row.Upsell .upsell__label, .container .container-fluid .row.Upsell .row.personalinfoForm .upsell__label {
-    float: left;
-    font-size: 32px;
-    font-weight: 100;
-    margin-bottom: 30px; }
-  .container .container-fluid .row.personalinfoForm label.error {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    text-align: right;
-    margin-right: 25px; }
-  .container .container-fluid .row.personalinfoForm .row.shoppingCart .cart, .container .container-fluid .row.shoppingCart .row.personalinfoForm .cart, .container .container-fluid .row.personalinfoForm .row.Upsell .upsell, .container .container-fluid .row.Upsell .row.personalinfoForm .upsell {
-    border: 1px solid #ddd;
-    border-top: 8px solid;
-    margin-top: 55px; }
-  .container .container-fluid .row.personalinfoForm .row.loginForm #username, .container .container-fluid .row.loginForm .row.personalinfoForm #username, .container .container-fluid .row.personalinfoForm .row.loginForm #email, .container .container-fluid .row.loginForm .row.personalinfoForm #email, .container .container-fluid .row.personalinfoForm .row.loginForm #password1, .container .container-fluid .row.loginForm .row.personalinfoForm #password1, .container .container-fluid .row.personalinfoForm .row.loginForm #cpassword, .container .container-fluid .row.loginForm .row.personalinfoForm #cpassword, .container .container-fluid .row.personalinfoForm .personalinfoform-div input, .container .container-fluid .row.personalinfoForm .row.billingForm .billingform-div input, .container .container-fluid .row.billingForm .billingform-div .row.personalinfoForm input {
-    height: 75px;
-    width: 90%;
-    line-height: 25px;
-    font-size: 21px;
-    color: #3096B1;
-    font-weight: inherit0; }
-  .container .container-fluid .row.personalinfoForm .form-control {
-    width: 90%;
-    height: 70px; }
-  .container .container-fluid .row.personalinfoForm #personalinfoform__input--div {
-    margin-bottom: 40px; }
-  .container .container-fluid .row.personalinfoForm input.error {
-    border-color: red; }
-  .container .container-fluid .row.personalinfoForm .form-control {
-    border-radius: 0px; }
-  .container .container-fluid .row.personalinfoForm #addressSame {
-    height: 15px; }
-  .container .container-fluid .row.personalinfoForm #newAddress {
-    height: 15px; }
-  .container .container-fluid .row.billingForm #billingform__input--div {
-    margin-bottom: 40px; }
-  .container .container-fluid .row.billingForm input.error {
-    border-color: red; }
-  .container .container-fluid .row.billingForm .form-control {
-    border-radius: 0px; }
-  .container .container-fluid .row.billingForm #savePaymentInfo {
-    height: 15px; }
-  .container .container-fluid .row.shoppingCart .padd {
-    padding: 5px 20px 10px 30px; }
-  .container .container-fluid .row.shoppingCart hr {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border: 0;
-    border-top: 1px solid #eeeeee; }
-  .container .container-fluid .row.shoppingCart .black {
-    font-family: Avenir Next,AvenirLTStd-Book;
-    color: #000;
-    font-size: 18px; }
-  .container .container-fluid .row.shoppingCart .cep {
-    color: #3096B1; }
-  .container .container-fluid .row.shoppingCart .right-float {
-    float: right; }
-  .container .container-fluid .row.shoppingCart .productName {
-    font-size: 30px; }
-  .container .container-fluid .row.shoppingCart .productPrice {
-    font-size: 35px; }
-  .container .container-fluid .row.shoppingCart .cart {
-    border-top-color: #3096B1; }
-  .container .container-fluid .row.shoppingCart .amt-b {
-    font-family: Avenir Next,AvenirLTStd-Book;
-    color: #000;
-    font-size: 38px;
-    font-weight: 400; }
-  .container .container-fluid .row.shoppingCart .amt {
-    font-family: Avenir Next,AvenirLTStd-Book;
-    color: #000;
-    font-size: 38px;
-    font-weight: 300; }
-  .container .container-fluid .row.shoppingCart .grey {
-    font-family: Avenir Next,AvenirLTStd-Book;
-    color: #999;
-    font-size: 18px; }
-  .container .container-fluid .row.shoppingCart .promo {
-    padding-left: 20px;
-    margin-left: 20px;
-    width: 91%;
-    height: 75px;
-    border: 1px solid gray; }
-  .container .container-fluid .row.shoppingCart .close {
-    width: 40px; }
-  .container .container-fluid .row.shoppingCart .apply {
-    border-radius: 25px;
-    border: 1px solid gray;
-    width: 91%;
-    height: 40px;
-    border-color: #3096B1;
-    color: #3096B1;
-    font-size: 16px; }
-  .container .container-fluid .row.Upsell .padd {
-    padding: 5px 20px 10px 30px; }
-  .container .container-fluid .row.Upsell hr {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border: 0;
-    border-top: 1px solid #eeeeee; }
-  .container .container-fluid .row.Upsell .black {
-    font-family: Avenir Next,AvenirLTStd-Book;
-    color: #000;
-    font-size: 18px; }
-  .container .container-fluid .row.Upsell .cep {
-    color: #3096B1; }
-  .container .container-fluid .row.Upsell .right-float {
-    float: right; }
-  .container .container-fluid .row.Upsell .productName {
-    font-size: 30px; }
-  .container .container-fluid .row.Upsell .productPrice {
-    font-size: 35px; }
-  .container .container-fluid .row.Upsell .upsell {
-    border-top-color: #898989; }
-  .container .container-fluid .row.Upsell #upsellApply {
-    border-radius: 25px;
-    border: 1px solid gray;
-    width: 145px;
-    height: 40px;
-    border-color: #898989;
-    color: #898989;
-    font-size: 16px; }
-  .container .container-fluid .col-md-7 {
-    margin-bottom: 50px; }
-  .container .container-fluid .terms_conditions #terms {
-    border: solid 1px;
-    padding: 20px 20px 20px 20px;
-    margin-top: 35x; }
-  .container .container-fluid .finish_button {
-    float: right;
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 60px; }
-    .container .container-fluid .finish_button #company_taxExempt {
-      margin-top: 10px; }
-    .container .container-fluid .finish_button #agree_terms {
-      margin-top: 10px; }
-    .container .container-fluid .finish_button .finish {
+    #main-container .container-fluid .row.billingForm .form-control {
+      border-radius: 0px; }
+    #main-container .container-fluid .row.billingForm #savePaymentInfo {
+      height: 15px; }
+    #main-container .container-fluid .row.shoppingCart .padd {
+      padding: 5px 20px 10px 30px; }
+    #main-container .container-fluid .row.shoppingCart hr {
       margin-top: 10px;
-      float: right;
+      margin-bottom: 15px;
+      border: 0;
+      border-top: 1px solid #eeeeee; }
+    #main-container .container-fluid .row.shoppingCart .black {
+      font-family: Avenir Next,AvenirLTStd-Book;
+      color: #000;
+      font-size: 18px; }
+    #main-container .container-fluid .row.shoppingCart .cep {
+      color: #3096B1; }
+    #main-container .container-fluid .row.shoppingCart .right-float {
+      float: right; }
+    #main-container .container-fluid .row.shoppingCart .productName {
+      font-size: 30px; }
+    #main-container .container-fluid .row.shoppingCart .productPrice {
+      font-size: 35px; }
+    #main-container .container-fluid .row.shoppingCart .cart {
+      border-top-color: #3096B1; }
+    #main-container .container-fluid .row.shoppingCart .amt-b {
+      font-family: Avenir Next,AvenirLTStd-Book;
+      color: #000;
+      font-size: 38px;
+      font-weight: 400; }
+    #main-container .container-fluid .row.shoppingCart .amt {
+      font-family: Avenir Next,AvenirLTStd-Book;
+      color: #000;
+      font-size: 38px;
+      font-weight: 300; }
+    #main-container .container-fluid .row.shoppingCart .grey {
+      font-family: Avenir Next,AvenirLTStd-Book;
+      color: #999;
+      font-size: 18px; }
+    #main-container .container-fluid .row.shoppingCart .promo {
+      padding-left: 20px;
+      margin-left: 20px;
+      width: 91%;
+      height: 75px;
+      border: 1px solid gray; }
+    #main-container .container-fluid .row.shoppingCart .close {
+      width: 40px; }
+    #main-container .container-fluid .row.shoppingCart .apply {
+      border-radius: 25px;
+      border: 1px solid gray;
+      width: 91%;
+      height: 40px;
+      border-color: #3096B1;
+      color: #3096B1;
+      font-size: 16px; }
+    #main-container .container-fluid .row.Upsell .padd {
+      padding: 5px 20px 10px 30px; }
+    #main-container .container-fluid .row.Upsell hr {
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 0;
+      border-top: 1px solid #eeeeee; }
+    #main-container .container-fluid .row.Upsell .black {
+      font-family: Avenir Next,AvenirLTStd-Book;
+      color: #000;
+      font-size: 18px; }
+    #main-container .container-fluid .row.Upsell .cep {
+      color: #3096B1; }
+    #main-container .container-fluid .row.Upsell .right-float {
+      float: right; }
+    #main-container .container-fluid .row.Upsell .productName {
+      font-size: 30px; }
+    #main-container .container-fluid .row.Upsell .productPrice {
+      font-size: 35px; }
+    #main-container .container-fluid .row.Upsell .upsell {
+      border-top-color: #898989; }
+    #main-container .container-fluid .row.Upsell #upsellApply {
       border-radius: 25px;
       border: 1px solid gray;
       width: 145px;
@@ -249,5 +476,46 @@
       border-color: #898989;
       color: #898989;
       font-size: 16px; }
+    #main-container .container-fluid .col-md-7 {
+      margin-bottom: 50px; }
+    #main-container .container-fluid .terms_conditions #terms {
+      border: solid 1px;
+      padding: 20px 20px 20px 20px;
+      margin-top: 35x; }
+    #main-container .container-fluid .finish_button {
+      float: right;
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 60px; }
+      #main-container .container-fluid .finish_button #company_taxExempt {
+        margin-top: 10px; }
+      #main-container .container-fluid .finish_button #agree_terms {
+        margin-top: 10px; }
+      #main-container .container-fluid .finish_button .finish {
+        margin-top: 10px;
+        float: right;
+        border-radius: 25px;
+        border: 1px solid gray;
+        width: 145px;
+        height: 40px;
+        border-color: #898989;
+        color: #898989;
+        font-size: 16px; }
+  #main-container p {
+    font-family: "Avenir Next", AvenirLTStd-Book;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 200%;
+    -webkit-text-stroke-width: 0.5px; }
+  #main-container button {
+    background-color: #FFF;
+    border: 1px solid;
+    border-radius: 50px;
+    display: inline;
+    font-size: 16px;
+    height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    width: 160px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,8 +9,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css"></link>
-    <link rel="stylesheet" type="text/css" href="css/style.css"></link>
-    
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+     -->
 <!-- The following style sheet can be removed in the Cart repo -->
     <link rel="stylesheet" type="text/css" href="css/styles.css"></link>
 

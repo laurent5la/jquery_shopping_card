@@ -5,30 +5,43 @@
 	input {
 	    @extend %input_textbox;
 	}
-}
-.personalinfoform__label{
 
+	.personalinfoform__label{
 		@extend %form_label1;
-}
-#personalinfoform__input--div {
-		margin-bottom: 40px;
+	}
+
+	label.error{
+    	@extend %label_error;
+	}
+
+	input.error {
+    	border-color: red;
+	}
+
+	.personalinfoform__input--div{
+		margin-bottom:35px;
+
+		.form-control{
+			@extend %dropdown;
+			border-radius: 0px;
+		}
+		.error{
+			color:red;
+		}
+	}
+	.checkbox{
+		#addressSame{
+    		height:15px;
+		}
+		#newAddress{
+			height:15px;	
+		}
+	}
+
 }
 
-label.error{
-    @extend %label_error;
-}
 
-input.error {
-    border-color: red;
-}
-.form-control{
-	@extend %dropdown;
-	border-radius: 0px;
-}
 
-#addressSame{
-    height:15px;
-}
-#newAddress{
-	height:15px;	
-}
+
+
+

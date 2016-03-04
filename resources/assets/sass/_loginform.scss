@@ -17,38 +17,48 @@
 
 /* Ends here */
 
-#username{
-    &.error {
-        border-color: red;}
-    @extend %loginform_input;
-}
-#email {
-    &.error {
-        border-color: red;}
-    @extend %loginform_input;   
-}
-#password1 {
-    &.error {
-        border-color: red;}
-    @extend %loginform_input;   
-}
-#cpassword {
-    &.error {
-        border-color: red;}
-    @extend %loginform_input;   
+#loginform-div{
+
+    .login-form__label {
+        @extend %form_label1;
+    }
+
+    .login-form__login-text{
+        color: $input_color_blue;
+    }
+    label.error{
+        @extend %label_error;
+    }
+    
+    form{
+        #username {
+            &.error {
+                border-color: red;
+            }
+        @extend %loginform_input;
+        }
+        #email {
+            &.error {
+                border-color: red;
+            }
+            @extend %loginform_input;   
+        }
+        #password1 {
+            &.error {
+                border-color: red;
+            }
+            @extend %loginform_input;   
+        }
+        #cpassword {
+            &.error {
+                border-color: red;
+            }
+            @extend %loginform_input;   
+        }
+    }
 }
 
-.login-form__label {
-    @extend %form_label1;
-}
 
-.login-form__login-text{
-    color: $input_color_blue;
-}
-
-label.error{
-    @extend %label_error;
-}
 
 /* Adding the Glyphicon */
 .inner-addon {
