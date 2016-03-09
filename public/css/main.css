@@ -1,4 +1,4 @@
-#main-container .container-fluid .row.loginForm #loginform-div .login-form__label, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__label, #main-container .container-fluid .row.billingForm .billingform__label, #main-container .container-fluid .terms_conditions .termsconditions__label {
+#main-container .container-fluid .row.loginForm #loginform-div .login-form__label, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__label, #main-container .container-fluid .row.billingForm .billing-form-main-div .billing-form-label, #main-container .container-fluid .terms_conditions .termsconditions__label {
   font-size: 32px;
   font-weight: 100; }
 
@@ -8,7 +8,7 @@
   font-weight: 100;
   margin-bottom: 30px; }
 
-#main-container .container-fluid .row.loginForm #loginform-div label.error, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div label.error, #main-container .container-fluid .row.billingForm label.error {
+#main-container .container-fluid .row.loginForm #loginform-div label.error, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div label.error, #main-container .container-fluid .row.billingForm .billing-form-main-div label.error {
   display: block;
   font-size: 14px;
   font-weight: normal;
@@ -20,7 +20,7 @@
   border-top: 8px solid;
   margin-top: 55px; }
 
-#main-container .container-fluid .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form #cpassword, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input, #main-container .container-fluid .row.billingForm .billingform-div input {
+#main-container .container-fluid .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form #cpassword, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input, #main-container .container-fluid .row.billingForm .billing-form-main-div input {
   height: 75px;
   width: 90%;
   line-height: 25px;
@@ -28,7 +28,7 @@
   color: #3096B1;
   font-weight: inherit0; }
 
-#main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control, #main-container .container-fluid .row.billingForm .form-control {
+#main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control, #main-container .container-fluid .row.billingForm .billing-form-main-div #billing-form-input .form-control {
   width: 90%;
   height: 70px; }
 
@@ -322,13 +322,17 @@
       #main-container .container-fluid .row.loginForm #loginform-div .login-form__login-text {
         color: #3096B1; }
       #main-container .container-fluid .row.loginForm #loginform-div form #username.error {
-        border-color: red; }
+        border-color: red;
+        color: red; }
       #main-container .container-fluid .row.loginForm #loginform-div form #email.error {
-        border-color: red; }
+        border-color: red;
+        color: red; }
       #main-container .container-fluid .row.loginForm #loginform-div form #password1.error {
-        border-color: red; }
+        border-color: red;
+        color: red; }
       #main-container .container-fluid .row.loginForm #loginform-div form #cpassword.error {
-        border-color: red; }
+        border-color: red;
+        color: red; }
       #main-container .container-fluid .row.loginForm .inner-addon {
         position: relative; }
       #main-container .container-fluid .row.loginForm .inner-addon .glyphicon {
@@ -348,7 +352,7 @@
         color: #3096B1; }
       #main-container .container-fluid .row.loginForm .progress {
         width: 90%; }
-    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div .login-form__label, #main-container .container-fluid .row.loginForm #loginform-div .row.personalinfoForm .login-form__label, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__label, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billingform__label, #main-container .container-fluid .row.billingForm .row.personalinfoForm .billingform__label, #main-container .container-fluid .row.personalinfoForm .terms_conditions .termsconditions__label, #main-container .container-fluid .terms_conditions .row.personalinfoForm .termsconditions__label {
+    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div .login-form__label, #main-container .container-fluid .row.loginForm #loginform-div .row.personalinfoForm .login-form__label, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__label, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billing-form-main-div .billing-form-label, #main-container .container-fluid .row.billingForm .billing-form-main-div .row.personalinfoForm .billing-form-label, #main-container .container-fluid .row.personalinfoForm .terms_conditions .termsconditions__label, #main-container .container-fluid .terms_conditions .row.personalinfoForm .termsconditions__label {
       font-size: 32px;
       font-weight: 100; }
     #main-container .container-fluid .row.personalinfoForm .row.shoppingCart .cart__label, #main-container .container-fluid .row.shoppingCart .row.personalinfoForm .cart__label, #main-container .container-fluid .row.personalinfoForm .row.Upsell .upsell__label, #main-container .container-fluid .row.Upsell .row.personalinfoForm .upsell__label {
@@ -356,7 +360,7 @@
       font-size: 32px;
       font-weight: 100;
       margin-bottom: 30px; }
-    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div label.error, #main-container .container-fluid .row.loginForm #loginform-div .row.personalinfoForm label.error, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div label.error, #main-container .container-fluid .row.personalinfoForm .row.billingForm label.error, #main-container .container-fluid .row.billingForm .row.personalinfoForm label.error {
+    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div label.error, #main-container .container-fluid .row.loginForm #loginform-div .row.personalinfoForm label.error, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div label.error, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billing-form-main-div label.error, #main-container .container-fluid .row.billingForm .billing-form-main-div .row.personalinfoForm label.error {
       display: block;
       font-size: 14px;
       font-weight: normal;
@@ -366,14 +370,14 @@
       border: 1px solid #ddd;
       border-top: 8px solid;
       margin-top: 55px; }
-    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #username, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #email, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #password1, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #cpassword, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #cpassword, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billingform-div input, #main-container .container-fluid .row.billingForm .billingform-div .row.personalinfoForm input {
+    #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #username, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #username, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #email, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #email, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #password1, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #password1, #main-container .container-fluid .row.personalinfoForm .row.loginForm #loginform-div form #cpassword, #main-container .container-fluid .row.loginForm #loginform-div form .row.personalinfoForm #cpassword, #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billing-form-main-div input, #main-container .container-fluid .row.billingForm .billing-form-main-div .row.personalinfoForm input {
       height: 75px;
       width: 90%;
       line-height: 25px;
       font-size: 21px;
       color: #3096B1;
       font-weight: inherit0; }
-    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control, #main-container .container-fluid .row.personalinfoForm .row.billingForm .form-control, #main-container .container-fluid .row.billingForm .row.personalinfoForm .form-control {
+    #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control, #main-container .container-fluid .row.personalinfoForm .row.billingForm .billing-form-main-div #billing-form-input .form-control, #main-container .container-fluid .row.billingForm .billing-form-main-div #billing-form-input .row.personalinfoForm .form-control {
       width: 90%;
       height: 70px; }
     #main-container .container-fluid .row.personalinfoForm .personalinfoform-div input.error {
@@ -381,21 +385,23 @@
     #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div {
       margin-bottom: 35px; }
       #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .form-control {
-        border-radius: 0px; }
+        border-radius: 0px;
+        -webkit-appearance: none; }
       #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .personalinfoform__input--div .error {
         color: red; }
     #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .checkbox #addressSame {
       height: 15px; }
     #main-container .container-fluid .row.personalinfoForm .personalinfoform-div .checkbox #newAddress {
       height: 15px; }
-    #main-container .container-fluid .row.billingForm #billingform__input--div {
+    #main-container .container-fluid .row.billingForm .billing-form-main-div #billing-form-input {
       margin-bottom: 40px; }
-    #main-container .container-fluid .row.billingForm input.error {
+      #main-container .container-fluid .row.billingForm .billing-form-main-div #billing-form-input .form-control {
+        border-radius: 0px;
+        -webkit-appearance: none; }
+      #main-container .container-fluid .row.billingForm .billing-form-main-div #billing-form-input #save-payment-info {
+        height: 15px; }
+    #main-container .container-fluid .row.billingForm .billing-form-main-div input.error {
       border-color: red; }
-    #main-container .container-fluid .row.billingForm .form-control {
-      border-radius: 0px; }
-    #main-container .container-fluid .row.billingForm #savePaymentInfo {
-      height: 15px; }
     #main-container .container-fluid .row.shoppingCart .padd {
       padding: 5px 20px 10px 30px; }
     #main-container .container-fluid .row.shoppingCart hr {

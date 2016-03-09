@@ -1,27 +1,34 @@
-.billingform-div {
+.billing-form-main-div {
 	input {
 	   @extend %input_textbox;
 	}
 
-}
-.billingform__label{
+	.billing-form-label{
 		@extend %form_label1;
-}
+	}
 
-#billingform__input--div {
+	#billing-form-input {
 		margin-bottom: 40px;
+
+		.form-control{
+			@extend %dropdown;
+			border-radius: 0px;
+			-webkit-appearance: none;
+		}
+
+		#save-payment-info{
+			height:15px;	
+		}
+	}
+
+	label.error{
+ 	   @extend %label_error;
+	}
+	input.error {
+	    border-color: red;
+	}
+
 }
 
-label.error{
-    @extend %label_error;
-}
-input.error {
-    border-color: red;
-}
-.form-control{
-	@extend %dropdown;
-	border-radius: 0px;
-}
-#savePaymentInfo{
-	height:15px;
-}
+
+

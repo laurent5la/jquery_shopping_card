@@ -29,29 +29,32 @@
     label.error{
         @extend %label_error;
     }
-    
     form{
         #username {
             &.error {
                 border-color: red;
+                color:red;
             }
         @extend %loginform_input;
         }
         #email {
             &.error {
                 border-color: red;
+                color:red;
             }
             @extend %loginform_input;   
         }
         #password1 {
             &.error {
                 border-color: red;
+                color:red;
             }
             @extend %loginform_input;   
         }
         #cpassword {
             &.error {
                 border-color: red;
+                color:red;
             }
             @extend %loginform_input;   
         }

@@ -24,6 +24,7 @@
 		.form-control{
 			@extend %dropdown;
 			border-radius: 0px;
+			-webkit-appearance: none;
 		}
 		.error{
 			color:red;
